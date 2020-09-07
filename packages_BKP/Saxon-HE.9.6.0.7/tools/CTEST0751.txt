@@ -1,0 +1,36 @@
+let $gReturnDataState :=  element{'ReturnDataState'} {''}
+let $gSchIL1120UB :=  element{'SchIL1120UB'} {''}
+let $gSchUBMembershipTable :=  element{'SchUBMembershipTable'} {''}
+let $xpathSchUBMembershipTable := doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/SchUBMembershipTable
+let $gStep1SecAMembersTable :=  element{'Step1SecAMembersTable'} {''}
+let $gMembersFEIN :=  element{'MembersFEIN'} {''}
+
+ 
+for 
+	$ReturnDataState at $currentReturnDataStatePos in if(exists(doc("CTEST075.xil")/ReturnState/ReturnDataState)) then doc("CTEST075.xil")/ReturnState/ReturnDataState else $gReturnDataState,
+	$SchIL1120UB at $currentSchIL1120UBPos in if(exists(doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB)) then doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB else $gSchIL1120UB,
+	$SchUBMembershipTable at $currentSchUBMembershipTablePos in if(exists(doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/SchUBMembershipTable)) then doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/SchUBMembershipTable else $gSchUBMembershipTable,
+	$Step1SecAMembersTable at $currentStep1SecAMembersTablePos in if(exists($SchUBMembershipTable/Step1SecAMembersTable)) then $SchUBMembershipTable/Step1SecAMembersTable else $gStep1SecAMembersTable,
+	$MembersFEIN at $currentMembersFEINPos in if(exists($SchUBMembershipTable/Step1SecAMembersTable/MembersFEIN)) then $SchUBMembershipTable/Step1SecAMembersTable/MembersFEIN else $gMembersFEIN
+
+let $genReturnDataState := false()
+let $genSchIL1120UB := false()
+let $genSchUBMembershipTable := false()
+let $prevSchUBMembershipTable := $xpathSchUBMembershipTable[$currentSchUBMembershipTablePos+-1]
+let $nextSchUBMembershipTable := $xpathSchUBMembershipTable[$currentSchUBMembershipTablePos+1]
+let $SchUBMembershipTableCount := count($xpathSchUBMembershipTable)
+let $genStep1SecAMembersTable := false()
+let $genMembersFEIN := exists($SchUBMembershipTable/Step1SecAMembersTable/MembersFEIN)
+return 
+<Evaluation><FieldEntry>
+                    <Name>MembersFEIN</Name>
+                    <Xpath>ReturnState/ReturnDataState/SchIL1120UB/SchUBMembershipTable/Step1SecAMembersTable/MembersFEIN</Xpath>
+			        <Value>{$SchUBMembershipTable/Step1SecAMembersTable/MembersFEIN/data()}</Value>
+			        <NextValue>{$nextSchUBMembershipTable/Step1SecAMembersTable/MembersFEIN/data()}</NextValue>
+			        <PrevValue>{$prevSchUBMembershipTable/Step1SecAMembersTable/MembersFEIN/data()}</PrevValue>
+			        <Index>{$currentSchUBMembershipTablePos}</Index>
+                    <Count>{$SchUBMembershipTableCount}</Count>
+                    <FieldKey>{$SchUBMembershipTable/Step1SecAMembersTable/MembersFEIN/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry></Evaluation>

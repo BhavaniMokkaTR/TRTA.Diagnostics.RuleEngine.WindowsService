@@ -1,0 +1,111 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRTA.Diagnostics.RuleEngine.WindowsService", "TRTA.Diagnostics.RuleEngine.WindowsService\TRTA.Diagnostics.RuleEngine.WindowsService.csproj", "{7F06541D-1733-4C13-B44B-A399F7710840}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{76171ACC-6007-4D69-ABEC-5A0BCD89458E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\TRTA.Diagnostics.BusinessRules.WebService\Domain\Domain.csproj", "{8F4998B5-FB07-4B2B-AAAF-4B78669D8B01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Resources", "..\TRTA.Diagnostics.BusinessRules.WebService\Common.Resources\Common.Resources.csproj", "{1036F352-0408-42C0-9036-1D2D050A3337}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2D64CFEF-F4A6-4A87-B293-03EFC9CDA111}"
+	ProjectSection(SolutionItems) = preProject
+		.tfignore = .tfignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging", "..\TRTA.Diagnostics.BusinessRules.WebService\Common.Logging\Common.Logging.csproj", "{6559398C-23FB-4895-A335-2B1FD92ECA8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{4EC0531B-27AF-4356-8D56-D5A137E7964D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateWindowsServiceResults", "ValidateWindowsServiceResults\ValidateWindowsServiceResults.csproj", "{55640C03-6ED2-4A36-9119-7EA7DB61D92A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Utilities", "..\TRTA.Diagnostics.BusinessRules.WebService\Common.Utilities\Common.Utilities.csproj", "{439205E5-21A0-4886-BAE8-A4EC73B88AB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F06541D-1733-4C13-B44B-A399F7710840}.Debug|x64.ActiveCfg = Debug|x64
+		{7F06541D-1733-4C13-B44B-A399F7710840}.Debug|x64.Build.0 = Debug|x64
+		{7F06541D-1733-4C13-B44B-A399F7710840}.Release|x64.ActiveCfg = Release|x64
+		{7F06541D-1733-4C13-B44B-A399F7710840}.Release|x64.Build.0 = Release|x64
+		{8F4998B5-FB07-4B2B-AAAF-4B78669D8B01}.Debug|x64.ActiveCfg = Debug|x64
+		{8F4998B5-FB07-4B2B-AAAF-4B78669D8B01}.Debug|x64.Build.0 = Debug|x64
+		{8F4998B5-FB07-4B2B-AAAF-4B78669D8B01}.Release|x64.ActiveCfg = Release|x64
+		{8F4998B5-FB07-4B2B-AAAF-4B78669D8B01}.Release|x64.Build.0 = Release|x64
+		{1036F352-0408-42C0-9036-1D2D050A3337}.Debug|x64.ActiveCfg = Debug|x64
+		{1036F352-0408-42C0-9036-1D2D050A3337}.Debug|x64.Build.0 = Debug|x64
+		{1036F352-0408-42C0-9036-1D2D050A3337}.Release|x64.ActiveCfg = Release|x64
+		{1036F352-0408-42C0-9036-1D2D050A3337}.Release|x64.Build.0 = Release|x64
+		{6559398C-23FB-4895-A335-2B1FD92ECA8D}.Debug|x64.ActiveCfg = Debug|x64
+		{6559398C-23FB-4895-A335-2B1FD92ECA8D}.Debug|x64.Build.0 = Debug|x64
+		{6559398C-23FB-4895-A335-2B1FD92ECA8D}.Release|x64.ActiveCfg = Release|x64
+		{6559398C-23FB-4895-A335-2B1FD92ECA8D}.Release|x64.Build.0 = Release|x64
+		{55640C03-6ED2-4A36-9119-7EA7DB61D92A}.Debug|x64.ActiveCfg = Debug|x64
+		{55640C03-6ED2-4A36-9119-7EA7DB61D92A}.Debug|x64.Build.0 = Debug|x64
+		{55640C03-6ED2-4A36-9119-7EA7DB61D92A}.Release|x64.ActiveCfg = Release|x64
+		{55640C03-6ED2-4A36-9119-7EA7DB61D92A}.Release|x64.Build.0 = Release|x64
+		{439205E5-21A0-4886-BAE8-A4EC73B88AB9}.Debug|x64.ActiveCfg = Debug|x64
+		{439205E5-21A0-4886-BAE8-A4EC73B88AB9}.Debug|x64.Build.0 = Debug|x64
+		{439205E5-21A0-4886-BAE8-A4EC73B88AB9}.Release|x64.ActiveCfg = Release|x64
+		{439205E5-21A0-4886-BAE8-A4EC73B88AB9}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{55640C03-6ED2-4A36-9119-7EA7DB61D92A} = {4EC0531B-27AF-4356-8D56-D5A137E7964D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3676903A-75F7-471A-AC75-33B2E91CE595}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/tr-corp-default
+		SccProjectUniqueName0 = ..\\TRTA.Diagnostics.BusinessRules.WebService\\Domain\\Domain.csproj
+		SccProjectName0 = ../TRTA.Diagnostics.BusinessRules.WebService/Domain
+		SccAuxPath0 = https://dev.azure.com/tr-corp-default
+		SccLocalPath0 = ..\\TRTA.Diagnostics.BusinessRules.WebService\\Domain
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\TRTA.Diagnostics.BusinessRules.WebService\\Common.Resources\\Common.Resources.csproj
+		SccProjectName1 = ../TRTA.Diagnostics.BusinessRules.WebService/Common.Resources
+		SccAuxPath1 = https://dev.azure.com/tr-corp-default
+		SccLocalPath1 = ..\\TRTA.Diagnostics.BusinessRules.WebService\\Common.Resources
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = TRTA.Diagnostics.RuleEngine.WindowsService\\TRTA.Diagnostics.RuleEngine.WindowsService.csproj
+		SccProjectName2 = TRTA.Diagnostics.RuleEngine.WindowsService
+		SccAuxPath2 = https://dev.azure.com/tr-corp-default
+		SccLocalPath2 = TRTA.Diagnostics.RuleEngine.WindowsService
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ..\\TRTA.Diagnostics.BusinessRules.WebService\\Common.Logging\\Common.Logging.csproj
+		SccProjectName3 = ../TRTA.Diagnostics.BusinessRules.WebService/Common.Logging
+		SccAuxPath3 = https://dev.azure.com/tr-corp-default
+		SccLocalPath3 = ..\\TRTA.Diagnostics.BusinessRules.WebService\\Common.Logging
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = ValidateWindowsServiceResults\\ValidateWindowsServiceResults.csproj
+		SccProjectTopLevelParentUniqueName4 = TRTA.Diagnostics.RuleEngine.WindowsService.sln
+		SccProjectName4 = ValidateWindowsServiceResults
+		SccAuxPath4 = https://dev.azure.com/tr-corp-default
+		SccLocalPath4 = ValidateWindowsServiceResults
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = ..\\TRTA.Diagnostics.BusinessRules.WebService\\Common.Utilities\\Common.Utilities.csproj
+		SccProjectName5 = ../TRTA.Diagnostics.BusinessRules.WebService/Common.Utilities
+		SccAuxPath5 = https://dev.azure.com/tr-corp-default
+		SccLocalPath5 = ..\\TRTA.Diagnostics.BusinessRules.WebService\\Common.Utilities
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReturnState xmlns="http://www.irs.gov/efile" xmlns:efile="http://www.irs.gov/efile" xsi:schemaLocation="http://www.irs.gov/efile ../Return1120.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" stateSchemaVersion="ILBusiness2015V2.0">
+	<ReturnHeaderState binaryAttachmentCnt="0">
+		<Jurisdiction>ILST</Jurisdiction>
+		<ReturnTs>2016-06-22T15:21:19-06:00</ReturnTs>
+		<!--FEDERALFEIN=99-9000011-->
+		<!--FEDERALLC=ABCDEF-->
+		<!--FEDERALACCT=8321-->
+		<!--FEDERALENTITY=SAME-->
+		<!--SubmissionType=CS-->
+		<!--FEDERALFILETYPE=XML-->
+		<!--CLIENTEFIN=757714-->
+		<!--LockTimestamp=2016-06-22T15:21:19-06:00-->
+		<TaxPeriodBeginDt>2015-01-01</TaxPeriodBeginDt>
+		<TaxPeriodEndDt>2015-12-31</TaxPeriodEndDt>
+		<TaxYr>2015</TaxYr>
+		<PaidPreparerInformationGrp>
+			<SignatureDt>2016-01-25</SignatureDt>
+			<PTIN>P55555555</PTIN>
+			<PreparerFirmEIN>110000011</PreparerFirmEIN>
+			<PreparerFirmName>
+				<BusinessNameLine1Txt>Johnny Appleseed Accounting</BusinessNameLine1Txt>
+			</PreparerFirmName>
+			<PreparerPersonNm>Johnny Appleseed</PreparerPersonNm>
+			<PreparerUSAddress>
+				<AddressLine1Txt>100 Efile Drive</AddressLine1Txt>
+				<CityNm>Anytown</CityNm>
+				<StateAbbreviationCd>TX</StateAbbreviationCd>
+				<ZIPCd>78621</ZIPCd>
+			</PreparerUSAddress>
+			<PhoneNum>5125551212</PhoneNum>
+			<EmailAddressTxt>johnnyappleseed@workNall.com</EmailAddressTxt>
+		</PaidPreparerInformationGrp>
+		<OriginatorGrp>
+			<EFIN>757714</EFIN>
+			<OriginatorTypeCd>ERO</OriginatorTypeCd>
+			<PractitionerPINGrp>
+				<EFIN>757714</EFIN>
+				<PIN>99954</PIN>
+			</PractitionerPINGrp>
+		</OriginatorGrp>
+		<SoftwareId>15000213</SoftwareId>
+		<SoftwareVersionNum>15-5.3F</SoftwareVersionNum>
+		<InternetProtocol>
+			<IPAddress>164.57.152.1</IPAddress>
+			<IPTimestamp>2016-06-22T15:21:19-06:00</IPTimestamp>
+		</InternetProtocol>
+		<SignatureOption>
+			<SignatureDocument>Retain</SignatureDocument>
+		</SignatureOption>
+		<OriginalSubmissionId>12345678901234567890</OriginalSubmissionId>
+		<OriginalSubmissionDate>2016-06-22</OriginalSubmissionDate>
+		<ReturnType>IL1120ST</ReturnType>
+		<Filer>
+			<EIN>999000011</EIN>
+			<BusinessName>
+				<BusinessNameLine1Txt>ILTK - Illinois e-file testing 11</BusinessNameLine1Txt>
+			</BusinessName>
+			<BusinessNameControlTxt>ILTK</BusinessNameControlTxt>
+			<ForeignAddress>
+				<AddressLine1Txt>1234 any street</AddressLine1Txt>
+				<CityNm>Korvatuntur</CityNm>
+				<ProvinceOrStateNm>any province</ProvinceOrStateNm>
+				<CountryCd>FI</CountryCd>
+				<ForeignPostalCd>99999</ForeignPostalCd>
+			</ForeignAddress>
+		</Filer>
+		<BusinessRepresentative>
+			<PersonName>
+				<FirstName>John</FirstName>
+				<LastName>Doe</LastName>
+			</PersonName>
+			<PersonTitleTxt>CFO</PersonTitleTxt>
+			<PhoneNum>9722507000</PhoneNum>
+			<EmailAddressTxt>John.Doe@TaxPreparation.com</EmailAddressTxt>
+			<SignatureDt>2016-01-25</SignatureDt>
+		</BusinessRepresentative>
+		<DiscussWithPaidPreparerInd>true</DiscussWithPaidPreparerInd>
+		<MultSoftwarePackagesUsedInd>false</MultSoftwarePackagesUsedInd>
+	</ReturnHeaderState>
+	<ReturnDataState>
+		<FormILAuthorization>
+			<AuthorizationStatement>Jurat accepted</AuthorizationStatement>
+		</FormILAuthorization>
+		<FormIL1120ST>
+			<AmountPaidWithReturn>0</AmountPaidWithReturn>
+			<Step1>
+				<FederallyRegulatedExchangeBox>X</FederallyRegulatedExchangeBox>
+				<Schedule1299Abox>X</Schedule1299Abox>
+				<NAICSCode>321900</NAICSCode>
+				<AcctRecordsCityLoc>Korvatuntur</AcctRecordsCityLoc>
+				<AcctRecordsStateLoc>FI</AcctRecordsStateLoc>
+				<AcctRecordsZIPCodeLoc>99999</AcctRecordsZIPCodeLoc>
+			</Step1>
+			<Step2>
+				<OrdIncOrLossOrEquivFedSchK>424118</OrdIncOrLossOrEquivFedSchK>
+				<PortfolioIncOrLoss>149796</PortfolioIncOrLoss>
+				<NetIRCSec1231GainOrLoss>0</NetIRCSec1231GainOrLoss>
+				<OtherAdditionsTable>
+					<Desc>Other portfolio income (loss)</Desc>
+					<Amt>10000</Amt>
+				</OtherAdditionsTable>
+				<OtherIncOrLossTotal>10000</OtherIncOrLossTotal>
+				<OrdinaryIncOrLossTotal>583914</OrdinaryIncOrLossTotal>
+			</Step2>
+			<Step3>
+				<ExpenseDeductinIRCSec179>62935</ExpenseDeductinIRCSec179>
+				<OtherExpensesTable>
+					<Desc>Other federal Schedule K deductions</Desc>
+					<Amt>502369</Amt>
+				</OtherExpensesTable>
+				<OtherIncOrLossTotal>502369</OtherIncOrLossTotal>
+				<CharitableAndExpensesTotal>565304</CharitableAndExpensesTotal>
+				<UnmodBaseIncOrLossTotal>18610</UnmodBaseIncOrLossTotal>
+			</Step3>
+			<Step4>
+				<IncSubTotal>18610</IncSubTotal>
+			</Step4>
+			<Step5>
+				<IncomeDistribToShareholder>12407</IncomeDistribToShareholder>
+				<TotalSubtractions>12407</TotalSubtractions>
+				<BaseIncOrNetLoss>6203</BaseIncOrNetLoss>
+				<InsideOutsideIllinoisBox>X</InsideOutsideIllinoisBox>
+			</Step5>
+			<Step6>
+				<BusinessIncOrLoss>6203</BusinessIncOrLoss>
+				<TotalSalesEverywhere>424118</TotalSalesEverywhere>
+				<TotalSaleInIL>0</TotalSaleInIL>
+				<ApportionmentFactor>0.000000</ApportionmentFactor>
+				<IncOrLossApportionToIL>0</IncOrLossApportionToIL>
+				<NonBusIncOrLossAllocToIL>0</NonBusIncOrLossAllocToIL>
+				<ApportionedNetAmount>0</ApportionedNetAmount>
+			</Step6>
+			<Step7>
+				<BaseInc>0</BaseInc>
+				<AdjustedBaseIncOrLoss>0</AdjustedBaseIncOrLoss>
+				<NetLossDeduction>0</NetLossDeduction>
+				<NetInc>0</NetInc>
+			</Step7>
+			<Step8>
+				<ReplacementTax>0</ReplacementTax>
+				<ReplacementTaxBeforeCredits>0</ReplacementTaxBeforeCredits>
+				<NetReplacementTax>0</NetReplacementTax>
+				<PassThruWithholdingPayments>0</PassThruWithholdingPayments>
+				<TotNetReplSuchrgPasthruWhldPay>0</TotNetReplSuchrgPasthruWhldPay>
+			</Step8>
+			<Step9>
+				<CreditFromPrevYr>1000</CreditFromPrevYr>
+				<TotalPayments>1000</TotalPayments>
+				<OverpaymentAfterPenaltyAndInt>1000</OverpaymentAfterPenaltyAndInt>
+				<CreditForward>500</CreditForward>
+				<TaxRefund>500</TaxRefund>
+				<TaxDue>0</TaxDue>
+			</Step9>
+			<Step10>
+				<ThirdPartyDesigneeBox>X</ThirdPartyDesigneeBox>
+			</Step10>
+		</FormIL1120ST>
+		<SchIL1120NB>
+			<SubRecapBusExpState>0</SubRecapBusExpState>
+			<NonApportionIncAllocatedState>0</NonApportionIncAllocatedState>
+		</SchIL1120NB>
+		<SchIL1299A>
+			<Step1>
+				<RERZITable>
+					<IL1299AIntSubTableColA>Borrower 1</IL1299AIntSubTableColA>
+					<IL1299AIntSubTableColB>Property 1</IL1299AIntSubTableColB>
+					<IL1299AIntSubTableColC>2015</IL1299AIntSubTableColC>
+					<IL1299AIntSubTableColD>zone 1</IL1299AIntSubTableColD>
+					<IL1299AIntSubTableColE>15000</IL1299AIntSubTableColE>
+					<IL1299AIntSubTableColF>14000</IL1299AIntSubTableColF>
+					<IL1299AIntSubTableColG>150</IL1299AIntSubTableColG>
+					<IL1299AIntSubTableColH>150</IL1299AIntSubTableColH>
+				</RERZITable>
+				<RERZITable>
+					<IL1299AIntSubTableColA>Borrower 2</IL1299AIntSubTableColA>
+					<IL1299AIntSubTableColH>200</IL1299AIntSubTableColH>
+				</RERZITable>
+				<RERZITable>
+					<IL1299AIntSubTableColA>Borrower 3</IL1299AIntSubTableColA>
+					<IL1299AIntSubTableColH>300</IL1299AIntSubTableColH>
+				</RERZITable>
+				<RERZITable>
+					<IL1299AIntSubTableColA>Borrower 4</IL1299AIntSubTableColA>
+					<IL1299AIntSubTableColH>400</IL1299AIntSubTableColH>
+				</RERZITable>
+				<RERZITable>
+					<IL1299AIntSubTableColA>Borrower 5</IL1299AIntSubTableColA>
+					<IL1299AIntSubTableColH>500</IL1299AIntSubTableColH>
+				</RERZITable>
+				<RERZITable>
+					<IL1299AIntSubTableColA>Borrower 6</IL1299AIntSubTableColA>
+					<IL1299AIntSubTableColH>600</IL1299AIntSubTableColH>
+				</RERZITable>
+				<RERZITable>
+					<IL1299AIntSubTableColA>Borrower 7</IL1299AIntSubTableColA>
+					<IL1299AIntSubTableColH>700</IL1299AIntSubTableColH>
+				</RERZITable>
+				<RERZITable>
+					<IL1299AIntSubTableColA>Borrower 8</IL1299AIntSubTableColA>
+					<IL1299AIntSubTableColH>800</IL1299AIntSubTableColH>
+				</RERZITable>
+				<DistShOfRERZIntSubtraction>111</DistShOfRERZIntSubtraction>
+				<TotalREDZISubtraction>3650</TotalREDZISubtraction>
+			</Step1>
+			<Step2/>
+		</SchIL1299A>
+		<SchIL8020/>
+		<SchILB>
+			<Step1>
+				<BaseIncOrLoss>0</BaseIncOrLoss>
+				<IncAndReplTaxCreditsOnK1P>0</IncAndReplTaxCreditsOnK1P>
+				<TotPartAndShrhldrsubjToILTax>12407</TotPartAndShrhldrsubjToILTax>
+				<TotNonresIndiv>0</TotNonresIndiv>
+				<TotNonresPartAndSCorp>0</TotNonresPartAndSCorp>
+				<TotNonresTrust>0</TotNonresTrust>
+				<TotNonresCCorp>0</TotNonresCCorp>
+				<TotalAmtBaseIncSubjReplTax>0</TotalAmtBaseIncSubjReplTax>
+			</Step1>
+			<Step2>
+				<PartshpOrShrHldrInfo>
+					<PartnerOrSharehldrName>Carrie Ortiz</PartnerOrSharehldrName>
+					<USAddress>
+						<AddressLine1Txt>55 Any Street</AddressLine1Txt>
+						<CityNm>Anytown</CityNm>
+						<StateAbbreviationCd>WI</StateAbbreviationCd>
+						<ZIPCd>53201</ZIPCd>
+					</USAddress>
+					<PartnerOrShareholder>I</PartnerOrShareholder>
+					<PartOrShrSSN>999060006</PartOrShrSSN>
+					<TotalAmtBaseInc>6203</TotalAmtBaseInc>
+					<ILShareOfIncSubjToPassWhlding>0</ILShareOfIncSubjToPassWhlding>
+					<PassWithholdBeforeCredits>0</PassWithholdBeforeCredits>
+					<PassThoughPayment>0</PassThoughPayment>
+				</PartshpOrShrHldrInfo>
+				<PartshpOrShrHldrInfo>
+					<PartnerOrSharehldrName>Bin Xempt</PartnerOrSharehldrName>
+					<USAddress>
+						<AddressLine1Txt>55 Any STreet</AddressLine1Txt>
+						<CityNm>Anytown</CityNm>
+						<StateAbbreviationCd>WI</StateAbbreviationCd>
+						<ZIPCd>53201</ZIPCd>
+					</USAddress>
+					<PartnerOrShareholder>P</PartnerOrShareholder>
+					<PartOrShrSSN>999060008</PartOrShrSSN>
+					<SubjectToReplaceTax>X</SubjectToReplaceTax>
+					<TotalAmtBaseInc>12407</TotalAmtBaseInc>
+					<ILShareOfIncSubjToPassWhlding>0</ILShareOfIncSubjToPassWhlding>
+					<PassWithholdBeforeCredits>0</PassWithholdBeforeCredits>
+					<PassThoughPayment>0</PassThoughPayment>
+				</PartshpOrShrHldrInfo>
+			</Step2>
+		</SchILB>
+	</ReturnDataState>
+	<FinancialTransaction>
+		<RefundDirectDeposit>
+			<TelephoneNumber>2123367788</TelephoneNumber>
+			<RoutingTransitNumber>071000013</RoutingTransitNumber>
+			<BankAccountNumber>21354125641245649</BankAccountNumber>
+			<Amount>500</Amount>
+			<Checking>X</Checking>
+			<NotIATTransaction>X</NotIATTransaction>
+		</RefundDirectDeposit>
+	</FinancialTransaction>
+</ReturnState>

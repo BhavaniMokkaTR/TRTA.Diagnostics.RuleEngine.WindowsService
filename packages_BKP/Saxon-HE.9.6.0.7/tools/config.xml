@@ -1,0 +1,3 @@
+<configuration xmlns="http://saxon.sf.net/ns/configuration" edition="HE">
+  <xquery defaultElementNamespace="http://www.irs.gov/efile" />
+</configuration>

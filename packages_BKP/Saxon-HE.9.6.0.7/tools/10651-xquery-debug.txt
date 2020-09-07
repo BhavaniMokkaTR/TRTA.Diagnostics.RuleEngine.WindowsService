@@ -1,0 +1,45 @@
+let $gReturnData :=  element{'ReturnData'} {''}
+let $gIRS1065 :=  element{'IRS1065'} {''}
+let $gCostOfGoodsSoldAmt :=  element{'CostOfGoodsSoldAmt'} {''}
+let $gIRS1125A :=  element{'IRS1125A'} {''}
+let $gCostOfGoodsSoldAmt2 :=  element{'CostOfGoodsSoldAmt'} {''}
+
+ 
+for 
+	$ReturnData at $currentReturnDataPos in if(exists(doc("10651.xml")/Return/ReturnData)) then doc("10651.xml")/Return/ReturnData else $gReturnData,
+	$IRS1065 at $currentIRS1065Pos in if(exists(doc("10651.xml")/Return/ReturnData/IRS1065)) then doc("10651.xml")/Return/ReturnData/IRS1065 else $gIRS1065,
+	$CostOfGoodsSoldAmt at $currentCostOfGoodsSoldAmtPos in if(exists(doc("10651.xml")/Return/ReturnData/IRS1065/CostOfGoodsSoldAmt)) then doc("10651.xml")/Return/ReturnData/IRS1065/CostOfGoodsSoldAmt else $gCostOfGoodsSoldAmt,
+	$IRS1125A at $currentIRS1125APos in if(exists(doc("10651.xml")/Return/ReturnData/IRS1125A)) then doc("10651.xml")/Return/ReturnData/IRS1125A else $gIRS1125A,
+	$CostOfGoodsSoldAmt2 at $currentCostOfGoodsSoldAmt2Pos in if(exists(doc("10651.xml")/Return/ReturnData/IRS1125A/CostOfGoodsSoldAmt)) then doc("10651.xml")/Return/ReturnData/IRS1125A/CostOfGoodsSoldAmt else $gCostOfGoodsSoldAmt2
+
+let $genReturnData := false()
+let $genIRS1065 := false()
+let $genCostOfGoodsSoldAmt := exists(doc("10651.xml")/Return/ReturnData/IRS1065/CostOfGoodsSoldAmt)
+let $CostOfGoodsSoldAmtData := doc("10651.xml")/Return/ReturnData/IRS1065/CostOfGoodsSoldAmt/data()
+let $genIRS1125A := false()
+let $genCostOfGoodsSoldAmt2 := exists(doc("10651.xml")/Return/ReturnData/IRS1125A/CostOfGoodsSoldAmt)
+let $CostOfGoodsSoldAmt2Data := doc("10651.xml")/Return/ReturnData/IRS1125A/CostOfGoodsSoldAmt/data()
+return 
+<Evaluation><FieldEntry>
+                    <Name>CostOfGoodsSoldAmt</Name>
+                    <Xpath>Return/ReturnData/IRS1065/CostOfGoodsSoldAmt</Xpath>
+			        <Value>{$CostOfGoodsSoldAmtData}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("10651.xml")/Return/ReturnData/IRS1065/CostOfGoodsSoldAmt/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry><FieldEntry>
+                    <Name>CostOfGoodsSoldAmt</Name>
+                    <Xpath>Return/ReturnData/IRS1125A/CostOfGoodsSoldAmt</Xpath>
+			        <Value>{$CostOfGoodsSoldAmt2Data}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("10651.xml")/Return/ReturnData/IRS1125A/CostOfGoodsSoldAmt/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry></Evaluation>

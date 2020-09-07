@@ -1,0 +1,21 @@
+﻿[
+	{
+		"$type": "Common.HealthCheck.HealthChecks.DatabaseAvailabilityHealthCheck, Common.HealthCheck",
+		"name": "BRMS Database Availability",
+		"cacheTimeout": "15",
+		"connectionStringKey": "ConnectionString"	
+	},
+	{
+		"$type":"TRTA.Diagnostics.RuleEngine.WindowsService.HealthChecks.FailedEvaluationRequestHealthCheck, TRTA.Diagnostics.RuleEngine.WindowsService",
+		"name":"BRMS Failed Evaluation Requests",
+		"cacheTimeout":"15",
+		"threshold": 10,
+		"timeIntervalInMinutes": 60
+	},
+	{
+		"$type": "Common.Resources.FileSystemHealthCheck, Common.Resources",
+		"name": "Rule Engine Service, File System access check",
+		"cacheTimeout": "15",
+		"EvaluationRequestXMLPath": "EvaluationRequestXMLPath"
+	},
+]

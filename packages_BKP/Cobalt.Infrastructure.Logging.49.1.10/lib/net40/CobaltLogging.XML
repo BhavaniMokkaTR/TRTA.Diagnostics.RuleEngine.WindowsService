@@ -1,0 +1,3139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CobaltLogging</name>
+    </assembly>
+    <members>
+        <member name="T:Cobalt.Infrastructure.cmdbSecret.PropertyEncryptionException">
+            <summary>
+            The exception identifying that the cmdb encryption process failed to decrypt a property.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.cmdbSecret.PropertyEncryptionException.#ctor(System.String)">
+            <summary>
+            The constructor specifying why this exception is being thrown.
+            </summary>
+            <param name="details">the details for why this exception is being thrown.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.cmdbSecret.PropertyEncryptionException.#ctor(System.String,System.Exception)">
+            <summary>
+            The constructor specifying why this exception is being thrown and an optional cause exception.
+            </summary>
+            <param name="details">the details for why this exception is being thrown.</param>
+            <param name="cause">the exception which is getting wrapped and rethrown.</param>
+        </member>
+        <member name="P:Cobalt.Infrastructure.cmdbSecret.PropertyEncryptionException.StackTrace">
+            <summary>
+            Return the stack trace for this exception.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.cmdbSecret.SecretProperty">
+            <summary>
+            Return values in the appSettings.  If the appSetting value is encrypted use the cmdb secret key to decrypt the value.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.cmdbSecret.SecretProperty.GetValue(System.String,System.String)">
+            <summary>
+            Returns the value of the propertyName from the configuration
+            application settings.  If the property is secret this method will
+            decrypt the value.  If the value of the property is clear text then
+            the value is returned.  If the property is not in the configuration
+            settings return the specified default.
+            </summary>
+            <param name="propertyName">the name of the property which is
+            specified in the appsettings configuration object.</param>
+            <param name="defaultValue">the default for the property.  This value
+            is returned if the property is not in the appsettings configuration
+            section.</param>
+            <returns>the value of the property</returns>
+            <exception cref="T:Cobalt.Infrastructure.cmdbSecret.PropertyEncryptionException">A
+            PropertyEncryptionException is thrown if an error occurs in the
+            encryption algorithm.  An error occurs retreiving the key or
+            if the encryption value is corrupt.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.cmdbSecret.SecretProperty.GetValue(System.String)">
+            <summary>
+            Returns the value of the propertyName from the configurtion
+            application settings.  If the property is secret this method will
+            decrypt the value.  If the property value is clear text then the
+            value is returned. 
+            </summary>
+            <param name="propertyName">the name of the property which is
+            specified in the appsetting configuration section.</param>
+            <returns>the value of the property or null if the property is not in
+            the appsetting configuration section.</returns>
+            <exception cref="T:Cobalt.Infrastructure.cmdbSecret.PropertyEncryptionException">A
+            PropertyEncryptionException is thrown if an error occurs in the
+            encryption algorithm.  An error occurs retreiving the key or
+            if the encryption value is corrupt.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.cmdbSecret.SecretProperty.Decrypt(System.String,System.String)">
+            <summary>
+            If the property is prefixed with a '+' then attempt to decrypt the
+            value and return the result.  If the property is not prefixed with
+            the '+' just return the value.
+            </summary>
+            <param name="propertyName">a property name from the appSettings
+            configuration section</param>
+            <param name="value">a property value from the appSettings
+            configuration section</param>
+            <returns>the decrypted value if the property is secret or just the
+            value for clear text properties.</returns>
+            <exception cref="T:Cobalt.Infrastructure.cmdbSecret.PropertyEncryptionException">A
+            PropertyEncryptionException is thrown if an error occurs in the
+            encryption algorithm.  An error occurs retreiving the key or if the
+            encryption value is corrupt.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.cmdbSecret.SecretProperty.Decrypt(System.String)">
+            <summary>
+            Decrypts the given encrypted string using the key defined in the NodeAgent.exe.config cmdb.properties
+            </summary>
+            <param name="encrytpedString">the string to be decrypted locally via NodeAgent config</param>
+            <returns>the decrypted value if encrypetd, or original value if errored.</returns>
+            <exception cref="T:Cobalt.Infrastructure.cmdbSecret.PropertyEncryptionException">A
+            PropertyEncryptionException is thrown if an error occurs in the
+            encryption algorithm.  An error occurs retreiving the key or if the
+            encryption value is corrupt.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.cmdbSecret.SecretProperty.getKey">
+            <summary>
+            Pull the secret key from the web.config cmdbProperties section.
+            </summary>
+            <returns>the raw key bytes generated on the deployment workflow process and transferred to this instance.</returns>
+            <exception cref="T:System.Exception">An Exception is thrown if the cmdbProperties section does not exist in the web.config file or if the key attribute does not exist in the section.</exception>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.AsyncAppender">
+            <summary>
+            Appender that forwards LoggingEvents asynchronously
+            </summary>
+            <remarks>
+            This appender forwards LoggingEvents to a list of attached appenders.
+            The events are placed on an internal buffer and a separate thread is used to deliver the events 
+            to the attached appenders.
+            </remarks>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.ActivateOptions">
+            <summary>
+            Activate any options necessary
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.Close">
+            <summary>
+            Close the appender
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.AddToBuffer(System.Object)">
+            <summary>
+            Add an object to the internal buffer
+            </summary>
+            <param name="objectToAdd">The object to add</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.DoAppend(log4net.Core.LoggingEvent)">
+            <summary>
+            
+            </summary>
+            <param name="loggingEvent"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.DoAppend(log4net.Core.LoggingEvent[])">
+            <summary>
+            
+            </summary>
+            <param name="loggingEvents"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.AsyncAppend(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.AddAppender(log4net.Appender.IAppender)">
+            <summary>
+            
+            </summary>
+            <param name="newAppender"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.GetAppender(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.RemoveAllAppenders">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.RemoveAppender(log4net.Appender.IAppender)">
+            <summary>
+            
+            </summary>
+            <param name="appender"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.RemoveAppender(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.ProcessBuffer">
+            <summary>
+            Process the buffer that holds the logging events.  This method will get executed within the process buffer thread that 
+            will get started.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.logThreadState(System.Threading.Thread,System.String)">
+            <summary>
+            Log the state of the specified thread.
+            </summary>
+            <param name="thread">The thread to log</param>
+            <param name="logHeader">The header to put on the log entry</param>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.AsyncAppender.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.AsyncAppender.BufferSize">
+            <summary>
+            The buffer size
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.AsyncAppender.Fix">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.AsyncAppender.Appenders">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.AsyncAppender.DiscardedSummary">
+            <summary>
+            A class to hold discarded events summary information
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.DiscardedSummary.#ctor(System.Object)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="state">The object to add</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.DiscardedSummary.Add(System.Object)">
+            <summary>
+            Add an object
+            </summary>
+            <param name="state">The object to add</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.AsyncAppender.DiscardedSummary.CreateEvent">
+            <summary>
+            Create a logging event that can be sent to each appender
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.AsyncAppender.DiscardedSummary.Count">
+            <summary>
+            The count of events
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.CacheKey">
+            <summary>
+            A class that concats strings together to form a cache key.  It is attempted to optimize 
+            itself to minimize string creation and provide the necessary equals and hashCode methods 
+            so it can be inserted as the key. 
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.CacheKey.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="size">An initial size, ignore the max that has been established.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.CacheKey.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.CacheKey.complete">
+            <summary>
+            The key is complete.  Do any work like setting the max based off of what has been set in the buffer.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.CacheKey.append(System.String)">
+            <summary>
+            Append a string
+            </summary>
+            <param name="str">The string</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.CacheKey.append(System.Char)">
+            <summary>
+            Append a character
+            </summary>
+            <param name="c">The character</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.CacheKey.append(System.Int32)">
+            <summary>
+            Append an integer
+            </summary>
+            <param name="i">The integer</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.CacheKey.reset">
+            <summary>
+            Reset the length to 0
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.CacheKey.getStringBuilder">
+            <summary>
+            Get the string builder
+            </summary>
+            <returns>StringBuilder</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.CacheKey.Equals(System.Object)">
+            <summary>
+            Test the equality
+            </summary>
+            <param name="anObject">The object to compare</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.CacheKey.GetHashCode">
+            <summary>
+            Return the hash code
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogRecordRequestValueMatchFilter">
+            <summary>
+            A class to filter out log events by Request value pairs stored within the LogRecord.  For the decision returned, if the
+            values should be equal (ContainsString is false and EndsWithString is false, which is the default) and they are, or
+            the log record value should end with (EndsWithString is true) the value and it is does, or the log record value should
+            contain (ContainsString is true) the value and it does, then accept or deny it based on the accept on match flag.
+            If any of these don't pass, then return neutral.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecordRequestValueMatchFilter.Decide(log4net.Core.LoggingEvent)">
+            <summary>
+            Decide if the logging event should be allowed to be logged.
+            </summary>
+            <param name="le">The logging event in question</param>
+            <returns>FilterDecision, Accept or Deny it</returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordRequestValueMatchFilter.AcceptOnMatch">
+            <summary>
+            AcceptOnMatch property to decide if the message class name should be passed 
+            through if a match occurs
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordRequestValueMatchFilter.ContainsString">
+            <summary>
+            ContainsString property to decide if the comparison should be done by equality 
+            or by contains.  Default is equality
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordRequestValueMatchFilter.EndsWithString">
+            <summary>
+            EndsWithString property to decide if the comparison should be done by equality 
+            or by "endsWith".  Default is equality
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordRequestValueMatchFilter.IgnoreCase">
+            <summary>
+            IgnoreCase property to decide if the comparison should ignore case. 
+            Default is equality
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordRequestValueMatchFilter.Name">
+            <summary>
+            Name property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordRequestValueMatchFilter.Value">
+            <summary>
+            Value property
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.RequestValuesLogProfileFilter">
+            <summary>
+            A class for applying filters for the log profile value within the LogRecord.  If the LogRecord's log profile value matches
+            one of the values in the log profile list, then the logging event will be denied.  If no log profile list is specified,
+            then the values "blind" and "encrypted" will be used as a default list.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogProfileFilter">
+            <summary>
+            A class for applying filters using log profile values.  If the current log profile value matches one of the values in the log profile list, 
+            then the logging event will be denied.  If no log profile list is specified, then the values "blind" and "encrypted" will be used as a default list.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogProfileFilter.Decide(log4net.Core.LoggingEvent)">
+            <summary>
+            Decide if the logging event should be allowed to be logged.
+            </summary>
+            <param name="le">The logging event in question</param>
+            <returns>FilterDecision, Accept or Deny it</returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogProfileFilter.LogProfileList">
+            <summary>
+            Log profile values
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogRecordLogProfileFilter">
+            <summary>
+            A class for applying filters for the log profile value within the LogRecord.  If the LogRecord's log profile value matches
+            one of the values in the log profile list, then the logging event will be denied.  If no log profile list is specified,
+            then the values "blind" and "encrypted" will be used as a default list.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.EndpointStatus.UnderDevelopment">
+            The endpoint not fully implemented yet, and should never be called in any environment.
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.EndpointStatus.UnderReview">
+            The endpoint has been completed and is available in lower environments to verify that it meets all requirements.
+            The contract may change pending review.
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.EndpointStatus.Released">
+            The endpoint is approved and ready for use in all environments. The contract will not change without versioning.
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.EndpointStatus.Versioned">
+            A newer version of the endpoint exists with a different contract, but this version is still supported and may be called in all environments.
+            This endpoint is likely to become deprecated in the future.
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.EndpointStatus.Deprecated">
+            The endpoint is no longer supported, and will be removed in an upcoming release.
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.EndpointStatus.Retired">
+            The endpoint is no longer supported, and has been disabled (in lower environments).
+            This is equivalent to DEPRECATED, after the retired iteration has been reached.
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.EndpointStatus.Undefined">
+            The status is not defined. This should never be explicitly set.
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException">
+            <summary>
+            Exception class to identify configuration type exceptions from middleware type exceptions.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException.#ctor(System.String,System.Exception)">
+            <summary>
+            The Configuration exception specifying why what is unexpected in the configuration and the cause of the exception if any.
+            </summary>
+            <param name="explaination">the context of what was being done when this exception was thrown.</param>
+            <param name="cause">a optional cause of the exception.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException.#ctor(System.String)">
+            <summary>
+            The Configuration exception specifying why what is unexpected in the configuration
+            </summary>
+            <param name="explaination">the context of what was being done when this exception was thrown.</param>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection">
+            <summary>
+            Represents a connection to a queue manager.  The connection is assocaited with a configuration name (factoryName).  If a connection error is detected
+            then the connection should be drained and closed.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection.#ctor(IBM.XMS.IConnectionFactory,System.String)">
+            <summary>
+            Create a connection using the specified connectionfactory.  Label this connection using the connectionFactoryName
+            </summary>
+            <param name="factory">A factory for creating connections to the queue manager.</param>
+            <param name="connectionFactoryName">the configuration name for this connection.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection.Close">
+            <summary>
+            Close the producers opened for this connection and close the connection.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection.Submit(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Int64)">
+            <summary>
+            Send the content and optional message properties to the specified queue.   Set the message expiry to the specified expiryInMilliseconds. 
+            </summary>
+            <param name="queue">A configuration name for the middleware queue.  The configuration must define the queue.</param>
+            <param name="content">The text content to send to this connection and queue.</param>
+            <param name="properties">optional map of key/value pairs to set on the message.  Can be null.</param>
+            <param name="expiryInMilliseconds">the number of milliseconds the message should be queued before it is disposed of.  A value of 0 will queue forever.  A value of -1 will be the default for the middleware.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection.GetProducer(System.String)">
+            <summary>
+            Get the cached producer of create a new producer using the configuration name queue.  The configuration must have the definition of the middleware queue associated with the name.
+            </summary>
+            <param name="queue">the configuration definition for the middleware queue.</param>
+            <returns>a producer which can be used to write messages to the middleware destination.</returns>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.MiddlewareException">A middlewareException is the queue cannot be opened.</exception>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection.LastAccessed">
+            <summary>
+            The last activity on this instance returned as the DateTime.Ticks.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection.ConnectionFactoryName">
+            <summary>
+            The configuration name assocaited with the connection class instance.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionCache">
+            <summary>
+            This class caches connection instances identified by a cacheName.  The connection maybe retreive by its cache name or by an alias name typically the factory name
+            used to retrieve the connection definitions from the configuration
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionCache.Get(System.String,System.String)">
+            <summary>
+             Find the connection in the cache using specified cache name and the factoryName.  If the connection cannot be found using the cache name then a secondary search will look for
+             the factory match in the currently cached connections. 
+            </summary>
+            <param name="cacheName">The name assigned to the connection in the cache</param>
+            <param name="factoryName">The factory name used to get connection attributes for the queue manager the connection represents.</param>
+            <returns>a Connection if the search was successful or null if the Connection is not in the cache.</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionCache.Remove(Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection)">
+            <summary>
+            Remove the connection specified from the cache.  If the connection was removed return true else false
+            </summary>
+            <param name="connection">The queue manager connection currently in the cache</param>
+            <returns>true if the connection was in the cache else false</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionCache.RemoveAll">
+            <summary>
+            Remove all queue manager connections from the cache and return any found.
+            </summary>
+            <returns>an array of 0 or more connections from the cache.</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionCache.Contains(Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection)">
+            <summary>
+            Return true if the connection is contained in this cache.
+            </summary>
+            <param name="connection">The queue manager connection currently in the cache</param>
+            <returns>true if the target connection is in the cache.  The connection will not be removed from the cache.</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionCache.Put(System.String,Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection)">
+            <summary>
+             Add the queue manager connection to the cache using the specified cacheName.
+            </summary>
+            <param name="cacheName">The name to assigned to the connection in the cache</param>
+            <param name="connection">The queue manager connection to put into the cache; cannot be null</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionCache.setAlias(Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection,System.String)">
+            <summary>
+            Sets a alias name for the connection in the cache.  A cached connection can be retrieved using the cached name or one of the alias names. 
+            </summary>
+            <param name="connection">a queue manager connection in the cache.  If the connection is not in the cache than no action is taken.</param>
+            <param name="alias">a non-empty alias name for the connection in the cache.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionCache.Close">
+            <summary>
+            Close all connections in this cache and clear the cache.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionCache.CacheEntry">
+            <summary>
+            This class is used to associate the connections kept in the cache with one or more aliases.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionCache.CacheEntry.#ctor(Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection)">
+            <summary>
+            Constructor for the CacheEntry.  Each entry holds a queue manager connection and one or more aliases.
+            </summary>
+            <param name="connection">The Connection object associated with this cache entry</param> 
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager">
+            <summary>
+            A factory for getting connections to a pool of factories or a factory.  Connections are cached globally until the close method is called.  If a connection detects a "connection" error it
+            will remove itself from the cache.  At a daily interval the factories associated with a pool will be drained, the pool will be reset and a new connection will be opened.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.#ctor">
+            <summary>
+            Private constructor so only have a single instance of this class.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.Refresh(Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection)">
+            <summary>
+            This will move the specified Connection to a inactive state.  In an inactive state the only outstanding events on the connection will be completed.  Any new requests will be sent to a new connection
+            </summary>
+            <param name="connection">the connection to remove from the cache</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.RefreshAll">
+            <summary>
+            This will move any active Connections to a inactive state.  In an inactive state the only outstanding events on the connection will be completed.  Any new requests will be sent to a new connection.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.Close">
+            <summary>
+            Close all connections referenced by this class.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.NotifyOnError(Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection,System.Exception)">
+            <summary>
+            Notification callback from a connection in the connection cache that an fatal error occurred on the connection.  Drain the connection by removing the connection from the cache. 
+            </summary>
+            <param name="connection">a queue manager connection in the connection cache.</param>
+            <param name="ex">the exception which occurred on the connection.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.GetConnection(System.String)">
+            <summary>
+            Get a connection to a queue manager using the information in the specified factoryOrPoolName.  The factoryOrPoolName is a pool of queue managers or a queue manager name.  The
+            pool or queue manager connection information must be defined in the application settings.
+            </summary>
+            <param name="factoryOrPoolName">the name of a factory which is known to the middleware configuration or a name of a pool of factories which is known to the middleware configuration.</param>
+            <returns>a connection to a factory in a pool or the specified factory name.</returns>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.MiddlewareException">A middleware exception is thrown if a connection attempt fails</exception>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ResponseTimeoutException">A response timeout exception is thrown if there are too many outstanding failed connections in the in activity list.</exception>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException">A configException is thrown if the pool or factory is not defined in the application properties.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.CreateConnection(System.String)">
+            <summary>
+            Factory method for a connection to a JMS queue manager using the XMS API.
+            </summary>
+            <param name="factoryName">the configuration repository name used to associated an id with connection parameters.</param>
+            <returns>a queue manager connection object to the factory name.</returns>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.MiddlewareException">a middlewareException is thrown if the configuration repository does not have the factory definition or it an exception occurs creating the queue manager connection.</exception>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException">a configException is thrown if the factory cannot be created from the application properties.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.GetFactoryPool(System.String)">
+            <summary>
+            Try to determine if this is a factory name or a pool name.  Create a pool with the specified name.  If it is a factory name then the pool will have a
+            single factory.  It it is a pool then there may be 1 or more factories in the pool.
+            </summary>
+            <param name="factoryOrPoolName">the configuration name of a pool of factories or the factory.</param>
+            <returns></returns>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.MiddlewareException">a middlewareException is thrown if the environment or factoryOrPoolName are null or empty.</exception>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException">a ConfigException is thrown if the pool cannot be created from the configuration definition of the pool.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.Drain(Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Connection,System.String)">
+            <summary>
+            If the specified connection is in the active state (in the pool cache) then switch it to the inactive state.  This can be used to drain a connection from a pool.
+            </summary>
+            <param name="connection">a cached connection created by this manager</param>
+            <param name="poolName">the cache name associated with the connection.</param>
+            <returns>true if the connection was in the cache.</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.CheckRoundRobinPools">
+            <summary>
+             Check for pools which are typed as ROUNDROBIN.  The roundRobin pools may have connections to more than one factory in the pool.  Check the ConnectionCache for connections from
+             the pool.  If the pool doesn't have full coverage try and start up some new connections.  Called by a backgroud thread to open additional connections.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.CheckInactiveConnections">
+            <summary>
+            Slowly get rid of the connections which are no longer active.  If the last access time for the connection exceeds the MAX_INACTIVE_TIME then get rid of the connection from the inactive list and
+            close the connection.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.CheckRebalance">
+            <summary>
+            Check to see it connetions should be rebalanced.  To minimize impact the rebalance will only occur once per day at a lower load time.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.logThreadState(System.Threading.Thread,System.String)">
+            <summary>
+            Log the state of the specified thread.
+            </summary>
+            <param name="thread">The thread to log</param>
+            <param name="logHeader">The header to put on the log entry</param>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.Manager">
+            <summary>
+            Factory method for returning a singleton instance of the ConnectionManager class.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.BackgroundCleanup">
+            <summary>  A daemon thread to clean up idle Queue connections.  Clean up could take a while if you cannot reach the 
+            queue manager because of a network issue.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConnectionManager.BackgroundCleanup.Run">
+            <summary> The execution method for this daemon.  Get the connection manager, check inactive connections, check connections for round robin pools and check for rebalance.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool">
+            <summary>
+            FactoryPool class containing one or more JMS factory.  The FactoryPool maybe the poolName passed into the constructor or could contain factories specified in the configuration repository.  The
+            wgMOMPool object named the same as the poolName must exist in the momVendor context.  The wgMOMPool object may contain factory names or other pool names, it may contain a factory name in each
+            wgFactory attribute or contain a comma separated list of factories on one wgFactory attribute.  The pool object could be different types: PRIORITY, RANDOM, and ROUNDROBIN.  The PRIORITY pool
+            type is most likely to have the comma separated list of factories on one wgFactory attribute.  The first factory is always attempted first and failure or drain causes the next factory to be 
+            attempted.  The RANDOM pool type is the default.  The factories listed in the pool object are put in a list in random order.  The connection attempts will iterate the list until it finds a
+            factory which is not drained and a connection is made.  The ROUNDROBIN pool type is a priority pool which will attempt to connect to two factories in the pool.  The requests sent to the pool
+            will be sent to the connections in a round robin faction.
+            
+             The pool can be prefixed by a location (i.e. EaganSiteA).  When retrieving the pool, the name of the pool will be prefixed with a location if specified in the constructor.  If the location +
+             pool name cannot be found, a second attempt will be made to locate the pool using the pool name specified.  If the pool name cannot be located the pool name will contain only one factory: the
+             pool name.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.#ctor(System.String)">
+            <summary> Constructor creates a pool of factories from the information provided.  The poolname is the name either of a pool in the repository or a factory which will
+            become the pool of one factory.  
+            </summary>
+            <param name="poolName">a name for a pool in the repository or a factory defined in the repository.
+            </param>
+            <exception cref="T:System.ArgumentException">An Argument exception is thrown if the environment, momVendor or poolName are null or empty.</exception>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException">A ConfigException is thrown if the pool is recursively defined or an exception is thrown searching the configuraiton repository.
+            </exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.GetFactories(System.String,System.Int32)">
+            <summary>
+            A recursive method to resolve the pool into factories by searching the configuration repository.  The recursion happens because the pool may contain a list of pool names.  The 
+            repository will be search targeting wgMOMPool object named with the case insensitive poolname.  The wgMOMPool may contain a pool type for ordering the factories in the pool.  The 
+            pool may specify an interval of time which no connection will be attempted.  If the pool cannot be found in the repository, then the poolName will be assumed to be a factory name.  The
+            pool will consist of a single factory named the same as the pool.   
+            </summary>
+            <param name="poolName">the unique name for the pool of factories defined</param>
+            <param name="iteration">a counter for the recursion.  If the iteration exceeds 19 the recursion will be stopped by throwing an exception.</param>
+            <returns>an array of factories contained in the pool</returns>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException">A ConfigExcepiton is thrown if the pool is recursively defined or an exception is thrown searching the configuraiton repository.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.OrderList(System.Collections.Generic.List{System.String},Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.FactoryPoolType)">
+            <summary> Order the factory names in the list.  If the poolType is RANDOM then use the random function to attempt to put the factory names in random order.</summary>
+            <param name="factoryList">a list of one or more factory names.
+            </param>
+            <param name="poolType">the type of the pool.  If the pool type is RANDOM, then attempt to randomize the list.
+            </param>
+            <returns> an ordered array of factory names.
+            </returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.Reset">
+            <summary>
+            Reorder the factory names.  If the pooltype is RANDOM then randomize the original order of the pool.  If the pool is priority, dynamic or round robin then order the factories in the same order as the original order 
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.GetFactory">
+            <summary> Return the next factory in the pool, placing the factory chosen to the end of the list, creating a circular list of factories.  The order of the factories returned is determined by the type of the pool until a reset occurs.  The
+            reset will reorder the factories in the pool. 
+            </summary>
+            <returns> a factory in the pool.
+            </returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.GetPoolNames(System.Boolean)">
+            <summary>Return pool names for the round robin pool type, these names can be used as cache names associating multiple names to the same pool of factories.  The round robin pool type 
+            defines the "connection" attribute.  For each "connection" a pool name is created.  If the type of pool isn't round robin the original 
+            pool name is returned.  The shuffle flag will be used to change for order of the names returned; the next call will have the first name in the array at the last position of the array. 
+            </summary>
+            <param name="shuffle">if true the pool names will be rotated on each call to this method.
+            </param>
+            <returns>an array of pool names typically used to implement a round robin association with this pool.
+            </returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.Contains(System.String)">
+            <summary>Returns true if the pool contains the case insensitive factory name specified.</summary>
+            <param name="factoryName">a non null factory name.
+            </param>
+            <returns> true if the factory name specified is one of the factories in this pool.
+            </returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.SetFailTimeStamp">
+            <summary> Sets the timestamp when an attempt to connect to a factory in the pool failed.  The canRetry can be used to see when a connection to another factory in the pool can be attempted.  If
+            no connections exist to the factory then the canRetry can be ignored.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.canRetry">
+            <summary> Returns true if a round robin connection should be reattempted to one of the factories in this pool.  The canRetry relies on the FailTimeStamp set when the last connection attempt fails 
+            and the retry interval set on this pool.
+            </summary>
+            <returns> true is an attempt to connect to the next factory in the pool should be attempted.
+            </returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.CanReset(System.DateTime,System.Random)">
+            <summary> Indicates that the FactoryPool can be reset based on the current hour of the day and the configured refresh
+            hour.  If the refresh hour is know then return true.  A false will delay reseting the pool.
+            </summary>
+            <param name="dateTime">the current time of the day.
+            </param>
+            <param name="random">a populated random object to randomize the reset across the environment.
+            </param>
+            <returns> true if the pool should be reset.
+            </returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.PoolType">
+            <summary>
+            The PoolType enum for this pool.  The default is RANDOM.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.FactoryPool.FactoryPoolType">
+            Enum used in the pool type identification. 
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.MiddlewareException">
+            <summary>
+            Exception class to identify middleware exceptions.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.MiddlewareException.#ctor(System.String,System.Exception)">
+            <summary>
+            The Middleware exception specifying why what is unexpected in the configuration and the cause of the exception if any.
+            </summary>
+            <param name="explaination">the context of what was being done when this exception was thrown.</param>
+            <param name="cause">a optional cause of the exception.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.MiddlewareException.#ctor(System.String)">
+            <summary>
+            The Middleware exception specifying why what is unexpected in the configuration
+            </summary>
+            <param name="explaination">the context of what was being done when this exception was thrown.</param>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.PoolConfig">
+            <summary>
+            Bean class to hold configuration information on a pool of factories.  The pool can be one or more factories.  The
+            behavior of the pool is defined by the pool type.  A Random pool will randomize access to the members in the pool.
+            A Priority pool will access the factories in the pool as specified in this class.  The RoundRobin pool is used
+            for supporting additional connections to factories in the pool.  A round robin pool may also specify
+            the number of connections which are supported for this pool, the retry interval can be used to specify the
+            time interval between a failure and the next attempt to open additional connections on the pool, and a
+            refresh hour in which the connections to the pool are refreshed. 
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.PoolConfig.Type">
+            <summary>
+            Returns the pool type from the enumeration Type.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.PoolConfig.Factories">
+            <summary>
+            Returns the factories in this pool.  Assume that in a PRIORITY pool that the order of the returned array is the priority order
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.PoolConfig.ConnectionsFromPool">
+            <summary> Returns the number of connections which should be opened to this pool.  This property is only valid
+            for ROUNDROBIN pool types.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.PoolConfig.ConnectionRetryInterval">
+            <summary>
+            Returns the number of milliseconds to wait after a connection failure until additional connections to the
+            pool should be opened.  One connection will always be opened or attempted on the pool when accessing the
+            pool.  Additional connections will wait for the connection retry interval.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.PoolConfig.RefreshHour">
+            <summary>
+            The number between 0 and 23 representing the hour in the day in which the connections to this pool
+            are refreshed.</summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.PoolConfig.PoolType">
+            Enum used in the pool type identification. 
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Producer">
+            <summary>
+            A middleware destination on a XMS connection. The destination is a queue.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Producer.#ctor(IBM.XMS.IDestination,IBM.XMS.IConnection)">
+            <summary>
+            Open the destination on the specified connection.
+            </summary>
+            <param name="destination">a XMS destination.</param>
+            <param name="connection">a configured connection which is opened</param>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.MiddlewareException">A middlwareException is thrown if the destination cannot be opened on the connection</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Producer.Write(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Int64)">
+            <summary>
+            Send the content and properties to the destination opened in this instance.  The message will expire on the queue if not read in the time span specified.
+            </summary>
+            <param name="content">The text content to send to this connection and queue.</param>
+            <param name="properties">optional map of key/value pairs to set on the message.  Can be null.</param>
+            <param name="expiryInMilliseconds">the number of milliseconds the message should be queued before it is disposed of.  A value of 0 will queue forever.  A value of -1 will be the default for the middleware</param>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.MiddlewareException">A middlewareException is thrown if an excpetion occurs writing to the middleware destination.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Producer.CreateGuid">
+            <summary>Creates a Novus-compatible GUID string.
+            </summary>
+            <returns>A guid.</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Producer.Close">
+            <summary>   Close the destination.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Producer.Destination">
+            <summary>
+            The XMS destination definition for this instance.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.Producer.WriteCount">
+            <summary>   Return the number of successful write attempts to this queue. 
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ResponseTimeoutException">
+            <summary>
+            A exception used to indentify a response timeout.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ResponseTimeoutException.#ctor(System.String,System.Exception)">
+            <summary>
+            The Middleware exception specifying why what is unexpected in the configuration and the cause of the exception if any.
+            </summary>
+            <param name="explaination">the context of what was being done when this exception was thrown.</param>
+            <param name="cause">a optional cause of the exception.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ResponseTimeoutException.#ctor(System.String)">
+            <summary>
+            The Middleware exception specifying why what is unexpected in the configuration
+            </summary>
+            <param name="explaination">the context of what was being done when this exception was thrown.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.XMSObjectFactory.GetPool(System.String)">
+            <summary>
+            Returns the pool configuration for the poolName specified.  The poolName may not exist in the configuration
+            in that case a null should be returned.  The definition for the pool should be retrieved from the
+            configuration environment specified.  The vendor indicates the vendor implementation of the factories in the pool. 
+            </summary>
+            <param name="poolName">a name associated with one or more factories in the configuration.</param>
+            <returns>the PoolConfig for pool found in the configuration or null if the pool isn't defined in the configuration.</returns>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException">A exception is thrown if the configuration is not correct.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.XMSObjectFactory.getDestination(System.String)">
+            <summary>
+            Get a queue (destination), getting the proper values from properties for re-creating the queue
+            </summary>
+            <param name="queueName"></param>
+            <returns>IDestination</returns>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException">A configuration exception is thrown if the queue name is null.</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.XMSObjectFactory.GetConnectionFactory(System.String)">
+            <summary>
+            Returns QueueConnectionFactory containing connection information for the factory name specified.  If the factoryName cannot be found 
+            in the configuration repository an exception should be thrown.  
+            </summary>
+            <param name="factoryName">the name of the factory used by the configuration repository to associate connection parameters for a queue manager with a name.</param>
+            <returns>the connection information for the configuration repository factory name specified.</returns>
+            <exception cref="T:Cobalt.Infrastructure.Logging.Jms.QueueMiddleware.ConfigException">An exception is thrown if the properties do not specify a definition for the factory.</exception>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogRecordLayout">
+            <summary>
+            Provides a layout for converting a log record into a string
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecordLayout.Format(System.IO.TextWriter,log4net.Core.LoggingEvent)">
+            <summary>
+            Format the logging event if the message is of type LogRecord
+            </summary>
+            <param name="tw">The text writer to write out the log record to.</param>
+            <param name="le">The logging event in question</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecordLayout.IgnoresThrowable">
+            <summary>
+            Ignore throwable
+            </summary>
+            <returns>True or false</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecordLayout.ActivateOptions">
+            <summary>
+            Activate any options necessary
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordLayout.AddLocalValues">
+            <summary>
+            AddLocalValues property for adding in local values to the log record
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordLayout.AddRequestValues">
+            <summary>
+            AddRequestValues property for adding in request values to the log record
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordLayout.AddNewLine">
+            <summary>
+            AddNewLine property for adding in a new line when formating the log record
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordLayout.AddDebugValues">
+            <summary>
+            Specifies whether extra debug values are included when formating the log record
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordLayout.OutputType">
+            <summary>
+            Specifies the output type
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.ClassFilter">
+            <summary>
+            A class to filter out log events based off of the class name of the message within the log event
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ClassFilter.Decide(log4net.Core.LoggingEvent)">
+            <summary>
+            Decide if the logging event should be allowed to be logged
+            </summary>
+            <param name="le">The logging event in question</param>
+            <returns>FilterDecision, Accept or Deny it</returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.ClassFilter.AcceptOnMatch">
+            <summary>
+            AcceptOnMatch property to decide if the message class name should be passed 
+            through if a match occurs
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.ClassFilter.ClassNameFilter">
+            <summary>
+            ClassNameFilter property for the class name of the message class
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.ClassFilter.Neutrality">
+            <summary>
+            ClassNameFilter property to decide if neutral should be returned in the case where a match does not happen.  This is so 
+            you can have back to back filters where you want to deny a set of classes or else only accept a set of classes.  The last 
+            filter in the chain should not have the neutrality on but set to false.
+            
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.ErrorLogRecord">
+            <summary>
+            A class that represents an error logging record comprised of a key and name/value pairs.  Its contents can
+            be output to various string formats to allow for it to be sent to whatever destination.  This class forces
+            the use of CATEGORY and SUBCATEGORY in the constructors.  Best practice is to use the predefined
+            categories and sub categories. 
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogRecord">
+            <summary>
+            A class that represents a logging record comprised of a key and name/value pairs.  Its contents can
+            be output to various string formats to allow for it to be sent to whatever destination.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.#ctor(System.String)">
+            <summary>
+            Constructor specifying a key
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.#ctor(System.String,System.String)">
+            <summary>
+            Constructor specifying a key and alternate root tag overriding the default of "logrecord"
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="alternateRootTag">An alternate root tag when the log record is output</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty or if the alternate root tag is empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.#ctor(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Constructor specifying a key and rootLogRecord object to use instead of default new JObject()
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="logRecordRoot">A root log record object to use</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.put(System.String,System.Object)">
+            <summary>
+            Put the name/value pair in the log record
+            </summary>
+            <param name="name">The name relating to the value</param>
+            <param name="value">The value</param>
+            <exception cref="T:System.ArgumentException">Thrown if name is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.putOverride(System.String,System.Object)">
+            <summary>
+            Put the name/value pair in the log record.  Override in the name values if the name is already present.
+            </summary>
+            <param name="name">The name relating to the value</param>
+            <param name="value">The value</param>
+            <exception cref="T:System.ArgumentException">Thrown if name is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.ToString">
+            <summary>
+            Get a string representation using the default output type of XML
+            </summary>
+            <returns>String representation of the log record</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.getString(Cobalt.Infrastructure.Logging.LogRecord.OUTPUT_TYPE)">
+            <summary>
+            Get the log record in the output form specified
+            </summary>
+            <param name="outputType">The output type</param>
+            <returns>String representation of the log record</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.getString(Cobalt.Infrastructure.Logging.LogRecord.OUTPUT_TYPE,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Get the log record in the output form specified along with any local or request values
+            </summary>
+            <param name="outputType">The output type</param>
+            <param name="addRequestValues">Add in the request values</param>
+            <param name="addLocalValues">Add in the local values</param>
+            <param name="level">The level of the logging event</param>
+            <returns>String representation of the log record</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the output type is not valid</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.getString(Cobalt.Infrastructure.Logging.LogRecord.OUTPUT_TYPE,System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Get the log record in the output form specified along with any local or request values
+            </summary>
+            <param name="outputType">The output type</param>
+            <param name="addRequestValues">Add in the request values</param>
+            <param name="addLocalValues">Add in the local values</param>
+            <param name="addDebugValues">Add in the debug values</param>
+            <param name="level">The level of the logging event</param>
+            <returns>String representation of the log record</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the output type is not valid</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.getXMLString(System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Get the log record output in an XML form
+            </summary>
+            <param name="addRequestVals">Add in the request values</param>
+            <param name="addLocalVals">Add in the local values</param>
+            <param name="addDebugValues">Add in the debug values</param>
+            <param name="level">The level of the logging event</param>
+            <returns>Log record in XML form</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.getJSONString(System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Get the log record output in an JSON form
+            </summary>
+            <param name="addRequestVals">Add in the request values</param>
+            <param name="addLocalVals">Add in the local values</param>
+            <param name="addDebugValues">Add in the extended values</param>
+            <param name="level">The level of the logging event</param>
+            <returns>Log record in JSON form</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.addRequestValues(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Add in the request values that were taken from the MDC at constructor time
+            </summary>
+            <param name="table">The hash table with the name/value pairs</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.addLocalValues(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Add in the local values relating to this instance
+            </summary>
+            <param name="table">The hash table with the name/value pairs</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.Escape(System.String)">
+            <summary>
+            Escape out a string
+            </summary>
+            <param name="inString">The incoming string</param>
+            <returns>An escaped string</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.getValue(System.String)">
+            <summary>
+            Get a string value of the object that was stored in relation to the name
+            </summary>
+            <param name="m_name">The name to lookup the value for</param>
+            <returns>The value corresponding to the name</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.putCustomerError">
+            <summary>
+            Used in error/exception situations where it's known that the end user will be
+            seeing an error message of some sort.  Calling this method will result in a 
+            flag being set in the error database if this logrecord is routed there.  The
+            flag will be used by a real-time monitoring service to correlate exceptions and
+            notify operational and SWAT staff that errors are occurring within the system.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.putCategory(Cobalt.Infrastructure.Logging.LogRecord.CATEGORY,Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY)">
+            <summary>
+            Flag this log record with a category and sub-category tag.  The category and sub-category will be used
+            by the error GUI to roll up or group like events together for display purposes.
+            
+            The category and sub-category will be stored in the error database if this log record is routed to the
+            error database.
+            </summary>
+            <param name="category">enum of CUSTOMER, APPLICATION, EXTIS, DAO</param>
+            <param name="subCategory">enum of AJAX, SJAX, NOVUS, PRISM, MIDDLETIER, VERTICAL, DATABASE, COHERENCE, BERKELEYDB</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.putCategory(System.String,System.String)">
+             <summary>
+             This method can be called to create a user defined category and sub-category.
+            
+             The category and sub-category will be used by the error GUI to roll up or group
+             like events together for display purposes.
+             
+             Must have a non null category in order to log a sub category.  In otherwords, if the category is null and
+             the sub-category is valued, neither the category nor the sub-category will be added to the logrecord.
+             
+             The category and sub-category will be stored in the error database if this log record is routed to the
+             error database.
+             
+             </summary>
+             <param name="category">user defined category</param>
+             <param name="subCategory">user defined sub-category, null is accepted if there isn't a sub-category.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.putCategory(Cobalt.Infrastructure.Logging.LogRecord.CATEGORY,System.String)">
+            <summary>
+            This method can be called to create a user defined sub-category.
+            
+            The category and sub-category will be used by the error GUI to roll up or group
+            like events together for display purposes.
+            
+            The category and sub-category will be stored in the error database if this log record is routed to the
+            error database.
+            
+            </summary>
+            <param name="category">enum of CUSTOMER, APPLICATION, EXTIS, DAO</param>
+            <param name="subCategory">user defined sub-category, null is accepted if there isn't a sub-category</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.getCategory">
+            <summary>
+            Get the category of the log record
+            </summary>
+            <returns>The value corresponding to the category</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.getSubcategory">
+            <summary>
+            Get the subcategory of the log record
+            </summary>
+            <returns>The value corresponding to the subcategory</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecord.getRequestValue(System.String)">
+            <summary>
+            Get a request value
+            </summary>
+            <param name="name">The name</param>
+            <returns>String</returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecord.Exception">
+            <summary>
+            Sets the exception that affects this LogRecord
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecord.IsCustomerFacing">
+            <summary>
+            Used in error/exception situations where it's known that the end user will be
+            seeing an error message of some sort.  Setting this property will result in a 
+            flag being set in the error database if this logrecord is routed there.  The
+            flag will be used by a real-time monitoring service to correlate exceptions and
+            notify operational and SWAT staff that errors are occurring within the system.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecord.Blob">
+            <summary>
+            Place a string of text into the logrecord.  The information put into the blob will
+            get placed into the error database if this logrecord is routed to the error database.
+            The database may truncate the information if the string will not fit into the column 
+            size (4k).  So if putting an xml formatted string into the blob, it may be truncated
+            if it exceeds the maximum length or 4k.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecord.MetaInfo">
+            <summary>
+            Place a string of text into the logrecord.  The information put into the MetaInfo will
+            get placed into the error database if this logrecord is routed to the error database.
+            The database may truncate the information if the string will not fit into the column 
+            size (4k).  So if putting an xml formatted string into the blob, it may be truncated
+            if it exceeds the maximum length.  The entire value will be included in any logging to 
+            a log file.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogRecord.OUTPUT_TYPE">
+            <summary>
+            Output types when creating a reprensentation of the LogRecord
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.OUTPUT_TYPE.XML">
+            <summary>
+            Output type for string representation in XML format
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.OUTPUT_TYPE.JSON">
+            <summary>
+            Output type for string representation in JSON format
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogRecord.CATEGORY">
+            <summary>
+            Categories to use when adding a category to a LogRecord
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.CATEGORY.CUSTOMER">
+            <summary>
+            Indicates a customer error
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.CATEGORY.APPLICATION">
+            <summary>
+            Indicates an application error
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.CATEGORY.EXITS">
+            <summary>
+            Indicates an external application to cobalt
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.CATEGORY.DAO">
+            <summary>
+            Indicates issues with the database access layer
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.CATEGORY.BATCH">
+            <summary>
+            Used for errors encountered during batch processing
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.CATEGORY.DESKTOP">
+            <summary>
+            Used for new value for logging errors from Desktop Utility
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY">
+            <summary>
+            Sub-Categories to be used in conjunction with the category
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY.AJAX">
+            <summary>
+            Typically used in conjunction with a category of CUSTOMER, indicates an issue with asynchronous processing.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY.SJAX">
+            <summary>
+            Typically used in conjunction with a category of CUSTOMER, indicates an issue with synchronous processing.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY.NOVUS">
+            <summary>
+            Typically used in conjunction with a category of EXITS, inidcates a call to the Novus layer.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY.PRISM">
+            <summary>
+            Typically used in conjunction with a category of EXITS, inidcates a call to the PRISM layer.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY.MIDDLETIER">
+            <summary>
+            Typically used in conjunction with a category of EXITS, inidcates a call to the MiddleTier layer.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY.VERTICAL">
+            <summary>
+            Typically used in conjunction with a category of EXITS, inidcates a call to a Cobalt vertical.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY.DATABASE">
+            <summary>
+            Typically used in conjunction with a category of DAO, inidcates a problem with the database (SQLException, etc...).
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY.COHERENCE">
+            <summary>
+            Typically used in conjunction with a category of DAO, inidcates a problem with the database in referenece to coherence.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY.BERKELEYDB">
+            <summary>
+            Typically used in conjunction with a category of DAO, inidcates a problem with the BerkeleyDB.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY.BILLING">
+            <summary>
+            Typically used in conjunction with a category of Application, inidcates a problem with billing of some sorts.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ErrorLogRecord.#ctor(System.String,Cobalt.Infrastructure.Logging.LogRecord.CATEGORY,Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY)">
+            <summary>
+            Constructor specifying a key and predefined category and sub-category.
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="category">The category of this Error</param>
+            <param name="subCategory">The sub-category of this Error</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ErrorLogRecord.#ctor(System.String,Cobalt.Infrastructure.Logging.LogRecord.CATEGORY,System.String)">
+            <summary>
+            Constructor specifying a key, predefined category and user defined sub-category.
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="category">The category of this Error</param>
+            <param name="subCategory">The sub-category of this Error</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ErrorLogRecord.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor specifying a key and user defined category and sub-category. 
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="category">The category of this Error</param>
+            <param name="subCategory">The sub-category of this Error</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty</exception>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.HeadersConfigurationSection">
+            <summary>
+            A class for reading configuration information about the HeadersFilter
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.HeadersConfigurationSection.HeadersFilters">
+            <summary>
+            Header filters
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.HeadersConfigurationSection.NovusProductHttpHeader">
+            <summary>
+            NovusProductHttpHeader
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.HeadersFilter">
+            <summary>
+            A class that implements the servlet filter interface such to pull header information out of the request and 
+            place it in a central place (RequestValues) for the application to use.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.HeadersFilter.Init(System.Web.HttpApplication)">
+            <summary>
+            Initialize method.  
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.HeadersFilter.Dispose">
+            <summary>
+            Clean up process.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.HeadersFilter.OnBeginRequest(System.Object,System.EventArgs)">
+            <summary>
+            Handles the beginning of a request.
+            </summary>
+            <param name="sender">The HttpApplication object for this request.</param>
+            <param name="ea">Event arguments from .Net</param>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.DebugInfoException">
+            <summary>
+            Custom exception classes can implement this interface to provide extra 
+            debuging information, which may be inappropriate in the exception message
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.DebugInfoException.getDebugInfo">
+            <summary>
+            Return the debug information associated with this exception
+            The debug information has the form of user defined name/value pairs
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.PropertyLoader">
+            <summary>
+            A class that will be used to load up properties from a property file and place them
+            in the app settings.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.PropertyLoader.PROPERTY_FILE_APP_SETTING">
+            <summary>
+            The app setting for the property file.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.PropertyLoader.load">
+            <summary>
+            Read in the properties into the app settings.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Request.HttpRequestLogProfileFilter">
+            <summary>
+            A class for applying filters for the log profile value within the HttpRequest.  If the HttpRequest's log profile value matches
+            one of the values in the log profile list, then the logging event will be denied.  If no log profile list is specified,
+            then the values "blind" and "encrypted" will be used as a default list.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Request.HttpRequestLog">
+            <summary>
+            A class for holding state about the request
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.ConvertStreamToBytes">
+            <summary>
+            Convert the stream of the body into bytes.  This will only be done once.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.getValue(System.String)">
+            <summary>
+            Get a value for a given name
+            </summary>
+            <param name="name">The name</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.toXMLString">
+            <summary>
+            Create an xml string representation of the request
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.ObfuscatePrivateData(System.String)">
+            <summary>
+            This method will obfuscate the data based on if you set a search and resplace expression.
+            If not, it will simply return the data.  It should only be called internally or via a Unit Test.
+            </summary>
+            <param name="input">The String you want to obfuscate.</param>
+            <returns>An obfuscated string based on the SearchReplaceRegEx property.</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.obfuscateHeaderValue(System.String)">
+            <summary>
+            This method will indicate whether or not to obfuscate the specified header's value.
+            It should only be called internally or via a Unit Test.
+            </summary>
+            <param name="input">The string to compare against the list of headers whose values should be obfuscated.</param>
+            <returns>true if the specified header matches a header from the list of excluded headers; otherwise return false.</returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.Headers">
+            <summary>
+            The Http headers collection
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.Uri">
+            <summary>
+            The uri
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.Method">
+            <summary>
+            The Http method
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.Encoding">
+            <summary>
+            The encoding of the body
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.BodyStream">
+            <summary>
+            The stream representing the copy of the body
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.DataCaptureStarted">
+            <summary>
+            Has data capture of the body been started
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.DataCaptureComplete">
+            <summary>
+            Has data capture of the body been completed
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.TransactionGUID">
+            <summary>
+            The transaction guid
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.LogProfile">
+            <summary>
+            The log profile
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.TimeZone">
+            <summary>
+            The time zone
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.SearchReplaceRegEx">
+            <summary>
+            Sets or Gets the array of regular expressions you want to use when obfuscating private data.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLog.ExcludeHeaders">
+            <summary>
+            Sets or Gets an array of headers whose values should be excluded from logging.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Request.HttpRequestLogNameValueFilter">
+            <summary>
+            A class to filter out log events by name value pairs stored within the HttpRequestLog.  For the decision returned, if the
+            values should be equal (ContainsString is false and EndsWithString is false, which is the default) and they are, or
+            the request log value should end with (EndsWithString is true) the value and it is does, or the request log value should
+            contain (ContainsString is true) the value and it does, then accept or deny it based on the accept on match flag.
+            If any of these don't pass, then return neutral.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.HttpRequestLogNameValueFilter.Decide(log4net.Core.LoggingEvent)">
+            <summary>
+            Decide if the logging event should be allowed to be logged.
+            </summary>
+            <param name="le">The logging event in question</param>
+            <returns>FilterDecision - Neutral, Accept or Deny it</returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogNameValueFilter.AcceptOnMatch">
+            <summary>
+            AcceptOnMatch property to decide if the message class name should be passed 
+            through if a match occurs
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogNameValueFilter.ContainsString">
+            <summary>
+            ContainsString property to decide if the comparison should be done by equality 
+            or by contains.  Default is equality
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogNameValueFilter.EndsWithString">
+            <summary>
+            EndsWithString property to decide if the comparison should be done by equality 
+            or by "endsWith".  Default is equality
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogNameValueFilter.IgnoreCase">
+            <summary>
+            IgnoreCase property to decide if the comparison should ignore case. 
+            Default is equality
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogNameValueFilter.Name">
+            <summary>
+            Name property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogNameValueFilter.Value">
+            <summary>
+            Value property
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Request.HttpRequestLogXMLLayout">
+            <summary>
+            Provide a layout for converting a http request into a XML string
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.HttpRequestLogXMLLayout.Format(System.IO.TextWriter,log4net.Core.LoggingEvent)">
+            <summary>
+            Format the logging event in an XML format if the message is of type LogRecord
+            </summary>
+            <param name="tw">The text writer to write out the http request to.</param>
+            <param name="le">The logging event in question</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.HttpRequestLogXMLLayout.IgnoresThrowable">
+            <summary>
+            Ignore throwable
+            </summary>
+            <returns>True or false</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.HttpRequestLogXMLLayout.ActivateOptions">
+            <summary>
+            Activate any options necessary
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogXMLLayout.AddNewLine">
+            <summary>
+            AddNewLine property for adding in a new line when formating the http request
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogXMLLayout.SearchReplaceRegExString">
+            <summary>
+            Gets or Sets the Regular Expression Pattern you want to use for obfuscating sensitive data.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogXMLLayout.ExcludeHeaderValues">
+            <summary>
+            Gets or Sets the list of HTTP headers whose values should be excluded when being logged because they contain sensitive data.
+            Multiple headers should be separated by a comma (,).
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogXMLLayout.CompiledExpressions">
+            <summary>
+            Get the Compile Expressions.  Used for Unit Testing only.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Request.HttpRequestLogXMLLayout.ExcludeHeaders">
+            <summary>
+            Get the list of headers whose values should be excluded when being logged.  Used for Unit Testing only.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Request.RequestLoggingFilter">
+            <summary>
+            Class that is used to log out the full request that took place.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.RequestLoggingFilter.Init(System.Web.HttpApplication)">
+            <summary>
+            Initialize method.  
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.RequestLoggingFilter.Dispose">
+            <summary>
+            Clean up process.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.RequestLoggingFilter.OnBeginRequest(System.Object,System.EventArgs)">
+            <summary>
+            Handles the beginning of a request.
+            </summary>
+            <param name="sender">The HttpApplication object for this request.</param>
+            <param name="ea">Event arguments from .Net</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.RequestLoggingFilter.OnError(System.Object,System.EventArgs)">
+            <summary>
+            Handles when an error occurs.
+            </summary>
+            <param name="sender">The HttpApplication object for this request.</param>
+            <param name="ea">Event arguments from .Net</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Request.RequestLoggingFilter.OnEndRequest(System.Object,System.EventArgs)">
+            <summary>
+            Handles the end of a request.
+            </summary>
+            <param name="sender">The HttpApplication object for this request.</param>
+            <param name="ea">Event arguments from .Net</param>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord">
+            <summary>
+            A class that represents an error logging record whose exception field (i.e. stack trace information) may contain private/sensitive information
+            which must be obfuscated before getting logged. 
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord.#ctor(System.String,Cobalt.Infrastructure.Logging.LogRecord.CATEGORY,Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY,System.String)">
+            <summary>
+            Constructor specifying a key and predefined category and sub-category.
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="category">The category of this Error</param>
+            <param name="subCategory">The sub-category of this Error</param>
+            <param name="regEx">The regular expression to use for obfuscating sensitive data</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord.#ctor(System.String,Cobalt.Infrastructure.Logging.LogRecord.CATEGORY,System.String,System.String)">
+            <summary>
+            Constructor specifying a key, predefined category and user defined sub-category.
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="category">The category of this Error</param>
+            <param name="subCategory">The sub-category of this Error</param>
+            <param name="regEx">The regular expression to use for obfuscating sensitive data</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor specifying a key and user defined category and sub-category. 
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="category">The category of this Error</param>
+            <param name="subCategory">The sub-category of this Error</param>
+            <param name="regEx">The regular expression to use for obfuscating sensitive data</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord.#ctor(System.String,Cobalt.Infrastructure.Logging.LogRecord.CATEGORY,Cobalt.Infrastructure.Logging.LogRecord.SUB_CATEGORY,System.String,System.String)">
+            <summary>
+            Constructor specifying a key and predefined category and sub-category.
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="category">The category of this Error</param>
+            <param name="subCategory">The sub-category of this Error</param>
+            <param name="regEx">The regular expression to use for obfuscating sensitive data</param>
+            <param name="replaceString">The replace string to use for obfuscating sensitive data</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord.#ctor(System.String,Cobalt.Infrastructure.Logging.LogRecord.CATEGORY,System.String,System.String,System.String)">
+            <summary>
+            Constructor specifying a key, predefined category and user defined sub-category.
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="category">The category of this Error</param>
+            <param name="subCategory">The sub-category of this Error</param>
+            <param name="regEx">The regular expression to use for obfuscating sensitive data</param>
+            <param name="replaceString">The replace string to use for obfuscating sensitive data</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor specifying a key and user defined category and sub-category. 
+            </summary>
+            <param name="key">The key which should be a unique value relating to this event</param>
+            <param name="category">The category of this Error</param>
+            <param name="subCategory">The sub-category of this Error</param>
+            <param name="regEx">The regular expression to use for obfuscating sensitive data</param>
+            <param name="replaceString">The replace string to use for obfuscating sensitive data</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is null or empty</exception>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord.compileRegEx(System.String)">
+            <summary>
+            Compiles a string into an array of regular expressions you want to use when obfuscating private data.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord.ObfuscatePrivateData(System.String)">
+            <summary>
+            This method will obfuscate the data based on if you set a search and resplace expression.
+            If not, it will simply return the data.  It should only be called internally or via a Unit Test.
+            </summary>
+            <param name="input">The String you want to obfuscate.</param>
+            <returns>An obfuscated string based on the SearchReplaceRegEx property.</returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord.Exception">
+            <summary>
+            Sets the exception that affects this LogRecord.  The stacktrace text in this exception could contain sensitive information
+            which must be obfuscated before being entered into the log record's name/value hash table.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.ObfuscatedErrorLogRecord.SearchReplaceRegExString">
+            <summary>
+            Gets or Sets the Regular Expression Pattern you want to use for obfuscating sensitive data.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RestAppender.activateOptions">
+            <summary>
+            Perform any functions necessary before processing begins for the first time. 
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RestAppender.OnClose">
+            <summary>
+            Close any resources.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RestAppender.Append(log4net.Core.LoggingEvent)">
+            <summary>
+            Append to the desired REST endpoint
+            </summary>
+            <param name="loggingEvent"></param>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentContext">
+            <summary>
+            This field is used to hold all TRMR fields for a given component, as well
+            as handle the logging.  Set the fields, then Start() and Stop() the
+            request, and finally use LogEvent() to log the TRMR event.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentContext.TRMR_COMPONENTS_AUTOMATIC_CHAINING">
+            <summary>
+            Constant for the app setting name for automatically chaining TRMR components
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentContext.#ctor(System.String,System.Nullable{System.Int64})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="componentName">The component name</param>
+            <param name="dtTimeTicks">The dateTime</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentContext.#ctor(System.String,System.String)">
+            <summary>
+            Constructor that allows for user to specify the parent guid, aka so you could have components of components
+            </summary>
+            <param name="componentName">The component name</param>
+            <param name="parentGUID"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentContext.determinePushPop">
+            <summary>
+            Determine if the push pop model should apply.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentContext.getTransactionGUID">
+            <summary>
+            Get the transaction guid.
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentContext.LogEvent">
+            <summary>
+            Logs the TRMR event.  Assumes the relevant properties have been
+            already set and that the Start()/Stop() methods have been used.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentContext.Errored">
+            <summary>
+            Set if the component encountered an error
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentContext.MetaInformation">
+            <summary>
+            Set some meta information about the component
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.JMSQueueAppender">
+            <summary>
+            Class that is used for appending messages to a jms queue.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.JMSQueueAppender.activateOptions">
+            <summary>
+            Perform any functions necessary before processing begins for the first time. 
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.JMSQueueAppender.OnClose">
+            <summary>
+            Close any resources.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.JMSQueueAppender.Append(log4net.Core.LoggingEvent)">
+            <summary>
+            Append to the desired queue.
+            </summary>
+            <param name="loggingEvent"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.JMSQueueAppender.Send(System.String,System.String)">
+            <summary>
+            Send the specified message as the message body of a middleware message to the middleware destination configured for this appender.
+            </summary>
+            <param name="message">the context to write to the middleware destination</param>
+            <param name="factoryOrPoolName">the configuration name for the connection information to the queue manager.</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.JMSQueueAppender.logError(System.String,System.Exception)">
+            <summary>
+            Log an error that occurred within the appender.
+            </summary>
+            <param name="message">The message describing what happened</param>
+            <param name="e">An exception if it occurred</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.JMSQueueAppender.requiresLayout">
+            <summary>
+            Return whether a layout is required or not.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.JMSQueueAppender.QueueName">
+            <summary>
+            A queue name
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.JMSQueueAppender.QueueConnectionName">
+            <summary>
+            A queue connection name
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.JMSQueueAppender.QueueConnectionPoolName">
+            <summary>
+            A queue connection pool name
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.JMSQueueAppender.ThrowAwayTimeAfterConnFailures">
+            <summary>
+            The time period in ms where messages shold be thrown away after the max consecutive 
+            connection failures have happened.  The default is 300000 ms (5 minutes).
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.JMSQueueAppender.MaxConnectionFailures">
+            <summary>
+            The max number of connection failures before messages get thrown away for a period 
+            of time before re-trying again.  A number &lt;= 0 indicates this processing should 
+            not happen.  The default is 5.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.JMSQueueAppender.LogSendErrorFrequency">
+            <summary>
+            The frequency in which the appender should log send errors to the application event log.  
+            The default is 10000 and 1 would indicate log every error, which would be very devestating 
+            for the application event log if a major error situation occurred.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.JMSManager">
+            <summary>
+            A class that is used to manage jms connections.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSManager.getQueueProducer(System.String,System.String)">
+            <summary>
+            Get a queue producer so that an application can write messages to a queue.
+            </summary>
+            <param name="queueConnectionName"></param>
+            <param name="queueName"></param>
+            <returns>JMSQueueProducer</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSManager.getQueueProducerFromPool(System.String,System.String)">
+            <summary>
+            Get a queue sender for a given queue connection pool name and queue name.  The queue connection 
+            will be randomized from the list of queue connection names.  The list will be cycled until either 
+            a queue connection is returned or none is returned which will result in an exception thrown.
+            </summary>
+            <param name="queueConnectionPoolName">The queue connection pool name</param>
+            <param name="queueName">The queue name</param>
+            <returns>JMSQueueProducer</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSManager.getQueueConsumer(System.String,System.String)">
+            <summary>
+            Get a queue consumer so that an application can read messages from a queue
+            </summary>
+            <param name="queueConnectionName"></param>
+            <param name="queueName"></param>
+            <returns>JMSQueueConsumer</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSManager.getQueueConnection(System.String)">
+            <summary>
+            Get a queue connection.  This could be from the currently held queue connection 
+            or establishing a new one.
+            </summary>
+            <param name="queueConnectionName"></param>
+            <returns>IConnection</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSManager.removeQueueConnection(System.String,IBM.XMS.IConnection)">
+            <summary>
+            Remove a queue connection from the managed cache of connections.
+            </summary>
+            <param name="queueConnectionName"></param>
+            <param name="queueConnection"></param>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.JMSQueueConsumer">
+            <summary>
+            A class to wrap a consumer of jms messages.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConsumer.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="queueConnectionName"></param>
+            <param name="queueName"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConsumer.close">
+            <summary>
+            Close any needed resources.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConsumer.getSessionClosed">
+            <summary>
+            Get whether the session has been closed or not.
+            </summary>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConsumer.receiveMessage">
+            <summary>
+            Receive a message with an indefinite wait time.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConsumer.receiveMessage(System.Int64)">
+            <summary>
+            Receive a message with a specified wait time.
+            </summary>
+            <param name="waitTime"></param>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConsumer.getTextMessage(IBM.XMS.IMessage)">
+            <summary>
+            Get the text message.
+            </summary>
+            <param name="msg"></param>
+            <returns>String </returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConsumer.getBytesMessage(IBM.XMS.IMessage)">
+            <summary>
+            Get the bytes message.
+            </summary>
+            <param name="msg"></param>
+            <returns>String</returns>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.JMSQueueProducer">
+            <summary>
+            A class to wrap a producer of jms messages.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueProducer.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="queueConnectionName"></param>
+            <param name="queueName"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueProducer.close">
+            <summary>
+            Close any needed resources
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueProducer.getSessionClosed">
+            <summary>
+            Get whether the session has been closed or not.
+            </summary>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueProducer.sendTextMessage(System.String)">
+            <summary>
+            Send a text message.
+            </summary>
+            <param name="textMessage"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueProducer.sendBytesMessage(System.String)">
+            <summary>
+            Send a bytes message.
+            </summary>
+            <param name="textMessage"></param>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.JMSQueueConnection">
+            <summary>
+            Wrap a connection
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConnection.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="queueConnectionName"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConnection.getQueueConnection">
+            <summary>
+            Get the connection wrapped in this class.
+            </summary>
+            <returns>IConnection</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConnection.getQueueConnectionName">
+            <summary>
+            Get the queue connection name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueConnection.close">
+            <summary>
+            Close the connection.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.JMSQueueSession">
+            <summary>
+            A class to wrap a session.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueSession.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="queueConnectionName"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueSession.getQueueSession">
+            <summary>
+            Get the session associated with this object.
+            </summary>
+            <returns>ISession</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueSession.getQueueConnection">
+            <summary>
+            Return the connection wrapper object associated with this object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSQueueSession.close">
+            <summary>
+            Close any needed resources.
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Jms.JMSUtilities">
+            <summary>
+            Class to provide utilities for re-creating jms objects.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSUtilities.getQueueConnection(System.String)">
+            <summary>
+            Get a queue connection, getting the proper values from properties.
+            </summary>
+            <param name="queueConnectionName"></param>
+            <returns>IConnection</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSUtilities.getQueue(System.String)">
+            <summary>
+            Get a queue (destination), getting the proper values from properties for re-creating the queue
+            </summary>
+            <param name="queueName"></param>
+            <returns>IDestination</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSUtilities.examineXMSException(Cobalt.Infrastructure.Logging.Jms.JMSQueueConnection,IBM.XMS.XMSException)">
+            <summary>
+            Examine the XMS Exception to determine if the exception warrants the connection/session be closed.  Some exceptions 
+            will be superficial and will not require getting a new connection.  If the exceptions warrants closing the connection, 
+            then true is returned, otherwise false is returned meaning closing the connection will not do any good.
+            </summary>
+            <param name="queueConnection"></param>
+            <param name="exception"></param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Jms.JMSUtilities.getQueueConnectionNamesFromPool(System.String)">
+            <summary>
+            Get an array of queue connection names for a given pool name.
+            </summary>
+            <param name="queueConnectionPoolName">Queue connection pool name</param>
+            <returns>String[]</returns>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LoggingInitializer">
+            <summary>
+            A class that will be used to do the configuration of logging hiding the details of
+            how that configuration is taking place.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LoggingInitializer.LOG4NET_CONFIG_FILE_APP_SETTING">
+            <summary>
+            The app setting element for the log4net config file.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.LoggingInitializer.LOG_DIRECTORY">
+            <summary>
+            The app setting element for the log directory.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LoggingInitializer.configure">
+            <summary>
+            Configure logging
+            </summary>
+            <returns>True or false</returns>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogRecordJSONLayout">
+            <summary>
+            Provides a layout for converting a log record into a JSON string
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogRecordNameValueMatchFilter">
+            <summary>
+            A class to filter out log events by name value pairs stored within the LogRecord.  For the decision returned, if the
+            values should be equal (ContainsString is false and EndsWithString is false, which is the default) and they are, or
+            the log record value should end with (EndsWithString is true) the value and it is does, or the log record value should
+            contain (ContainsString is true) the value and it does, then accept or deny it based on the accept on match flag.
+            If any of these don't pass, then return neutral.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.LogRecordNameValueMatchFilter.Decide(log4net.Core.LoggingEvent)">
+            <summary>
+            Decide if the logging event should be allowed to be logged.
+            </summary>
+            <param name="le">The logging event in question</param>
+            <returns>FilterDecision, Accept or Deny it</returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordNameValueMatchFilter.AcceptOnMatch">
+            <summary>
+            AcceptOnMatch property to decide if the message class name should be passed 
+            through if a match occurs
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordNameValueMatchFilter.ContainsString">
+            <summary>
+            ContainsString property to decide if the comparison should be done by equality 
+            or by contains.  Default is equality
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordNameValueMatchFilter.EndsWithString">
+            <summary>
+            EndsWithString property to decide if the comparison should be done by equality 
+            or by "endsWith".  Default is equality
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordNameValueMatchFilter.IgnoreCase">
+            <summary>
+            IgnoreCase property to decide if the comparison should ignore case. 
+            Default is equality
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordNameValueMatchFilter.Name">
+            <summary>
+            Name property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.LogRecordNameValueMatchFilter.Value">
+            <summary>
+            Value property
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.LogRecordXMLLayout">
+            <summary>
+            Provides a layout for converting a log record into a XML string
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.RequestValues">
+            <summary>
+            A class that is used to value request values in the MDC to be used for logging purposes relating to the current request.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.PARENT_GUID">
+            <summary>
+            The parent guid constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.PAGE_GUID">
+            <summary>
+            The page guid constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.ROOT_GUID">
+            <summary>
+            The root guid constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.TRANSACTION_GUID">
+            <summary>
+            The page guid constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.SESSION_ID">
+            <summary>
+            The session id constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.USER_GUID">
+            <summary>
+            The user guid constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.PRODUCT">
+            <summary>
+            The product constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.BUSINESS_UNIT">
+            <summary>
+            The business unit constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.ERRORED">
+            <summary>
+            The errored constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.API">
+            <summary>
+            The api constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.META_INFO">
+            <summary>
+            The metainfo constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.COOKIES">
+            <summary>
+            The cookies constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.COOKIE">
+            <summary>
+            The cookies constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.HEADERS">
+            <summary>
+            The headers constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.HEADER">
+            <summary>
+            The header constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.STACK">
+            <summary>
+            The request values stack constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.LOG_VERTICAL_TRANSACTION">
+            <summary>
+            The log vertical transaction constant
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.HEADER_REQUEST_ID">
+            <summary>
+            The internal lookup key for request values
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.DEPRECATED_API">
+            <summary>
+            Indicates if the API has been deprecated.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.ENDPOINT_STATUS">
+            <summary>
+            The endpoint status constant.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.CALL_STACK_HASH">
+            <summary>
+            The call stack hash constant.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.LOG_PROFILE">
+            <summary>
+            The log profile constant.
+            </summary>
+        </member>
+        <member name="F:Cobalt.Infrastructure.Logging.RequestValues.TIME_ZONE">
+            <summary>
+            The time zone constant.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.GetRequestData">
+            <summary>
+            This method can only be called from the set and get context item methods, as they do the thread locking. 
+            </summary>
+            <returns>IDictionary&lt;string, object&gt;</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.GetRequestValuesFromThread">
+            <summary>
+            Get the dictionary for a custom/non IIS thread
+            </summary>
+            <returns>Dictionary&lt;string, object&gt;</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.SetContextItem(System.String,System.Object)">
+            <summary>
+            Set the context item
+            </summary>
+            <param name="key">The key</param>
+            <param name="value">The value</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.GetContextItem(System.String)">
+            <summary>
+            Get the context item value
+            </summary>
+            <param name="key">The key</param>
+            <returns>object</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setParentGUID(System.String)">
+            <summary>
+            Set the parent guid for the current request
+            </summary>
+            <param name="parentGUID">The parent id to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setPageGUID(System.String)">
+            <summary>
+            Set the page guid for the current request
+            </summary>
+            <param name="pageGUID">The page guid to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setRootGUID(System.String)">
+            <summary>
+            Set the root guid for the current request
+            </summary>
+            <param name="rootGUID">The root guid to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setTransactionGUID(System.String)">
+            <summary>
+            Set the transaction guid for the current request
+            </summary>
+            <param name="transactionGUID">The transaction guid to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setSessionID(System.String)">
+            <summary>
+            Set the session id for the current request
+            </summary>
+            <param name="sessionID">The session id to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setUserGUID(System.String)">
+            <summary>
+            Set the user guid for the current request
+            </summary>
+            <param name="userGUID">The user guid to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setProduct(System.String)">
+            <summary>
+            Set the product for the current request
+            </summary>
+            <param name="product">The product to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setBusinessUnit(System.String)">
+            <summary>
+            Set the business unit for the current request
+            </summary>
+            <param name="businessUnit">The business unit to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setErrored(System.Boolean)">
+            <summary>
+            Set if the request has errored or not
+            </summary>
+            <param name="errored">If the request is in error or not</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setLogVerticalTransaction(System.Boolean)">
+            <summary>
+            Set if a vertical transaction should be logged for the request
+            </summary>
+            <param name="log">If a vertical transaction should be logged</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setAPI(System.String)">
+            <summary>
+            Set the api for the current request
+            </summary>
+            <param name="api">The api to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setMetaInfo(System.String)">
+            <summary>
+            Set the metainfo for the current request
+            </summary>
+            <param name="metainfo">The metainfo to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setLogProfile(System.String)">
+            <summary>
+            Set the log profile for the current request
+            </summary>
+            <param name="logProfile">The log profile to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setTimeZone(System.String)">
+            <summary>
+            Set the time zone for the current request
+            </summary>
+            <param name="timeZone">The time zone to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setProductView(System.String)">
+            <summary>
+            Set the product View for the current request
+            </summary>
+            <param name="productView">The productView to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setDeprecated(System.Boolean)">
+            <summary>
+            Set if the API handling this request has been deprecated
+            </summary>
+            <param name="deprecated">If the API that handled this request has been deprecated or not</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setEndpointStatus(Cobalt.Infrastructure.Logging.EndpointStatus)">
+            <summary>
+            Set the endpoint status for the current request
+            </summary>
+            <param name="endpointStatus">The endpoint status (e.g. released, deprecated, etc)</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setCallStackHash(System.String)">
+            <summary>
+            Set the call stack hash for the current request
+            </summary>
+            <param name="callStackHash">The callStackHash to set</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setNovusProduct(System.String)">
+            Set the novus product header value for the current request
+            @param novusProduct the novus product header value to set
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setCookies(System.Web.HttpCookieCollection)">
+            <summary>
+            Set the cookies for the current request
+            </summary>
+            <param name="cookies">The cookie collection</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setHeaders(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Set the headers for the current request
+            </summary>
+            <param name="headers">The headers</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.setHeader(System.String,System.String)">
+            <summary>
+            Set a header
+            </summary>
+            <param name="name">The name of the header</param>
+            <param name="value">The value of the header</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.push">
+            <summary>
+            Push the current information on the stack.  Should not be used outside of the logging components.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.pop">
+            <summary>
+            Pop information off of the stack and replace in the RequestValues.  Should not be used outside of the logging components.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.flatten">
+            <summary>
+            Flatten the stack down to empty.  Should not be used outside of the logging components.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.clearRequestValues">
+            <summary>
+            Clear the request values
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getParentGUID">
+            <summary>
+            Get the parent guid for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getPageGUID">
+            <summary>
+            Get the page guid for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getRootGUID">
+            <summary>
+            Get the root guid for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getTransactionGUID">
+            <summary>
+            Get the transaction guid for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getSessionID">
+            <summary>
+            Get the session id for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getUserGUID">
+            <summary>
+            Get the user guid for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getProduct">
+            <summary>
+            Get the product for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getBusinessUnit">
+            <summary>
+            Get the business unit for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getErrored">
+            <summary>
+            Get if the current request has errored
+            </summary>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getLogVerticalTransaction">
+            <summary>
+            Get if a vertical transaction should be logged
+            </summary>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getAPI">
+            <summary>
+            Get the api for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getMetaInfo">
+            <summary>
+            Get the metainfo for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getLogProfile">
+            <summary>
+            Get the log profile for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getTimeZone">
+            <summary>
+            Get the time zone for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getProductView">
+            <summary>
+            Get the Product View for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getDeprecated">
+            <summary>
+            Get if the API processing the current request has been deprecated
+            </summary>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getEndpointStatus">
+            <summary>
+            Get the endpoint status for the current request
+            </summary>
+            <returns>EndpointStatus</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getCallStackHash">
+            <summary>
+            Get the call stack hash for the current request
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getNovusProduct">
+            Get the novus product header value.
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getCookies">
+            <summary>
+            Get the cookies for the current request
+            </summary>
+            <returns>HttpCookieCollection</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getHeaders">
+            <summary>
+            Get the headers
+            </summary>
+            <returns>NameValueCollection</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getHeader(System.String)">
+            <summary>
+            Get a header value
+            </summary>
+            <param name="name">The name of the header</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.serialize">
+            <summary>
+            Serialize the request values
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.addValue(Newtonsoft.Json.Linq.JObject,System.String,System.String)">
+            <summary>
+            Add a name/value combination to a json object
+            </summary>
+            <param name="jsonObject">The json object</param>
+            <param name="name">The name</param>
+            <param name="value">The value</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.deserialize(System.String)">
+            <summary>
+            De-serialize the string by setting the request values
+            </summary>
+            <param name="serializedRequestValues">The serialized version of the request values</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.getPropertyValue(Newtonsoft.Json.Linq.JObject,System.String)">
+            <summary>
+            Get the property value from the json object.
+            </summary>
+            <param name="jsonObject"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.RequestValues.RequestValuesStackItem">
+            <summary>
+            Class to hold info from the RequestValues that will go onto the stack 
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.RequestValuesStackItem.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="transactionGUID">The transaction GUID</param>
+            <param name="parentGUID">The parent GUID</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.RequestValuesStackItem.getTransactionGUID">
+            <summary>
+            Get the transaction GUID
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.RequestValues.RequestValuesStackItem.getParentGUID">
+            <summary>
+            Get the parent GUID
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.Summarize">
+            <summary>
+            Summarize the statistics
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.addStatistic(Cobalt.Infrastructure.Logging.LogRecord)">
+            <summary>
+            Add a statistic for a component
+            </summary>
+            <param name="lr">The log record</param>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.Stop">
+            <summary>
+            Should the component summarizer stop its work
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic">
+            <summary>
+            A class to hold onto statistics for a component
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="product">The product</param>
+            <param name="businessUnit">The business unit</param>
+            <param name="componentName">The component name</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.addStatistic(System.Int32,System.Int64)">
+            <summary>
+            Add statistic values
+            </summary>
+            <param name="errorCount">The error count</param>
+            <param name="elapsedTime">The elapsed time</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.getProduct">
+            <summary>
+            Get the product
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.getBusinessUnit">
+            <summary>
+            Get the business unit
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.getComponentName">
+            <summary>
+            Get the component name
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.getErrorCount">
+            <summary>
+            Get the error count
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.getNumOccurrences">
+            <summary>
+            Get the number of occurrences
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.getAvgElapsedTime">
+            <summary>
+            Get the average elapsed time
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.getMaxElapsedTime">
+            <summary>
+            Get the max elapsed time
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.getMinElapsedTime">
+            <summary>
+            Get the min elapsed time
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizer.ComponentStatistic.getSquareAvgElapsedTime">
+            <summary>
+            Get the square average elapsed time
+            </summary>
+            <returns>long</returns>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizerAppender">
+            <summary>
+            An appender to take incoming component transactions, summarize them every minute and log out the summarization.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizerAppender.activateOptions">
+            <summary>
+            Perform any functions necessary before processing begins for the first time. 
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizerAppender.OnClose">
+            <summary>
+            Close any resources.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizerAppender.Append(log4net.Core.LoggingEvent)">
+            <summary>
+            Append to the desired queue.
+            </summary>
+            <param name="loggingEvent"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizerAppender.initialize">
+            <summary>
+            Initialize the summarization process
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizerAppender.requiresLayout">
+            <summary>
+            Return whether a layout is required or not.
+            </summary>
+            <returns>bool</returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrComponentSummarizerAppender.AutomaticChaining">
+            <summary>
+            Whether automatic chaining will occur within TRMR components
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection">
+            <summary>
+            A class for reading configuration information about the TrmrFilter
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.HeaderRootGuid">
+            <summary>
+            Root guid header
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.HeaderParentGuid">
+            <summary>
+            Parent guid header
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.HeaderExecType">
+            <summary>
+            Exec type header
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.HeaderUserGuid">
+            <summary>
+            User guid header
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.HeaderSessionId">
+            <summary>
+            Session id header
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.HeaderProduct">
+            <summary>
+            Product header
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.HeaderBusinessUnit">
+            <summary>
+            Business unit header
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.HeaderLogProfile">
+            <summary>
+            Log profile header
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.HeaderTimeZone">
+            <summary>
+            Time zone header
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.HeaderProductView">
+            <summary>
+            Product view header
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.StatusCodeErrorRangeStart">
+            <summary>
+            Status code error range start
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.StatusCodeErrorRangeEnd">
+            <summary>
+            Status code error range end
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.StatusCodeErrorRangeUse">
+            <summary>
+            Use the status code in an error range for determining an error
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.AppSpecifiesLogVerticalTransaction">
+            <summary>
+            Have the application specify whether to log the vertical transaction or not
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.StatusCodeErrorExcludeList">
+            <summary>
+            Have the application specify status codes to exclude from setting within errors.  This applies to status codes within the status 
+            code range.  The list is separated by commas.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.ReportDeprecatedAPI">
+            <summary>
+            Report deprecated API
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrConfigurationSection.ApiVersionPattern">
+            <summary>
+            API version regex pattern
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Trmr.TrmrContext">
+            <summary>
+            This class is used to hold all TRMR fields across the request, as well
+            as handle the logging.  Set the fields, then Start() and Stop() the
+            request, and finally use LogEvent() to log the TRMR event.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.Start">
+            <summary>
+            Method to start the timer for a TRMR transaction.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.Stop">
+            <summary>
+            Method to stop the timer for a TRMR transaction.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.LogEvent">
+            <summary>
+            Logs the TRMR event.  Assumes the relevant properties have been
+            already set and that the Start()/Stop() methods have been used.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.getErrorCount">
+            <summary>
+            Get the error count
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.Uri">
+            <summary>
+            The Uri that this transaction is running under.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.RequestorUri">
+            <summary>
+            The Uri of the requestor.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.Api">
+            <summary>
+            The Api that corresponds to this request.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.AppApiVersion">
+            <summary>
+            The version of the api that corresponds to this request.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.StatusCode">
+            <summary>
+            The HTTP status code sent back on the response.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.ErrorCount">
+            <summary>
+            Value of 1 indicates an error occured, defaulted to 0.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.Deprecated">
+            <summary>
+            Indicates if the API called for this request has been deprecated.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.EndpointStatus">
+            <summary>
+            The endpoint status that corresponds to this request.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.CallStackHash">
+            <summary>
+            The call stack hash that corresponds to this request.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.Synchronous">
+            <summary>
+            An indicator if the request was synchronous or not.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.HttpMethod">
+            <summary>
+            What type of http method was taken.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.RemoteAddress">
+            <summary>
+            The remote address that corresponds to this request.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrContext.MetaInfo">
+            <summary>
+            The meta info for the request
+            </summary>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Trmr.TrmrFilter">
+            <summary>
+            Class that intercepts .Net requests/response and logs TRMR events.
+            Properties that control some of the event fields can come from either
+            the appSettings section or the headers coming in on the request or going out 
+            on the response.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrFilter.Init(System.Web.HttpApplication)">
+            <summary>
+            Initialize method.  
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrFilter.Dispose">
+            <summary>
+            Clean up process.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrFilter.OnError(System.Object,System.EventArgs)">
+            <summary>
+            Sets a flag in the TrmrContext that an error occurred.
+            </summary>
+            <param name="sender">The HttpApplication object for this request.</param>
+            <param name="ea">Event arguments from .Net</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrFilter.OnBeginRequest(System.Object,System.EventArgs)">
+            <summary>
+            Handles the beginning of a request.  In this situation, TRMR will
+            create a TrmrContext to hold various fields, then create or get the
+            TRMR guids from the HTTP headers.  The TRMR guids are set using the 
+            RequestValues classes that place the values in the MDC.  Finally, it will
+            start the timer.
+            </summary>
+            <param name="sender">The HttpApplication object for this request.</param>
+            <param name="ea">Event arguments from .Net</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrFilter.OnEndRequest(System.Object,System.EventArgs)">
+            <summary>
+            Handles the end of a request.  In this situation, TRMR will stop the
+            timer, log the event, via the TrmrContext object stored in the
+            context of this HTTP request.
+            </summary>
+            <param name="sender">The HttpApplication object for this request.</param>
+            <param name="ea">Event arguments from .Net</param>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrFilter.getPropertyValue(Newtonsoft.Json.Linq.JObject,System.String)">
+            <summary>
+            Get the property value from the json object.
+            </summary>
+            <param name="jsonObject"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrFilter.getRemoteAddress(System.Web.HttpRequest)">
+            <summary>
+            Get the remote IP address from the HTTP request.
+            </summary>
+            <param name="request"></param>
+            <returns>A remote IP address</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrFilter.getMatchingHeader(System.Web.HttpRequest,System.String)">
+            <summary>
+            Get the request header that matches one of the possible headers.
+            </summary>
+            <param name="request"></param>
+            <param name="possibleHeaders"></param>
+            <returns>A request header (or null if match not found)</returns>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrFilter.CreateGuid">
+            <summary>
+            Creates a GUID.
+            </summary>
+            <returns>A 33-byte GUID</returns>
+        </member>
+        <member name="T:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext">
+            <summary>
+            This class is used to log a widget transaction.  It is assumed that a callback is made to a hosted application 
+            that will take that information, use this class to populate the fields and log the transaction that occurred.
+            </summary>
+        </member>
+        <member name="M:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.LogEvent">
+            <summary>
+            Logs the TRMR event.  Assumes the relevant properties have been already set.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.ResponseTime">
+            <summary>
+            The response time property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.TransactionGUID">
+            <summary>
+            The transaction guid property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.ParentGUID">
+            <summary>
+            The parent guid property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.PageGUID">
+            <summary>
+            The page GUID property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.RootGUID">
+            <summary>
+            The root GUID property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.PageName">
+            <summary>
+            The page name property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.WidgetName">
+            <summary>
+            The widget name property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.WidgetAction">
+            <summary>
+            The widget action property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.SessionID">
+            <summary>
+            The session id property
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.ErrorCount">
+            <summary>
+            The error count property.  Value of 1 indicates an error occured, defaulted to 0.
+            </summary>
+        </member>
+        <member name="P:Cobalt.Infrastructure.Logging.Trmr.TrmrWidgetContext.UserGUID">
+            <summary>
+            The user guid property
+            </summary>
+        </member>
+    </members>
+</doc>

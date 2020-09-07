@@ -1,0 +1,2122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReturnState xmlns="http://www.irs.gov/efile" xmlns:efile="http://www.irs.gov/efile" xsi:schemaLocation="http://www.irs.gov/efile ../Return1120.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" stateSchemaVersion="ILBusiness2015V2.0">
+	<ReturnHeaderState binaryAttachmentCnt="0">
+		<Jurisdiction>ILST</Jurisdiction>
+		<ReturnTs>2016-06-22T13:39:44-06:00</ReturnTs>
+		<!--FEDERALFEIN=99-0000071-->
+		<!--FEDERALLC=TEST07-->
+		<!--FEDERALACCT=8321-->
+		<!--FEDERALENTITY=SAME-->
+		<!--SubmissionType=CS-->
+		<!--FEDERALFILETYPE=XML-->
+		<!--CLIENTEFIN=757714-->
+		<TaxPeriodBeginDt>2015-01-01</TaxPeriodBeginDt>
+		<TaxPeriodEndDt>2015-12-31</TaxPeriodEndDt>
+		<TaxYr>2015</TaxYr>
+		<PaidPreparerInformationGrp>
+			<SignatureDt>2012-02-15</SignatureDt>
+			<SelfEmployedInd>X</SelfEmployedInd>
+			<PTIN>P00000001</PTIN>
+			<PreparerFirmEIN>110000011</PreparerFirmEIN>
+			<PreparerFirmName>
+				<BusinessNameLine1Txt>Electronic Tax Filers Inc</BusinessNameLine1Txt>
+			</PreparerFirmName>
+			<PreparerPersonNm>Johnny Appleseed</PreparerPersonNm>
+			<PreparerUSAddress>
+				<AddressLine1Txt>100 Efile Drive</AddressLine1Txt>
+				<CityNm>Anytown</CityNm>
+				<StateAbbreviationCd>AL</StateAbbreviationCd>
+				<ZIPCd>75231</ZIPCd>
+			</PreparerUSAddress>
+			<PhoneNum>5125551212</PhoneNum>
+			<EmailAddressTxt>john@gmail.com</EmailAddressTxt>
+		</PaidPreparerInformationGrp>
+		<OriginatorGrp>
+			<EFIN>757714</EFIN>
+			<OriginatorTypeCd>ERO</OriginatorTypeCd>
+			<PractitionerPINGrp>
+				<EFIN>757714</EFIN>
+				<PIN>11000</PIN>
+			</PractitionerPINGrp>
+		</OriginatorGrp>
+		<SoftwareId>15000213</SoftwareId>
+		<SoftwareVersionNum>15-5.3F</SoftwareVersionNum>
+		<InternetProtocol>
+			<IPAddress>164.57.152.1</IPAddress>
+			<IPTimestamp>2016-06-22T13:39:44-06:00</IPTimestamp>
+		</InternetProtocol>
+		<SignatureOption>
+			<SignatureDocument>Retain</SignatureDocument>
+		</SignatureOption>
+		<OriginalSubmissionId>12345678901234567890</OriginalSubmissionId>
+		<OriginalSubmissionDate>2016-06-22</OriginalSubmissionDate>
+		<ReturnType>IL1120</ReturnType>
+		<Filer>
+			<EIN>990000071</EIN>
+			<BusinessName>
+				<BusinessNameLine1Txt>ILTG - Illinois e-file test 7</BusinessNameLine1Txt>
+			</BusinessName>
+			<BusinessNameControlTxt>ILTG</BusinessNameControlTxt>
+			<USAddress>
+				<AddressLine1Txt>35 Any Street</AddressLine1Txt>
+				<CityNm>Anytown</CityNm>
+				<StateAbbreviationCd>NY</StateAbbreviationCd>
+				<ZIPCd>10006</ZIPCd>
+			</USAddress>
+		</Filer>
+		<BusinessRepresentative>
+			<PersonName>
+				<FirstName>Poppy</FirstName>
+				<LastName>seed</LastName>
+			</PersonName>
+			<PersonTitleTxt>Chief executive officer</PersonTitleTxt>
+			<PhoneNum>3015551212</PhoneNum>
+			<EmailAddressTxt>doug.doe@hideNseek.com</EmailAddressTxt>
+			<SignatureDt>2016-03-15</SignatureDt>
+		</BusinessRepresentative>
+		<DiscussWithPaidPreparerInd>true</DiscussWithPaidPreparerInd>
+		<MultSoftwarePackagesUsedInd>false</MultSoftwarePackagesUsedInd>
+	</ReturnHeaderState>
+	<ReturnDataState>
+		<FormILAuthorization>
+			<AuthorizationStatement>Jurat accepted</AuthorizationStatement>
+		</FormILAuthorization>
+		<FormIL1120>
+			<AmountPaidWithReturn>0</AmountPaidWithReturn>
+			<Step1>
+				<CombinedUnitaryReturnBox>X</CombinedUnitaryReturnBox>
+				<FedSchM3AttachedBox>X</FedSchM3AttachedBox>
+				<FinancialOrganizationBox>X</FinancialOrganizationBox>
+				<ScheduleUnitaryBusinessBox>X</ScheduleUnitaryBusinessBox>
+				<Schedule1299DBox>X</Schedule1299DBox>
+				<FormIL4562Box>X</FormIL4562Box>
+				<ScheduleMBusinessBox>X</ScheduleMBusinessBox>
+				<Schedule8020box>X</Schedule8020box>
+				<NAICSCode>522293</NAICSCode>
+				<AcctRecordsCityLoc>Dallas</AcctRecordsCityLoc>
+				<AcctRecordsStateLoc>TX</AcctRecordsStateLoc>
+				<AcctRecordsZIPCodeLoc>75287</AcctRecordsZIPCodeLoc>
+				<AccrualAccountingMethodBox>X</AccrualAccountingMethodBox>
+			</Step1>
+			<Step2>
+				<FederalTaxableInc>126692790</FederalTaxableInc>
+				<SpecialDepreciationAddition>115556</SpecialDepreciationAddition>
+				<RelatedPartyExpnsAdd>39360</RelatedPartyExpnsAdd>
+				<DistibutedShareOfAdditions>580961</DistibutedShareOfAdditions>
+				<OtherAdditions>1609989</OtherAdditions>
+				<IncSubTotal>129038656</IncSubTotal>
+			</Step2>
+			<Step3>
+				<RiversEdgeRedev>15500</RiversEdgeRedev>
+				<RERInterestSub>2561</RERInterestSub>
+				<DividendHighImpactBusiness>16830</DividendHighImpactBusiness>
+				<InterestHighImpactBusiness>10585</InterestHighImpactBusiness>
+				<ContributionSubtraction>25640</ContributionSubtraction>
+				<ConJobTrainingProj>3333</ConJobTrainingProj>
+				<ForeignDividendSubtraction>46138520</ForeignDividendSubtraction>
+				<SpecialDepreciationSub>15444</SpecialDepreciationSub>
+				<RelatedPartyExpnsSub>5362</RelatedPartyExpnsSub>
+				<DistrShareOfSubtractions>24220</DistrShareOfSubtractions>
+				<OtherSubtractions>60300</OtherSubtractions>
+				<TotalSubtractions>46318295</TotalSubtractions>
+				<BaseIncOrNetLoss>82720361</BaseIncOrNetLoss>
+				<InsideOutsideIllinoisBox>X</InsideOutsideIllinoisBox>
+			</Step3>
+			<Step4>
+				<IncNonBusinessOrLoss>1324643</IncNonBusinessOrLoss>
+				<IncOrLossNonUnitary>732175</IncOrLossNonUnitary>
+				<TotalAllocatedEverywhere>2056818</TotalAllocatedEverywhere>
+				<BusinessIncOrLoss>80663543</BusinessIncOrLoss>
+				<TotalSalesEverywhere>389274623</TotalSalesEverywhere>
+				<TotalSaleInIL>248813647</TotalSaleInIL>
+				<ApportionmentFactor>0.639173</ApportionmentFactor>
+				<IncOrLossApportionToIL>51557958</IncOrLossApportionToIL>
+				<NonBusIncOrLossAllocToIL>275443</NonBusIncOrLossAllocToIL>
+				<PartnershipApporIncOrLoss>587605</PartnershipApporIncOrLoss>
+				<ApportionedNetAmount>52421006</ApportionedNetAmount>
+			</Step4>
+			<Step5>
+				<BaseInc>52421006</BaseInc>
+				<AdjustedBaseIncOrLoss>52421006</AdjustedBaseIncOrLoss>
+				<NetInc>52421006</NetInc>
+			</Step5>
+			<Step6>
+				<ReplacementTax>1310525</ReplacementTax>
+				<RecaptureOfInvestmentCredits>2441</RecaptureOfInvestmentCredits>
+				<ReplacementTaxBeforeCredits>1312966</ReplacementTaxBeforeCredits>
+				<TotalReplacementTaxCredits>4992</TotalReplacementTaxCredits>
+				<NetReplacementTax>1307974</NetReplacementTax>
+			</Step6>
+			<Step7>
+				<StateTaxRateIT>2752103</StateTaxRateIT>
+				<RecaptureOfInvestmentCrdts>2231</RecaptureOfInvestmentCrdts>
+				<IncTaxBeforeCredits>2754334</IncTaxBeforeCredits>
+				<TotalIncTaxCrdts>32072</TotalIncTaxCrdts>
+				<NetIncTax>2722262</NetIncTax>
+			</Step7>
+			<Step8>
+				<ReplacementTaxBeforeReduction>1307974</ReplacementTaxBeforeReduction>
+				<NetReplacementTax2>1307974</NetReplacementTax2>
+				<IncomeTaxBeforeReduction>2722262</IncomeTaxBeforeReduction>
+				<NetIncTax2>2722262</NetIncTax2>
+				<TotalNetTax>4030236</TotalNetTax>
+				<SelfAssessedPenalties>175000</SelfAssessedPenalties>
+				<TaxandPenaltyBeforeCrAndPmts>4205236</TaxandPenaltyBeforeCrAndPmts>
+				<CreditFromPrevYr>85000</CreditFromPrevYr>
+				<AmountPaidEstimated>5532016</AmountPaidEstimated>
+				<AmountPaidWithExtension>31200</AmountPaidWithExtension>
+				<GamblingWithholding>95000</GamblingWithholding>
+				<TotalPayments>5743216</TotalPayments>
+				<OverpaymentAfterPenaltyAndInt>1537980</OverpaymentAfterPenaltyAndInt>
+				<TaxRefund>1537980</TaxRefund>
+				<TaxDue>0</TaxDue>
+			</Step8>
+			<Step9>
+				<ThirdPartyDesigneeBox>X</ThirdPartyDesigneeBox>
+			</Step9>
+		</FormIL1120>
+		<FormIL2220>
+			<Step2>
+				<ThisYearsNetITAndRTTax>4030236</ThisYearsNetITAndRTTax>
+				<LastYearsNetITAndRTTax>2500</LastYearsNetITAndRTTax>
+				<ThisYrNetITAndRTTaxTimes90Perc>3627212</ThisYrNetITAndRTTaxTimes90Perc>
+				<ThisYrCalcLateESPenaltyBase>2500</ThisYrCalcLateESPenaltyBase>
+				<ThisYrRegularInstallment>625</ThisYrRegularInstallment>
+				<QtrInstallmentsTable>
+					<InstallmentDate>2015-04-15</InstallmentDate>
+					<ReqInstallment>250000</ReqInstallment>
+					<AmtCarriedForward>120000</AmtCarriedForward>
+					<InstallmentLessCredit>130000</InstallmentLessCredit>
+					<RemainingInstallment>130000</RemainingInstallment>
+				</QtrInstallmentsTable>
+				<QtrInstallmentsTable>
+					<InstallmentDate>2015-06-15</InstallmentDate>
+					<ReqInstallment>135000</ReqInstallment>
+					<AmtCarriedForward>85000</AmtCarriedForward>
+					<InstallmentLessCredit>50000</InstallmentLessCredit>
+					<PriorQuarterOverpayment>25000</PriorQuarterOverpayment>
+					<RemainingInstallment>25000</RemainingInstallment>
+				</QtrInstallmentsTable>
+				<QtrInstallmentsTable>
+					<InstallmentDate>2015-09-15</InstallmentDate>
+					<ReqInstallment>250000</ReqInstallment>
+					<AmtCarriedForward>28000</AmtCarriedForward>
+					<InstallmentLessCredit>222000</InstallmentLessCredit>
+					<PriorQuarterOverpayment>20000</PriorQuarterOverpayment>
+					<RemainingInstallment>202000</RemainingInstallment>
+				</QtrInstallmentsTable>
+				<QtrInstallmentsTable>
+					<InstallmentDate>2015-12-15</InstallmentDate>
+					<ReqInstallment>465000</ReqInstallment>
+					<AmtCarriedForward>250000</AmtCarriedForward>
+					<InstallmentLessCredit>1215000</InstallmentLessCredit>
+					<PriorQuarterOverpayment>6500000</PriorQuarterOverpayment>
+					<RemainingInstallment>5285000</RemainingInstallment>
+				</QtrInstallmentsTable>
+			</Step2>
+			<Step3>
+				<TotalNetITAndRT>4030236</TotalNetITAndRT>
+				<PriorYearCreditCFAndES>5758133</PriorYearCreditCFAndES>
+				<T2220Choice>1100000</T2220Choice>
+				<Greater16AOrB>5758133</Greater16AOrB>
+				<RemainingLiabilityOrOverpyt>-1727897</RemainingLiabilityOrOverpyt>
+			</Step3>
+			<Step4>
+				<AmountsPaidTable>
+					<Amount>1383004</Amount>
+					<AmountDate>2013-05-16</AmountDate>
+				</AmountsPaidTable>
+				<AmountsPaidTable>
+					<Amount>1383004</Amount>
+					<AmountDate>2013-07-15</AmountDate>
+				</AmountsPaidTable>
+				<AmountsPaidTable>
+					<Amount>1383004</Amount>
+					<AmountDate>2013-10-15</AmountDate>
+				</AmountsPaidTable>
+				<AmountsPaidTable>
+					<Amount>1383004</Amount>
+					<AmountDate>2014-01-17</AmountDate>
+				</AmountsPaidTable>
+				<AmountsPaidTable>
+					<Amount>16200</Amount>
+					<AmountDate>2014-03-17</AmountDate>
+				</AmountsPaidTable>
+				<AmountsPaidTable>
+					<Amount>15000</Amount>
+					<AmountDate>2014-02-17</AmountDate>
+				</AmountsPaidTable>
+				<AmountsPaidTable>
+					<Amount>2717</Amount>
+					<AmountDate>2014-04-15</AmountDate>
+				</AmountsPaidTable>
+				<AmountsPaidTable>
+					<Amount>62000</Amount>
+					<AmountDate>2014-05-15</AmountDate>
+				</AmountsPaidTable>
+				<AmountsPaidTable>
+					<Amount>85000</Amount>
+					<AmountDate>2014-06-15</AmountDate>
+				</AmountsPaidTable>
+				<AmountsPaidTable>
+					<Amount>12500</Amount>
+					<AmountDate>2014-07-15</AmountDate>
+				</AmountsPaidTable>
+				<AmountsPaidTable>
+					<Amount>250000</Amount>
+					<AmountDate>2014-08-15</AmountDate>
+				</AmountsPaidTable>
+				<Qtr1PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-04-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>130000</PenaltyWksTableColC>
+					<PenaltyWksTableColD>1383004</PenaltyWksTableColD>
+					<PenaltyWksTableColE>-1253004</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2013-05-16</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr1PenaltyWks1Table>
+				<Qtr2PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-06-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>25000</PenaltyWksTableColC>
+					<PenaltyWksTableColD>1253004</PenaltyWksTableColD>
+					<PenaltyWksTableColE>-1228004</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2013-05-16</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr2PenaltyWks1Table>
+				<Qtr3PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-09-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>202000</PenaltyWksTableColC>
+					<PenaltyWksTableColD>1228004</PenaltyWksTableColD>
+					<PenaltyWksTableColE>-1026004</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2013-05-16</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr3PenaltyWks1Table>
+				<Qtr4PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-12-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>5285000</PenaltyWksTableColC>
+					<PenaltyWksTableColD>1026004</PenaltyWksTableColD>
+					<PenaltyWksTableColE>4258996</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2013-05-16</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr4PenaltyWks1Table>
+				<Qtr4PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-12-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>4258996</PenaltyWksTableColC>
+					<PenaltyWksTableColD>1383004</PenaltyWksTableColD>
+					<PenaltyWksTableColE>2875992</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2013-07-15</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr4PenaltyWks1Table>
+				<Qtr4PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-12-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>2875992</PenaltyWksTableColC>
+					<PenaltyWksTableColD>1383004</PenaltyWksTableColD>
+					<PenaltyWksTableColE>1492988</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2013-10-15</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr4PenaltyWks1Table>
+				<Qtr4PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-12-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>1492988</PenaltyWksTableColC>
+					<PenaltyWksTableColD>1383004</PenaltyWksTableColD>
+					<PenaltyWksTableColE>109984</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2014-01-17</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr4PenaltyWks1Table>
+				<Qtr4PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-12-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>109984</PenaltyWksTableColC>
+					<PenaltyWksTableColD>16200</PenaltyWksTableColD>
+					<PenaltyWksTableColE>93784</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2014-03-17</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr4PenaltyWks1Table>
+				<Qtr4PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-12-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>93784</PenaltyWksTableColC>
+					<PenaltyWksTableColD>15000</PenaltyWksTableColD>
+					<PenaltyWksTableColE>78784</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2014-02-17</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr4PenaltyWks1Table>
+				<Qtr4PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-12-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>78784</PenaltyWksTableColC>
+					<PenaltyWksTableColD>2717</PenaltyWksTableColD>
+					<PenaltyWksTableColE>76067</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2014-04-15</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr4PenaltyWks1Table>
+				<Qtr4PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-12-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>76067</PenaltyWksTableColC>
+					<PenaltyWksTableColD>62000</PenaltyWksTableColD>
+					<PenaltyWksTableColE>14067</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2014-05-15</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr4PenaltyWks1Table>
+				<Qtr4PenaltyWks1Table>
+					<PenaltyWksTableColB>2015-12-15</PenaltyWksTableColB>
+					<PenaltyWksTableColC>14067</PenaltyWksTableColC>
+					<PenaltyWksTableColD>85000</PenaltyWksTableColD>
+					<PenaltyWksTableColE>-70933</PenaltyWksTableColE>
+					<PenaltyWksTableColF>2014-06-15</PenaltyWksTableColF>
+					<PenaltyWksTableColG>0</PenaltyWksTableColG>
+					<PenaltyWksTableColI>0</PenaltyWksTableColI>
+				</Qtr4PenaltyWks1Table>
+				<TotalPenForUnderpayOfEstTax>175000</TotalPenForUnderpayOfEstTax>
+			</Step4>
+			<Step5>
+				<TotalLatePayPenalty2>0</TotalLatePayPenalty2>
+				<TotOverpaymentOrTaxDue>-1537980</TotOverpaymentOrTaxDue>
+				<TotalOwedOrOverpaid>-1537980</TotalOwedOrOverpaid>
+			</Step5>
+		</FormIL2220>
+		<FormIL4562>
+			<Step2>
+				<SpecialDepreciationAllowance>115556</SpecialDepreciationAllowance>
+				<SpecialDeprAdditionTotal>115556</SpecialDeprAdditionTotal>
+			</Step2>
+			<Step3>
+				<DepreciationAllowance30Pct>36000</DepreciationAllowance30Pct>
+				<Depreciation30PctSubTotal>36000</Depreciation30PctSubTotal>
+				<Depreciation30PctTotal>15444</Depreciation30PctTotal>
+				<Depr30PctTotPlusDepr50PctTot>15444</Depr30PctTotPlusDepr50PctTot>
+				<SpecialDeprSubtractionTotal>15444</SpecialDeprSubtractionTotal>
+			</Step3>
+		</FormIL4562>
+		<FormIL477>
+			<Step1>
+				<IL477CreditsTable>
+					<Description>Sub 1 Property 1</Description>
+					<YearMonth>2015-03</YearMonth>
+					<UsefulLife>20</UsefulLife>
+					<NewOrUsed>U CO</NewOrUsed>
+					<BusinessActivity>3</BusinessActivity>
+					<Location>Sub 1 Loc 1</Location>
+					<Basis>25000</Basis>
+					<Result>125</Result>
+				</IL477CreditsTable>
+				<IL477CreditsTable>
+					<Description>Sub 1 Property 2</Description>
+					<YearMonth>2015-04</YearMonth>
+					<UsefulLife>25</UsefulLife>
+					<NewOrUsed>U CA</NewOrUsed>
+					<BusinessActivity>4</BusinessActivity>
+					<Location>Sub 1 Loc 2</Location>
+					<Basis>30000</Basis>
+					<Result>150</Result>
+				</IL477CreditsTable>
+				<IL477CreditsTable>
+					<Description>Sub 2 Property 1</Description>
+					<YearMonth>2015-05</YearMonth>
+					<UsefulLife>30</UsefulLife>
+					<NewOrUsed>N</NewOrUsed>
+					<BusinessActivity>2</BusinessActivity>
+					<Location>Sub 2 Loc 1</Location>
+					<Basis>40000</Basis>
+					<Result>200</Result>
+				</IL477CreditsTable>
+				<IL477CreditsTable>
+					<Description>Sub 2 Property 2</Description>
+					<YearMonth>2015-06</YearMonth>
+					<UsefulLife>35</UsefulLife>
+					<NewOrUsed>U AK</NewOrUsed>
+					<BusinessActivity>4</BusinessActivity>
+					<Location>Sub 2 Loc 2</Location>
+					<Basis>45000</Basis>
+					<Result>225</Result>
+				</IL477CreditsTable>
+				<IL477CreditsTable>
+					<Description>Property P1</Description>
+					<YearMonth>2015-01</YearMonth>
+					<UsefulLife>10</UsefulLife>
+					<NewOrUsed>N</NewOrUsed>
+					<BusinessActivity>1</BusinessActivity>
+					<Location>Location P1</Location>
+					<Basis>10000</Basis>
+					<Result>50</Result>
+				</IL477CreditsTable>
+				<IL477CreditsTable>
+					<Description>Property P2</Description>
+					<YearMonth>2015-02</YearMonth>
+					<UsefulLife>15</UsefulLife>
+					<NewOrUsed>U AL</NewOrUsed>
+					<BusinessActivity>2</BusinessActivity>
+					<Location>Location P2</Location>
+					<Basis>15000</Basis>
+					<Result>75</Result>
+				</IL477CreditsTable>
+				<TotalBasis>165000</TotalBasis>
+				<TotalResult>825</TotalResult>
+				<QualifyAmount>825</QualifyAmount>
+				<DistShRTTaxInvCrFrPartsSCorps>3342</DistShRTTaxInvCrFrPartsSCorps>
+				<IntialSum>4992</IntialSum>
+				<SubResult>4992</SubResult>
+				<AddSum>4992</AddSum>
+				<RTTax>1312966</RTTax>
+				<RTCreditAfterSubTrustRTCredit>1312966</RTCreditAfterSubTrustRTCredit>
+				<RTCredit>4992</RTCredit>
+				<CrCf>0</CrCf>
+			</Step1>
+			<Step2>
+				<BaseEmployment1stMnthCurrYr>100</BaseEmployment1stMnthCurrYr>
+				<BaseEmployment1stMnthPrYr>50</BaseEmployment1stMnthPrYr>
+				<BaseEmployment2ndMnthCurrYr>150</BaseEmployment2ndMnthCurrYr>
+				<BaseEmployment2ndMnthPrYr>60</BaseEmployment2ndMnthPrYr>
+				<BaseEmployment3rdMnthCurrYr>160</BaseEmployment3rdMnthCurrYr>
+				<BaseEmployment3rdMnthPrYr>70</BaseEmployment3rdMnthPrYr>
+				<BaseEmployment4thMnthCurrYr>180</BaseEmployment4thMnthCurrYr>
+				<BaseEmployment4thMnthPrYr>80</BaseEmployment4thMnthPrYr>
+				<BaseEmployment5thMnthCurrYr>190</BaseEmployment5thMnthCurrYr>
+				<BaseEmployment5thMnthPrYr>90</BaseEmployment5thMnthPrYr>
+				<BaseEmployment6thMnthCurrYr>200</BaseEmployment6thMnthCurrYr>
+				<BaseEmployment6thMnthPrYr>100</BaseEmployment6thMnthPrYr>
+				<BaseEmployment7thMnthCurrYr>210</BaseEmployment7thMnthCurrYr>
+				<BaseEmployment7thMnthPrYr>110</BaseEmployment7thMnthPrYr>
+				<BaseEmployment8thMnthCurrYr>220</BaseEmployment8thMnthCurrYr>
+				<BaseEmployment8thMnthPrYr>120</BaseEmployment8thMnthPrYr>
+				<BaseEmployment9thMnthCurrYr>230</BaseEmployment9thMnthCurrYr>
+				<BaseEmployment9thMnthPrYr>130</BaseEmployment9thMnthPrYr>
+				<BaseEmployment10thMnthCurrYr>240</BaseEmployment10thMnthCurrYr>
+				<BaseEmployment10thMnthPrYr>140</BaseEmployment10thMnthPrYr>
+				<BaseEmployment11thMnthCurrYr>250</BaseEmployment11thMnthCurrYr>
+				<BaseEmployment11thMnthPrYr>150</BaseEmployment11thMnthPrYr>
+				<BaseEmployment12thMnthCurrYr>260</BaseEmployment12thMnthCurrYr>
+				<BaseEmployment12thMnthPrYr>160</BaseEmployment12thMnthPrYr>
+				<BaseEmpTotalCurrYr>2390</BaseEmpTotalCurrYr>
+				<BaseEmpTotalPrYr>1260</BaseEmpTotalPrYr>
+				<NumMonthsTaxYrA>12</NumMonthsTaxYrA>
+				<NumMonthsTaxYrB>12</NumMonthsTaxYrB>
+				<DecimalCurrYr>199.166667</DecimalCurrYr>
+				<DecimalPrYr>105.000000</DecimalPrYr>
+				<EmpResult>94.166667</EmpResult>
+				<DecimalResult>0.896825</DecimalResult>
+			</Step2>
+		</FormIL477>
+		<SchIL1120J>
+			<Step1>
+				<Div80PctOrGrOwnedForCorp2>45972661</Div80PctOrGrOwnedForCorp2>
+				<Net80OrMoreCntrldForeignIncome>45972661</Net80OrMoreCntrldForeignIncome>
+				<For80OrMoreCntrldIncSub>45972661</For80OrMoreCntrldIncSub>
+				<ForeignDivSubBeforeGrossUp>45972661</ForeignDivSubBeforeGrossUp>
+				<ForeignDividendGrossUp>165859</ForeignDividendGrossUp>
+				<TotalForDividendSubtraction>46138520</TotalForDividendSubtraction>
+			</Step1>
+		</SchIL1120J>
+		<SchIL1120M>
+			<Step2>
+				<CollegePlanCredits>3000</CollegePlanCredits>
+				<OtherAdditionsTable>
+					<Desc>Other income 1</Desc>
+					<Amt>1562000</Amt>
+				</OtherAdditionsTable>
+				<OtherAdditionsTable>
+					<Desc>Sub 1 Other Income 1</Desc>
+					<Amt>6500</Amt>
+				</OtherAdditionsTable>
+				<OtherAdditionsTable>
+					<Desc>Sub 1 Other Income 2</Desc>
+					<Amt>7500</Amt>
+				</OtherAdditionsTable>
+				<OtherAdditionsTable>
+					<Desc>Sub 2 Other Income 1</Desc>
+					<Amt>9500</Amt>
+				</OtherAdditionsTable>
+				<OtherAdditionsTable>
+					<Desc>Sub 2 Other Income 2</Desc>
+					<Amt>10500</Amt>
+				</OtherAdditionsTable>
+				<OtherAdditionsTable>
+					<Desc>Other income P1</Desc>
+					<Amt>5389</Amt>
+				</OtherAdditionsTable>
+				<OtherAdditionsTable>
+					<Desc>Other income P2</Desc>
+					<Amt>5600</Amt>
+				</OtherAdditionsTable>
+				<TotalOtherAdditions>1606989</TotalOtherAdditions>
+				<TotalAdditions>1609989</TotalAdditions>
+			</Step2>
+			<Step3>
+				<RdDepRelRailMaint>1100</RdDepRelRailMaint>
+				<GrossIncAlterEnergyCr>1200</GrossIncAlterEnergyCr>
+				<TotalExpenseDeductions>2300</TotalExpenseDeductions>
+				<SubtractionSubtotal>2300</SubtractionSubtotal>
+				<IlPowerAgencyBonds>100</IlPowerAgencyBonds>
+				<CentralILDevBonds>200</CentralILDevBonds>
+				<EasternILDevBonds>300</EasternILDevBonds>
+				<SoutheasternILDevBonds>400</SoutheasternILDevBonds>
+				<SouthernILDevBonds>500</SouthernILDevBonds>
+				<ILUrbanDevBonds>600</ILUrbanDevBonds>
+				<DownstateILSportsDevBonds>700</DownstateILSportsDevBonds>
+				<WesternILDevBonds>800</WesternILDevBonds>
+				<UpperILRiverValDevBonds>900</UpperILRiverValDevBonds>
+				<TotalStateLocalInterest>4500</TotalStateLocalInterest>
+				<Page2Total>6800</Page2Total>
+				<IRC965DivSub>0</IRC965DivSub>
+				<OtherSubtractionsTable>
+					<Desc>Sub 1 Other Subtraction 1</Desc>
+					<Amt>8500</Amt>
+				</OtherSubtractionsTable>
+				<OtherSubtractionsTable>
+					<Desc>Sub 1 Other Subtraction 2</Desc>
+					<Amt>9500</Amt>
+				</OtherSubtractionsTable>
+				<OtherSubtractionsTable>
+					<Desc>Sub 2 Other Subtraction 1</Desc>
+					<Amt>11500</Amt>
+				</OtherSubtractionsTable>
+				<OtherSubtractionsTable>
+					<Desc>Sub 2 Other Subtraction 2</Desc>
+					<Amt>12500</Amt>
+				</OtherSubtractionsTable>
+				<OtherSubtractionsTable>
+					<Desc>Other subtraction P1</Desc>
+					<Amt>5700</Amt>
+				</OtherSubtractionsTable>
+				<OtherSubtractionsTable>
+					<Desc>Other subtraction P2</Desc>
+					<Amt>5800</Amt>
+				</OtherSubtractionsTable>
+				<TotalOtherSubtractions>53500</TotalOtherSubtractions>
+				<TotalSubtractions>60300</TotalSubtractions>
+			</Step3>
+		</SchIL1120M>
+		<SchIL1120NB>
+			<InterestTotal>40000</InterestTotal>
+			<InterestIncState>15000</InterestIncState>
+			<DividendsTotalEverywhere>70000</DividendsTotalEverywhere>
+			<DividendsState>25000</DividendsState>
+			<RentalIncTotalEverywhere>100000</RentalIncTotalEverywhere>
+			<RentalIncAllocableToState>35000</RentalIncAllocableToState>
+			<PatentIncTotalEverywhere>802000</PatentIncTotalEverywhere>
+			<PatentIncAllocableToState>37000</PatentIncAllocableToState>
+			<IncRoyaltyTotalAll>160000</IncRoyaltyTotalAll>
+			<IncRoyaltyAllocToState>55000</IncRoyaltyAllocToState>
+			<CapGainLossRealPropOther>49000</CapGainLossRealPropOther>
+			<CapGainLossRealPropState>34500</CapGainLossRealPropState>
+			<CapGainLossTangPropOther>69000</CapGainLossTangPropOther>
+			<CapGainLossTangPropState>44500</CapGainLossTangPropState>
+			<SchNBTable>
+				<Description>Sub 2 other nonbusiness income 1</Description>
+				<Amount1>6900</Amount1>
+				<Amount2>5600</Amount2>
+			</SchNBTable>
+			<SchNBTable>
+				<Description>Sub 2 other nonbusiness income 2</Description>
+				<Amount1>7800</Amount1>
+				<Amount2>5900</Amount2>
+			</SchNBTable>
+			<SchNBTable>
+				<Description>Other nonbusiness income P1</Description>
+				<Amount1>2000</Amount1>
+				<Amount2>1000</Amount2>
+			</SchNBTable>
+			<SchNBTable>
+				<Description>Other nonbusiness income P2</Description>
+				<Amount1>2500</Amount1>
+				<Amount2>1500</Amount2>
+			</SchNBTable>
+			<SchNBTable>
+				<Description>Ptrship, other inv., misc.</Description>
+				<Amount1>15443</Amount1>
+				<Amount2>15443</Amount2>
+			</SchNBTable>
+			<IncNonBusinessOrLoss>1324643</IncNonBusinessOrLoss>
+			<NonApportionIncAllocatedState>275443</NonApportionIncAllocatedState>
+		</SchIL1120NB>
+		<SchIL1120UB>
+			<Step1MembershipInfo>
+				<DesignatedAgentName>ILTG - Illinois e-file test 7 - parent</DesignatedAgentName>
+				<DesignatedAgentFEIN>11111099</DesignatedAgentFEIN>
+				<ControllingCorporation>ILTG - Illinois e-file test 7 - parent</ControllingCorporation>
+				<ControllingCorpFEIN>111110087</ControllingCorpFEIN>
+				<ControllingCorpBox>X</ControllingCorpBox>
+			</Step1MembershipInfo>
+			<SchUBMembershipTable>
+				<Step1SecAMembersTable>
+					<BusinessName>ILTG - Illinois e-file test 7 - parent</BusinessName>
+					<MembersFEIN>990000071</MembersFEIN>
+					<UniMemberTaxYrEnding>2015-12</UniMemberTaxYrEnding>
+					<MustFileReturnIndicator>X</MustFileReturnIndicator>
+					<AppMethod>F</AppMethod>
+				</Step1SecAMembersTable>
+				<Step2ColABCFedTaxableInc>
+					<Dividends>43834479</Dividends>
+					<TotalIncFed>43834479</TotalIncFed>
+					<OtherDeductions>120387</OtherDeductions>
+					<TotalDeductionsFed>120387</TotalDeductionsFed>
+					<NetIncFed>43714092</NetIncFed>
+					<FedTaxIncOrLossForILL>43714092</FedTaxIncOrLossForILL>
+				</Step2ColABCFedTaxableInc>
+				<Step3ColABCTaxableInc>
+					<DistShareOfAdditions>569000</DistShareOfAdditions>
+					<OtherAdditions>1562000</OtherAdditions>
+					<IncSubTotal>45845092</IncSubTotal>
+					<ForeignDividendSubtraction>43834479</ForeignDividendSubtraction>
+					<OtherSubtractions>0</OtherSubtractions>
+					<TotalSubtractions>43834479</TotalSubtractions>
+					<StateModifiedInc>2010613</StateModifiedInc>
+					<IncOrLossNonUnitary>569000</IncOrLossNonUnitary>
+					<TotalAllocatedEverywhere>569000</TotalAllocatedEverywhere>
+					<BusinessInc>1441613</BusinessInc>
+				</Step3ColABCTaxableInc>
+				<Step4ColABCApporFactor>
+					<SalesGrossRcptsSumEverywhere>84562871</SalesGrossRcptsSumEverywhere>
+					<SalesGrossReceiptsSumInState>0</SalesGrossReceiptsSumInState>
+					<SalesGrossReceiptsSumRatio>0.000000</SalesGrossReceiptsSumRatio>
+					<AllocatedBusinessInc>0</AllocatedBusinessInc>
+					<NonApportionIncAllocatedState>0</NonApportionIncAllocatedState>
+					<ApportionableInc>569000</ApportionableInc>
+					<ApportionedNetAmount>569000</ApportionedNetAmount>
+					<ApportionedCombinedNetAmount>569000</ApportionedCombinedNetAmount>
+				</Step4ColABCApporFactor>
+			</SchUBMembershipTable>
+			<SchUBMembershipTable>
+				<Step1SecAMembersTable>
+					<BusinessName>ILTG - Illinois e-file test 7 - sub 1</BusinessName>
+					<MembersFEIN>990000071</MembersFEIN>
+					<UniMemberTaxYrEnding>2015-12</UniMemberTaxYrEnding>
+					<MustFileReturnIndicator>X</MustFileReturnIndicator>
+					<AppMethod>S</AppMethod>
+				</Step1SecAMembersTable>
+				<Step2ColABCFedTaxableInc>
+					<NetReceiptsOrSales>530446</NetReceiptsOrSales>
+					<CostOfGoodsSold>315431</CostOfGoodsSold>
+					<GrossProfit>215015</GrossProfit>
+					<CapGainNetInc>220747</CapGainNetInc>
+					<NetGainOrLoss>2147</NetGainOrLoss>
+					<OtherIncFed>220747</OtherIncFed>
+					<TotalIncFed>658656</TotalIncFed>
+					<SalariesAndWagesLessJC>128917</SalariesAndWagesLessJC>
+					<Repairs>1568</Repairs>
+					<Rents>7150</Rents>
+					<InterestDeduction>2142</InterestDeduction>
+					<Contributions>15602</Contributions>
+					<Depreciation>7603</Depreciation>
+					<Advertising>1943</Advertising>
+					<OtherDeductions>100753</OtherDeductions>
+					<TotalDeductionsFed>265678</TotalDeductionsFed>
+					<NetIncFed>392978</NetIncFed>
+					<FedTaxIncOrLossForILL>392978</FedTaxIncOrLossForILL>
+				</Step2ColABCFedTaxableInc>
+				<Step3ColABCTaxableInc>
+					<RelatedPartyExpns>12310</RelatedPartyExpns>
+					<OtherAdditions>15000</OtherAdditions>
+					<IncSubTotal>420288</IncSubTotal>
+					<DividendEnterpriseZone>7460</DividendEnterpriseZone>
+					<EZInterestSub>784</EZInterestSub>
+					<DividendHighImpactBusiness>7970</DividendHighImpactBusiness>
+					<InterestHighImpactBusiness>8814</InterestHighImpactBusiness>
+					<ContributionsJobTraining>11040</ContributionsJobTraining>
+					<ConJobTrainingProj>2222</ConJobTrainingProj>
+					<BonusDepreciationSub>15444</BonusDepreciationSub>
+					<RelatedPartyExpnsSubtraction>2495</RelatedPartyExpnsSubtraction>
+					<DistShareOfSubtractions>14260</DistShareOfSubtractions>
+					<OtherSubtractions>18000</OtherSubtractions>
+					<TotalSubtractions>88489</TotalSubtractions>
+					<StateModifiedInc>331799</StateModifiedInc>
+					<IncNonBusinessOrLoss>15443</IncNonBusinessOrLoss>
+					<TotalAllocatedEverywhere>15443</TotalAllocatedEverywhere>
+					<BusinessInc>316356</BusinessInc>
+				</Step3ColABCTaxableInc>
+				<Step4ColABCApporFactor>
+					<SalesGrossRcptsSumEverywhere>998876</SalesGrossRcptsSumEverywhere>
+					<SalesGrossReceiptsSumInState>123456</SalesGrossReceiptsSumInState>
+					<SalesGrossReceiptsSumRatio>0.000317</SalesGrossReceiptsSumRatio>
+					<AllocatedBusinessInc>25570</AllocatedBusinessInc>
+					<NonApportionIncAllocatedState>15443</NonApportionIncAllocatedState>
+					<ApportionedNetAmount>41013</ApportionedNetAmount>
+					<ApportionedCombinedNetAmount>41013</ApportionedCombinedNetAmount>
+				</Step4ColABCApporFactor>
+			</SchUBMembershipTable>
+			<SchUBMembershipTable>
+				<Step1SecAMembersTable>
+					<BusinessName>ILTG - Illinois e-file test 7 - sub 2</BusinessName>
+					<MembersFEIN>99000001</MembersFEIN>
+					<UniMemberTaxYrEnding>2015-12</UniMemberTaxYrEnding>
+					<MustFileReturnIndicator>X</MustFileReturnIndicator>
+					<AppMethod>S</AppMethod>
+				</Step1SecAMembersTable>
+				<Step2ColABCFedTaxableInc>
+					<NetReceiptsOrSales>24403531</NetReceiptsOrSales>
+					<CostOfGoodsSold>21212382</CostOfGoodsSold>
+					<GrossProfit>3191149</GrossProfit>
+					<InterestInc>1727325</InterestInc>
+					<GrossRents>1115864</GrossRents>
+					<OtherIncFed>50308174</OtherIncFed>
+					<TotalIncFed>56342512</TotalIncFed>
+					<SalariesAndWagesLessJC>2023917</SalariesAndWagesLessJC>
+					<Repairs>35556</Repairs>
+					<BadDebts>4719</BadDebts>
+					<Rents>421651</Rents>
+					<Taxes>1551702</Taxes>
+					<InterestDeduction>19262</InterestDeduction>
+					<Contributions>15814</Contributions>
+					<Depreciation>178987</Depreciation>
+					<Advertising>30731</Advertising>
+					<PensionPlan>220417</PensionPlan>
+					<EmployeeBenefitPrograms>168604</EmployeeBenefitPrograms>
+					<OtherDeductions>2397475</OtherDeductions>
+					<TotalDeductionsFed>7068835</TotalDeductionsFed>
+					<NetIncFed>49273677</NetIncFed>
+					<FedTaxIncOrLossForILL>49273677</FedTaxIncOrLossForILL>
+				</Step2ColABCFedTaxableInc>
+				<Step3ColABCTaxableInc>
+					<BonusDepreciationAddition>88556</BonusDepreciationAddition>
+					<RelatedPartyExpns>12733</RelatedPartyExpns>
+					<OtherAdditions>21000</OtherAdditions>
+					<IncSubTotal>49395966</IncSubTotal>
+					<DividendEnterpriseZone>2800</DividendEnterpriseZone>
+					<EZInterestSub>777</EZInterestSub>
+					<DividendHighImpactBusiness>3200</DividendHighImpactBusiness>
+					<InterestHighImpactBusiness>1221</InterestHighImpactBusiness>
+					<ContributionsJobTraining>7200</ContributionsJobTraining>
+					<OtherSubtractions>24000</OtherSubtractions>
+					<TotalSubtractions>39198</TotalSubtractions>
+					<StateModifiedInc>49356768</StateModifiedInc>
+					<IncNonBusinessOrLoss>132700</IncNonBusinessOrLoss>
+					<IncOrLossNonUnitary>74200</IncOrLossNonUnitary>
+					<TotalAllocatedEverywhere>206900</TotalAllocatedEverywhere>
+					<BusinessInc>49149868</BusinessInc>
+				</Step3ColABCTaxableInc>
+				<Step4ColABCApporFactor>
+					<SalesGrossRcptsSumEverywhere>1033100</SalesGrossRcptsSumEverywhere>
+					<SalesGrossReceiptsSumInState>948600</SalesGrossReceiptsSumInState>
+					<SalesGrossReceiptsSumRatio>0.002437</SalesGrossReceiptsSumRatio>
+					<AllocatedBusinessInc>196577</AllocatedBusinessInc>
+					<NonApportionIncAllocatedState>90500</NonApportionIncAllocatedState>
+					<ApportionableInc>3369</ApportionableInc>
+					<ApportionedNetAmount>290446</ApportionedNetAmount>
+					<ApportionedCombinedNetAmount>290446</ApportionedCombinedNetAmount>
+				</Step4ColABCApporFactor>
+			</SchUBMembershipTable>
+			<SchUBMembershipTable>
+				<Step1SecAMembersTable>
+					<BusinessName>ILTG - Illinois e-file test 7 - sub 3</BusinessName>
+					<MembersFEIN>Foreign</MembersFEIN>
+					<UniMemberTaxYrEnding>2015-12</UniMemberTaxYrEnding>
+					<MustFileReturnIndicator>X</MustFileReturnIndicator>
+					<AppMethod>S</AppMethod>
+				</Step1SecAMembersTable>
+				<Step2ColABCFedTaxableInc>
+					<NetReceiptsOrSales>411215222</NetReceiptsOrSales>
+					<CostOfGoodsSold>265912650</CostOfGoodsSold>
+					<GrossProfit>145302572</GrossProfit>
+					<Dividends>2304041</Dividends>
+					<InterestInc>1221456</InterestInc>
+					<GrossRents>5016831</GrossRents>
+					<GrossRoyalties>2707354</GrossRoyalties>
+					<CapGainNetInc>207765</CapGainNetInc>
+					<NetGainOrLoss>528161</NetGainOrLoss>
+					<OtherIncFed>-475221</OtherIncFed>
+					<TotalIncFed>156812959</TotalIncFed>
+					<CompOfOfficers>3563291</CompOfOfficers>
+					<SalariesAndWagesLessJC>28833991</SalariesAndWagesLessJC>
+					<Repairs>560968</Repairs>
+					<BadDebts>374049</BadDebts>
+					<Rents>3044789</Rents>
+					<Taxes>4174822</Taxes>
+					<InterestDeduction>21413314</InterestDeduction>
+					<Contributions>117353</Contributions>
+					<Depreciation>1469944</Depreciation>
+					<Advertising>1837525</Advertising>
+					<PensionPlan>2006997</PensionPlan>
+					<EmployeeBenefitPrograms>3120938</EmployeeBenefitPrograms>
+					<OtherDeductions>52982935</OtherDeductions>
+					<TotalDeductionsFed>123500916</TotalDeductionsFed>
+					<NetIncFed>33312043</NetIncFed>
+					<FedTaxIncOrLossForILL>33312043</FedTaxIncOrLossForILL>
+				</Step2ColABCFedTaxableInc>
+				<Step3ColABCTaxableInc>
+					<BonusDepreciationAddition>27000</BonusDepreciationAddition>
+					<RelatedPartyExpns>14317</RelatedPartyExpns>
+					<DistShareOfAdditions>11961</DistShareOfAdditions>
+					<OtherAdditions>12100</OtherAdditions>
+					<IncSubTotal>33377421</IncSubTotal>
+					<DividendEnterpriseZone>5240</DividendEnterpriseZone>
+					<EZInterestSub>1000</EZInterestSub>
+					<DividendHighImpactBusiness>5660</DividendHighImpactBusiness>
+					<InterestHighImpactBusiness>550</InterestHighImpactBusiness>
+					<ContributionsJobTraining>7400</ContributionsJobTraining>
+					<ConJobTrainingProj>1111</ConJobTrainingProj>
+					<ForeignDividendSubtraction>2304041</ForeignDividendSubtraction>
+					<RelatedPartyExpnsSubtraction>2867</RelatedPartyExpnsSubtraction>
+					<DistShareOfSubtractions>9960</DistShareOfSubtractions>
+					<OtherSubtractions>18300</OtherSubtractions>
+					<TotalSubtractions>2356129</TotalSubtractions>
+					<StateModifiedInc>31021292</StateModifiedInc>
+					<IncNonBusinessOrLoss>1176500</IncNonBusinessOrLoss>
+					<IncOrLossNonUnitary>88975</IncOrLossNonUnitary>
+					<TotalAllocatedEverywhere>1265475</TotalAllocatedEverywhere>
+					<BusinessInc>29755817</BusinessInc>
+				</Step3ColABCTaxableInc>
+				<Step4ColABCApporFactor>
+					<SalesGrossRcptsSumEverywhere>302679776</SalesGrossRcptsSumEverywhere>
+					<SalesGrossReceiptsSumInState>247741591</SalesGrossReceiptsSumInState>
+					<SalesGrossReceiptsSumRatio>0.636419</SalesGrossReceiptsSumRatio>
+					<AllocatedBusinessInc>51335811</AllocatedBusinessInc>
+					<NonApportionIncAllocatedState>169500</NonApportionIncAllocatedState>
+					<ApportionableInc>15236</ApportionableInc>
+					<ApportionedNetAmount>51520547</ApportionedNetAmount>
+					<ApportionedCombinedNetAmount>51520547</ApportionedCombinedNetAmount>
+				</Step4ColABCApporFactor>
+			</SchUBMembershipTable>
+			<Part1SecBMergersTable>
+				<MergedMemberName>New person 1</MergedMemberName>
+				<MergedMemberFein>900000001</MergedMemberFein>
+				<MergingMemberName>Section A member</MergingMemberName>
+				<MergingMemberFein>990000071</MergingMemberFein>
+				<MergingMemberMergerDt>2015-06-15</MergingMemberMergerDt>
+			</Part1SecBMergersTable>
+			<Part1SecBMergersTable>
+				<MergedMemberName>New person 2</MergedMemberName>
+				<MergedMemberFein>900000002</MergedMemberFein>
+				<MergingMemberName>Section A member 2</MergingMemberName>
+				<MergingMemberFein>960000001</MergingMemberFein>
+				<MergingMemberMergerDt>2015-07-15</MergingMemberMergerDt>
+			</Part1SecBMergersTable>
+			<Part1SecBMergersTable>
+				<MergedMemberName>New person 3</MergedMemberName>
+				<MergedMemberFein>900000003</MergedMemberFein>
+				<MergingMemberName>Section A member 3</MergingMemberName>
+				<MergingMemberFein>990000072</MergingMemberFein>
+				<MergingMemberMergerDt>2015-08-15</MergingMemberMergerDt>
+			</Part1SecBMergersTable>
+			<Step2ColEFedTaxableInc>
+				<NetReceiptsOrSales>436149199</NetReceiptsOrSales>
+				<CostOfGoodsSold>287440463</CostOfGoodsSold>
+				<GrossProfit>148708736</GrossProfit>
+				<Dividends>46138520</Dividends>
+				<InterestInc>2948781</InterestInc>
+				<GrossRents>6132695</GrossRents>
+				<GrossRoyalties>2707354</GrossRoyalties>
+				<CapGainNetInc>428512</CapGainNetInc>
+				<NetGainOrLoss>530308</NetGainOrLoss>
+				<OtherIncFed>50053700</OtherIncFed>
+				<TotalIncFed>257648606</TotalIncFed>
+				<CompOfOfficers>3563291</CompOfOfficers>
+				<SalariesAndWagesLessJC>30986825</SalariesAndWagesLessJC>
+				<Repairs>598092</Repairs>
+				<BadDebts>378768</BadDebts>
+				<Rents>3473590</Rents>
+				<Taxes>5726524</Taxes>
+				<InterestDeduction>21434718</InterestDeduction>
+				<Contributions>148769</Contributions>
+				<Depreciation>1656534</Depreciation>
+				<Advertising>1870199</Advertising>
+				<PensionPlan>2227414</PensionPlan>
+				<EmployeeBenefitPrograms>3289542</EmployeeBenefitPrograms>
+				<OtherDeductions>55601550</OtherDeductions>
+				<TotalDeductionsFed>130955816</TotalDeductionsFed>
+				<NetIncFed>126692790</NetIncFed>
+				<FedTaxIncOrLossForILL>126692790</FedTaxIncOrLossForILL>
+			</Step2ColEFedTaxableInc>
+			<Step3ColDTaxableInc>
+				<BonusDepreciationAddition>100</BonusDepreciationAddition>
+				<OtherAdditions>111</OtherAdditions>
+				<IncSubTotal>111</IncSubTotal>
+				<ForeignDividendSubtraction>111</ForeignDividendSubtraction>
+				<TotalSubtractions>111</TotalSubtractions>
+				<StateModifiedInc>111</StateModifiedInc>
+				<BusinessInc>111</BusinessInc>
+			</Step3ColDTaxableInc>
+			<Step3ColETaxableInc>
+				<BonusDepreciationAddition>115556</BonusDepreciationAddition>
+				<RelatedPartyExpns>39360</RelatedPartyExpns>
+				<DistShareOfAdditions>580961</DistShareOfAdditions>
+				<OtherAdditions>1609989</OtherAdditions>
+				<IncSubTotal>129038656</IncSubTotal>
+				<DividendEnterpriseZone>15500</DividendEnterpriseZone>
+				<EZInterestSub>2561</EZInterestSub>
+				<DividendHighImpactBusiness>16830</DividendHighImpactBusiness>
+				<InterestHighImpactBusiness>10585</InterestHighImpactBusiness>
+				<ContributionsJobTraining>25640</ContributionsJobTraining>
+				<ConJobTrainingProj>3333</ConJobTrainingProj>
+				<ForeignDividendSubtraction>46138520</ForeignDividendSubtraction>
+				<BonusDepreciationSub>15444</BonusDepreciationSub>
+				<RelatedPartyExpnsSubtraction>5362</RelatedPartyExpnsSubtraction>
+				<DistShareOfSubtractions>24220</DistShareOfSubtractions>
+				<OtherSubtractions>60300</OtherSubtractions>
+				<TotalSubtractions>46318295</TotalSubtractions>
+				<StateModifiedInc>82720361</StateModifiedInc>
+				<IncNonBusinessOrLoss>1324643</IncNonBusinessOrLoss>
+				<IncOrLossNonUnitary>732175</IncOrLossNonUnitary>
+				<TotalAllocatedEverywhere>2056818</TotalAllocatedEverywhere>
+				<BusinessInc>80663543</BusinessInc>
+			</Step3ColETaxableInc>
+			<BusinessInc2>80663543</BusinessInc2>
+			<Step4ColDApporFactor>
+				<SalesGrossRcptsSumEverywhere>389274623</SalesGrossRcptsSumEverywhere>
+				<SalesGrossReceiptsSumInState>248813647</SalesGrossReceiptsSumInState>
+				<SalesGrossReceiptsSumRatio>0.639173</SalesGrossReceiptsSumRatio>
+				<AllocatedBusinessInc>51557958</AllocatedBusinessInc>
+				<NonApportionIncAllocatedState>275443</NonApportionIncAllocatedState>
+				<ApportionableInc>587605</ApportionableInc>
+				<ApportionedNetAmount>52421006</ApportionedNetAmount>
+				<ApportionedCombinedNetAmount>52421006</ApportionedCombinedNetAmount>
+			</Step4ColDApporFactor>
+			<Step5AffiliatedInfo/>
+		</SchIL1120UB>
+		<SchIL1299B>
+			<Step2>
+				<RERZ1120DivTable>
+					<IL1299BRERZDivSubTableColA>Sub 1 RZ Zone 1</IL1299BRERZDivSubTableColA>
+					<IL1299BRERZDivSubTableColH>2310</IL1299BRERZDivSubTableColH>
+				</RERZ1120DivTable>
+				<RERZ1120DivTable>
+					<IL1299BRERZDivSubTableColA>Sub 1 RZ Zone 2</IL1299BRERZDivSubTableColA>
+					<IL1299BRERZDivSubTableColH>2410</IL1299BRERZDivSubTableColH>
+				</RERZ1120DivTable>
+				<RERZ1120DivTable>
+					<IL1299BRERZDivSubTableColA>Sub 2 RZ Zone 1</IL1299BRERZDivSubTableColA>
+					<IL1299BRERZDivSubTableColH>1350</IL1299BRERZDivSubTableColH>
+				</RERZ1120DivTable>
+				<RERZ1120DivTable>
+					<IL1299BRERZDivSubTableColA>Sub 2 RZ Zone 2</IL1299BRERZDivSubTableColA>
+					<IL1299BRERZDivSubTableColH>1450</IL1299BRERZDivSubTableColH>
+				</RERZ1120DivTable>
+				<RERZ1120DivTable>
+					<IL1299BRERZDivSubTableColA>RZ Zone P1</IL1299BRERZDivSubTableColA>
+					<IL1299BRERZDivSubTableColH>1400</IL1299BRERZDivSubTableColH>
+				</RERZ1120DivTable>
+				<RERZ1120DivTable>
+					<IL1299BRERZDivSubTableColA>RZ Zone P2</IL1299BRERZDivSubTableColA>
+					<IL1299BRERZDivSubTableColH>1500</IL1299BRERZDivSubTableColH>
+				</RERZ1120DivTable>
+				<TotalOtherDividendsRERZDivSub>10420</TotalOtherDividendsRERZDivSub>
+				<DistShOfRERZ1120DivSub>5080</DistShOfRERZ1120DivSub>
+				<TotalRERZ1120DivSub>15500</TotalRERZ1120DivSub>
+				<HIB1120Table>
+					<IL1299BDivSubTableColA>Sub 1 HIB Zone 1</IL1299BDivSubTableColA>
+					<IL1299BDivSubTableColH>2510</IL1299BDivSubTableColH>
+				</HIB1120Table>
+				<HIB1120Table>
+					<IL1299BDivSubTableColA>Sub 1 HIB Zone 2</IL1299BDivSubTableColA>
+					<IL1299BDivSubTableColH>2610</IL1299BDivSubTableColH>
+				</HIB1120Table>
+				<HIB1120Table>
+					<IL1299BDivSubTableColA>Sub 2 HIB Zone 1</IL1299BDivSubTableColA>
+					<IL1299BDivSubTableColH>1550</IL1299BDivSubTableColH>
+				</HIB1120Table>
+				<HIB1120Table>
+					<IL1299BDivSubTableColA>Sub 2 HIB Zone 2</IL1299BDivSubTableColA>
+					<IL1299BDivSubTableColH>1650</IL1299BDivSubTableColH>
+				</HIB1120Table>
+				<HIB1120Table>
+					<IL1299BDivSubTableColA>HIB Zone P1</IL1299BDivSubTableColA>
+					<IL1299BDivSubTableColH>1600</IL1299BDivSubTableColH>
+				</HIB1120Table>
+				<HIB1120Table>
+					<IL1299BDivSubTableColA>HIB Zone P2</IL1299BDivSubTableColA>
+					<IL1299BDivSubTableColH>1700</IL1299BDivSubTableColH>
+				</HIB1120Table>
+				<TotalOtherDividendsHIBD>11620</TotalOtherDividendsHIBD>
+				<DistShOfHIB1120DivSub>5210</DistShOfHIB1120DivSub>
+				<TotalHIB1120DivSub>16830</TotalHIB1120DivSub>
+				<ContributionTable>
+					<ContributionTableColA>Sub 1 CEZ Zone 1</ContributionTableColA>
+					<ContributionTableColB>Sub 1 CEZ Org 1</ContributionTableColB>
+					<ContributionTableColC>2710</ContributionTableColC>
+					<ContributionTableColD>5420</ContributionTableColD>
+				</ContributionTable>
+				<ContributionTable>
+					<ContributionTableColA>Sub 1 CEZ Zone 2</ContributionTableColA>
+					<ContributionTableColB>Sub 1 CEZ Org 2</ContributionTableColB>
+					<ContributionTableColC>2810</ContributionTableColC>
+					<ContributionTableColD>5620</ContributionTableColD>
+				</ContributionTable>
+				<ContributionTable>
+					<ContributionTableColA>Sub 2 CEZ 1</ContributionTableColA>
+					<ContributionTableColB>Sub 2 CEZ Org 1</ContributionTableColB>
+					<ContributionTableColC>1750</ContributionTableColC>
+					<ContributionTableColD>3500</ContributionTableColD>
+				</ContributionTable>
+				<ContributionTable>
+					<ContributionTableColA>Sub 2 CEZ 2</ContributionTableColA>
+					<ContributionTableColB>Sub 2 CEZ Org 2</ContributionTableColB>
+					<ContributionTableColC>1850</ContributionTableColC>
+					<ContributionTableColD>3700</ContributionTableColD>
+				</ContributionTable>
+				<ContributionTable>
+					<ContributionTableColA>Cont EZ P1</ContributionTableColA>
+					<ContributionTableColB>Cont Org P1</ContributionTableColB>
+					<ContributionTableColC>1800</ContributionTableColC>
+					<ContributionTableColD>3600</ContributionTableColD>
+				</ContributionTable>
+				<ContributionTable>
+					<ContributionTableColA>Cont EZ P2</ContributionTableColA>
+					<ContributionTableColB>Cont Org P2</ContributionTableColB>
+					<ContributionTableColC>1900</ContributionTableColC>
+					<ContributionTableColD>3800</ContributionTableColD>
+				</ContributionTable>
+				<TotalContSubtraction>25640</TotalContSubtraction>
+				<RERZ1120IntTable>
+					<IL1299BRERZIntSubTableColA>Sub 1 RZB1</IL1299BRERZIntSubTableColA>
+					<IL1299BRERZIntSubTableColB>Sub 1 RZP1</IL1299BRERZIntSubTableColB>
+					<IL1299BRERZIntSubTableColC>2009</IL1299BRERZIntSubTableColC>
+					<IL1299BRERZIntSubTableColD>Sub 1 RZ1</IL1299BRERZIntSubTableColD>
+					<IL1299BRERZIntSubTableColE>5500</IL1299BRERZIntSubTableColE>
+					<IL1299BRERZIntSubTableColF>2895</IL1299BRERZIntSubTableColF>
+					<IL1299BRERZIntSubTableColG>336</IL1299BRERZIntSubTableColG>
+					<IL1299BRERZIntSubTableColH>336</IL1299BRERZIntSubTableColH>
+				</RERZ1120IntTable>
+				<RERZ1120IntTable>
+					<IL1299BRERZIntSubTableColA>Sub 1 RZB2</IL1299BRERZIntSubTableColA>
+					<IL1299BRERZIntSubTableColB>Sub 1 RZP2</IL1299BRERZIntSubTableColB>
+					<IL1299BRERZIntSubTableColC>2010</IL1299BRERZIntSubTableColC>
+					<IL1299BRERZIntSubTableColD>Sub 1 RZ1</IL1299BRERZIntSubTableColD>
+					<IL1299BRERZIntSubTableColE>6500</IL1299BRERZIntSubTableColE>
+					<IL1299BRERZIntSubTableColF>3895</IL1299BRERZIntSubTableColF>
+					<IL1299BRERZIntSubTableColG>448</IL1299BRERZIntSubTableColG>
+					<IL1299BRERZIntSubTableColH>448</IL1299BRERZIntSubTableColH>
+				</RERZ1120IntTable>
+				<RERZ1120IntTable>
+					<IL1299BRERZIntSubTableColA>Sub 2 RZB 1</IL1299BRERZIntSubTableColA>
+					<IL1299BRERZIntSubTableColB>Sub 2 RZP1</IL1299BRERZIntSubTableColB>
+					<IL1299BRERZIntSubTableColC>2006</IL1299BRERZIntSubTableColC>
+					<IL1299BRERZIntSubTableColD>Sub 2 RZ1</IL1299BRERZIntSubTableColD>
+					<IL1299BRERZIntSubTableColE>2150</IL1299BRERZIntSubTableColE>
+					<IL1299BRERZIntSubTableColF>1150</IL1299BRERZIntSubTableColF>
+					<IL1299BRERZIntSubTableColG>333</IL1299BRERZIntSubTableColG>
+					<IL1299BRERZIntSubTableColH>333</IL1299BRERZIntSubTableColH>
+				</RERZ1120IntTable>
+				<RERZ1120IntTable>
+					<IL1299BRERZIntSubTableColA>Sub 2 RZB 2</IL1299BRERZIntSubTableColA>
+					<IL1299BRERZIntSubTableColB>Sub 2 RZP2</IL1299BRERZIntSubTableColB>
+					<IL1299BRERZIntSubTableColC>2007</IL1299BRERZIntSubTableColC>
+					<IL1299BRERZIntSubTableColD>Sub 2 RZ2</IL1299BRERZIntSubTableColD>
+					<IL1299BRERZIntSubTableColE>2250</IL1299BRERZIntSubTableColE>
+					<IL1299BRERZIntSubTableColF>1250</IL1299BRERZIntSubTableColF>
+					<IL1299BRERZIntSubTableColG>444</IL1299BRERZIntSubTableColG>
+					<IL1299BRERZIntSubTableColH>444</IL1299BRERZIntSubTableColH>
+				</RERZ1120IntTable>
+				<RERZ1120IntTable>
+					<IL1299BRERZIntSubTableColA>RZ Borrw P1</IL1299BRERZIntSubTableColA>
+					<IL1299BRERZIntSubTableColB>RZ Borr P1</IL1299BRERZIntSubTableColB>
+					<IL1299BRERZIntSubTableColC>2007</IL1299BRERZIntSubTableColC>
+					<IL1299BRERZIntSubTableColD>RZ Zone P1</IL1299BRERZIntSubTableColD>
+					<IL1299BRERZIntSubTableColE>4000</IL1299BRERZIntSubTableColE>
+					<IL1299BRERZIntSubTableColF>3600</IL1299BRERZIntSubTableColF>
+					<IL1299BRERZIntSubTableColG>400</IL1299BRERZIntSubTableColG>
+					<IL1299BRERZIntSubTableColH>400</IL1299BRERZIntSubTableColH>
+				</RERZ1120IntTable>
+				<RERZ1120IntTable>
+					<IL1299BRERZIntSubTableColA>RZ Borrw P2</IL1299BRERZIntSubTableColA>
+					<IL1299BRERZIntSubTableColB>RZ Borr P2</IL1299BRERZIntSubTableColB>
+					<IL1299BRERZIntSubTableColC>2008</IL1299BRERZIntSubTableColC>
+					<IL1299BRERZIntSubTableColD>RZ Zone P2</IL1299BRERZIntSubTableColD>
+					<IL1299BRERZIntSubTableColE>5000</IL1299BRERZIntSubTableColE>
+					<IL1299BRERZIntSubTableColF>4400</IL1299BRERZIntSubTableColF>
+					<IL1299BRERZIntSubTableColG>600</IL1299BRERZIntSubTableColG>
+					<IL1299BRERZIntSubTableColH>600</IL1299BRERZIntSubTableColH>
+				</RERZ1120IntTable>
+				<TotalRERZ1120IntSub>2561</TotalRERZ1120IntSub>
+				<HIB1120IntTable>
+					<IL1299BIntSubTableColA>Sub 1 HB1</IL1299BIntSubTableColA>
+					<IL1299BIntSubTableColB>Sub 1 HP1</IL1299BIntSubTableColB>
+					<IL1299BIntSubTableColC>2007</IL1299BIntSubTableColC>
+					<IL1299BIntSubTableColD>Sub 1 HZ 1</IL1299BIntSubTableColD>
+					<IL1299BIntSubTableColE>14580</IL1299BIntSubTableColE>
+					<IL1299BIntSubTableColF>9856</IL1299BIntSubTableColF>
+					<IL1299BIntSubTableColG>5462</IL1299BIntSubTableColG>
+					<IL1299BIntSubTableColH>5462</IL1299BIntSubTableColH>
+				</HIB1120IntTable>
+				<HIB1120IntTable>
+					<IL1299BIntSubTableColA>Sub 1 HB2</IL1299BIntSubTableColA>
+					<IL1299BIntSubTableColB>Sub 1 HP2</IL1299BIntSubTableColB>
+					<IL1299BIntSubTableColC>2008</IL1299BIntSubTableColC>
+					<IL1299BIntSubTableColD>Sub 1 HZ 2</IL1299BIntSubTableColD>
+					<IL1299BIntSubTableColE>24850</IL1299BIntSubTableColE>
+					<IL1299BIntSubTableColF>9687</IL1299BIntSubTableColF>
+					<IL1299BIntSubTableColG>3352</IL1299BIntSubTableColG>
+					<IL1299BIntSubTableColH>3352</IL1299BIntSubTableColH>
+				</HIB1120IntTable>
+				<HIB1120IntTable>
+					<IL1299BIntSubTableColA>Sub 2 HB 1</IL1299BIntSubTableColA>
+					<IL1299BIntSubTableColB>Sub 2 HP 1</IL1299BIntSubTableColB>
+					<IL1299BIntSubTableColC>2008</IL1299BIntSubTableColC>
+					<IL1299BIntSubTableColD>Sub 2 HZ 1</IL1299BIntSubTableColD>
+					<IL1299BIntSubTableColE>2350</IL1299BIntSubTableColE>
+					<IL1299BIntSubTableColF>1350</IL1299BIntSubTableColF>
+					<IL1299BIntSubTableColG>555</IL1299BIntSubTableColG>
+					<IL1299BIntSubTableColH>555</IL1299BIntSubTableColH>
+				</HIB1120IntTable>
+				<HIB1120IntTable>
+					<IL1299BIntSubTableColA>Sub 2 HB 2</IL1299BIntSubTableColA>
+					<IL1299BIntSubTableColB>Sub 2 HP 2</IL1299BIntSubTableColB>
+					<IL1299BIntSubTableColC>2009</IL1299BIntSubTableColC>
+					<IL1299BIntSubTableColD>Sub 2 HZ 2</IL1299BIntSubTableColD>
+					<IL1299BIntSubTableColE>2450</IL1299BIntSubTableColE>
+					<IL1299BIntSubTableColF>1450</IL1299BIntSubTableColF>
+					<IL1299BIntSubTableColG>666</IL1299BIntSubTableColG>
+					<IL1299BIntSubTableColH>666</IL1299BIntSubTableColH>
+				</HIB1120IntTable>
+				<HIB1120IntTable>
+					<IL1299BIntSubTableColA>HIB Bor P1</IL1299BIntSubTableColA>
+					<IL1299BIntSubTableColB>HIB Pro P1</IL1299BIntSubTableColB>
+					<IL1299BIntSubTableColC>2009</IL1299BIntSubTableColC>
+					<IL1299BIntSubTableColD>HIB Zon P1</IL1299BIntSubTableColD>
+					<IL1299BIntSubTableColE>6000</IL1299BIntSubTableColE>
+					<IL1299BIntSubTableColF>5750</IL1299BIntSubTableColF>
+					<IL1299BIntSubTableColG>225</IL1299BIntSubTableColG>
+					<IL1299BIntSubTableColH>225</IL1299BIntSubTableColH>
+				</HIB1120IntTable>
+				<HIB1120IntTable>
+					<IL1299BIntSubTableColA>HIB Bor P2</IL1299BIntSubTableColA>
+					<IL1299BIntSubTableColB>HIB Pro P2</IL1299BIntSubTableColB>
+					<IL1299BIntSubTableColC>2010</IL1299BIntSubTableColC>
+					<IL1299BIntSubTableColD>HIB Zon P2</IL1299BIntSubTableColD>
+					<IL1299BIntSubTableColE>7500</IL1299BIntSubTableColE>
+					<IL1299BIntSubTableColF>3800</IL1299BIntSubTableColF>
+					<IL1299BIntSubTableColG>325</IL1299BIntSubTableColG>
+					<IL1299BIntSubTableColH>325</IL1299BIntSubTableColH>
+				</HIB1120IntTable>
+				<TotalHIB1120IntSub>10585</TotalHIB1120IntSub>
+			</Step2>
+		</SchIL1299B>
+		<SchIL1299D>
+			<Step1>
+				<Sch1299DEntZoneCrTable>
+					<PropertyDescription>Sub 1 EZ Property 1</PropertyDescription>
+					<ServiceYearMonth>2015-03</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>25</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>U CA</SpecifyNewOrUsed>
+					<ZoneName>Sub 1 EZ 1</ZoneName>
+					<Basis>15200</Basis>
+					<Rate>0.005000</Rate>
+					<BasisTimesRate>76</BasisTimesRate>
+				</Sch1299DEntZoneCrTable>
+				<Sch1299DEntZoneCrTable>
+					<PropertyDescription>Sub 1 EZ Property 2</PropertyDescription>
+					<ServiceYearMonth>2015-04</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>30</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>N</SpecifyNewOrUsed>
+					<ZoneName>Sub 1 EZ 1</ZoneName>
+					<Basis>16200</Basis>
+					<Rate>0.005000</Rate>
+					<BasisTimesRate>81</BasisTimesRate>
+				</Sch1299DEntZoneCrTable>
+				<Sch1299DEntZoneCrTable>
+					<PropertyDescription>Sub 2 EZ Property 1</PropertyDescription>
+					<ServiceYearMonth>2015-05</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>35</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>N</SpecifyNewOrUsed>
+					<ZoneName>Sub 2 EZ Zone 1</ZoneName>
+					<Basis>17200</Basis>
+					<Rate>0.005000</Rate>
+					<BasisTimesRate>86</BasisTimesRate>
+				</Sch1299DEntZoneCrTable>
+				<Sch1299DEntZoneCrTable>
+					<PropertyDescription>Sub 2 EZ Property 2</PropertyDescription>
+					<ServiceYearMonth>2015-06</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>40</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>U DE</SpecifyNewOrUsed>
+					<ZoneName>Sub 2 EZ Zone 2</ZoneName>
+					<Basis>18200</Basis>
+					<Rate>0.005000</Rate>
+					<BasisTimesRate>91</BasisTimesRate>
+				</Sch1299DEntZoneCrTable>
+				<Sch1299DEntZoneCrTable>
+					<PropertyDescription>EZ Property P1</PropertyDescription>
+					<ServiceYearMonth>2015-01</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>15</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>N</SpecifyNewOrUsed>
+					<ZoneName>EZ P1</ZoneName>
+					<Basis>12500</Basis>
+					<Rate>0.005000</Rate>
+					<BasisTimesRate>63</BasisTimesRate>
+				</Sch1299DEntZoneCrTable>
+				<Sch1299DEntZoneCrTable>
+					<PropertyDescription>EZ Property P2</PropertyDescription>
+					<ServiceYearMonth>2015-02</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>20</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>U AL</SpecifyNewOrUsed>
+					<ZoneName>EZ P2</ZoneName>
+					<Basis>14500</Basis>
+					<Rate>0.005000</Rate>
+					<BasisTimesRate>73</BasisTimesRate>
+				</Sch1299DEntZoneCrTable>
+				<DistrShOfEZInvCr>1350</DistrShOfEZInvCr>
+				<TotalEntZoneInvCr>1820</TotalEntZoneInvCr>
+				<Page1Subtotat>1820</Page1Subtotat>
+				<Sch1299DRiverEdgeRDTable>
+					<PropertyDescription>Sub 2 RZ Property 1</PropertyDescription>
+					<ServiceYearMonth>2015-07</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>45</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>N</SpecifyNewOrUsed>
+					<ZoneName>Sub 2 RZ Zone 1</ZoneName>
+					<Basis>19200</Basis>
+					<Rate>0.005000</Rate>
+					<BasisTimesRate>96</BasisTimesRate>
+				</Sch1299DRiverEdgeRDTable>
+				<Sch1299DRiverEdgeRDTable>
+					<PropertyDescription>Sub 2 RZ Property 2</PropertyDescription>
+					<ServiceYearMonth>2015-08</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>50</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>U FL</SpecifyNewOrUsed>
+					<ZoneName>Sub 2 RZ Zone 2</ZoneName>
+					<Basis>20200</Basis>
+					<Rate>0.005000</Rate>
+					<BasisTimesRate>101</BasisTimesRate>
+				</Sch1299DRiverEdgeRDTable>
+				<Sch1299DRiverEdgeRDTable>
+					<PropertyDescription>RERZ Property P1</PropertyDescription>
+					<ServiceYearMonth>2015-03</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>25</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>N</SpecifyNewOrUsed>
+					<ZoneName>RERZ P1</ZoneName>
+					<Basis>15500</Basis>
+					<Rate>0.005000</Rate>
+					<BasisTimesRate>78</BasisTimesRate>
+				</Sch1299DRiverEdgeRDTable>
+				<Sch1299DRiverEdgeRDTable>
+					<PropertyDescription>RERZ Property P2</PropertyDescription>
+					<ServiceYearMonth>2015-04</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>30</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>U CO</SpecifyNewOrUsed>
+					<ZoneName>RERZ P2</ZoneName>
+					<Basis>16500</Basis>
+					<Rate>0.005000</Rate>
+					<BasisTimesRate>83</BasisTimesRate>
+				</Sch1299DRiverEdgeRDTable>
+				<DistrShOfRiverEdgeInvCr>1250</DistrShOfRiverEdgeInvCr>
+				<TotalRiverEdgeInvCr>1608</TotalRiverEdgeInvCr>
+				<Sch1299DHIBICTable>
+					<PropertyDescription>Sub 1 HIB Property 1</PropertyDescription>
+					<ServiceYearMonth>2015-01</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>15</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>N</SpecifyNewOrUsed>
+					<Basis>2000</Basis>
+					<BasisTimesRate>10</BasisTimesRate>
+				</Sch1299DHIBICTable>
+				<Sch1299DHIBICTable>
+					<PropertyDescription>Sub 1 HIB Property 2</PropertyDescription>
+					<ServiceYearMonth>2015-02</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>20</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>U KS</SpecifyNewOrUsed>
+					<Basis>2500</Basis>
+					<BasisTimesRate>13</BasisTimesRate>
+				</Sch1299DHIBICTable>
+				<Sch1299DHIBICTable>
+					<PropertyDescription>Sub 2 HIB Property 1</PropertyDescription>
+					<ServiceYearMonth>2015-03</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>25</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>U PA</SpecifyNewOrUsed>
+					<Basis>3000</Basis>
+					<BasisTimesRate>15</BasisTimesRate>
+				</Sch1299DHIBICTable>
+				<Sch1299DHIBICTable>
+					<PropertyDescription>Sub 2 HIB Property 2</PropertyDescription>
+					<ServiceYearMonth>2015-04</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>30</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>U ME</SpecifyNewOrUsed>
+					<Basis>3500</Basis>
+					<BasisTimesRate>18</BasisTimesRate>
+				</Sch1299DHIBICTable>
+				<Sch1299DHIBICTable>
+					<PropertyDescription>HIB Property P1</PropertyDescription>
+					<ServiceYearMonth>2015-01</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>10</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>N</SpecifyNewOrUsed>
+					<Basis>1000</Basis>
+					<BasisTimesRate>5</BasisTimesRate>
+				</Sch1299DHIBICTable>
+				<Sch1299DHIBICTable>
+					<PropertyDescription>HIB Property P2</PropertyDescription>
+					<ServiceYearMonth>2015-02</ServiceYearMonth>
+					<ACRSClassOrUsefulLife>15</ACRSClassOrUsefulLife>
+					<SpecifyNewOrUsed>U GA</SpecifyNewOrUsed>
+					<Basis>1500</Basis>
+					<BasisTimesRate>8</BasisTimesRate>
+				</Sch1299DHIBICTable>
+				<TotalColGHIBIC>69</TotalColGHIBIC>
+				<Page2Subtotal>3497</Page2Subtotal>
+				<Sch1299DRERZTable>
+					<ZoneName>Sub 1 RZ Zone 1</ZoneName>
+					<TotRemediationCosts>5500</TotRemediationCosts>
+					<CreditAmount>1375</CreditAmount>
+				</Sch1299DRERZTable>
+				<Sch1299DRERZTable>
+					<ZoneName>Sub 1 RZ Zone 2</ZoneName>
+					<TotRemediationCosts>6500</TotRemediationCosts>
+					<CreditAmount>1625</CreditAmount>
+				</Sch1299DRERZTable>
+				<Sch1299DRERZTable>
+					<ZoneName>Sub 2 RZ Zone 1</ZoneName>
+					<TotRemediationCosts>7000</TotRemediationCosts>
+					<CreditAmount>1750</CreditAmount>
+				</Sch1299DRERZTable>
+				<Sch1299DRERZTable>
+					<ZoneName>Sub 2 RZ Zone 2</ZoneName>
+					<TotRemediationCosts>7500</TotRemediationCosts>
+					<CreditAmount>1875</CreditAmount>
+				</Sch1299DRERZTable>
+				<Sch1299DRERZTable>
+					<ZoneName>RZ Zone P1</ZoneName>
+					<TotRemediationCosts>5000</TotRemediationCosts>
+					<CreditAmount>1250</CreditAmount>
+				</Sch1299DRERZTable>
+				<Sch1299DRERZTable>
+					<ZoneName>RZ Zone P2</ZoneName>
+					<TotRemediationCosts>10000</TotRemediationCosts>
+					<CreditAmount>2500</CreditAmount>
+				</Sch1299DRERZTable>
+				<TotalRemediationCredit>10375</TotalRemediationCredit>
+				<Sch1299DExFelonsTable>
+					<Name>Sub 1 Ex-Felon 1</Name>
+					<SSN>123457001</SSN>
+					<DateHired>2015-05</DateHired>
+					<QualifyingWages>20000</QualifyingWages>
+					<PercentWages>1000</PercentWages>
+					<PriorCredit>100</PriorCredit>
+					<MaxCreditMinusPriorCredit>1400</MaxCreditMinusPriorCredit>
+					<CreditAmount>1000</CreditAmount>
+				</Sch1299DExFelonsTable>
+				<Sch1299DExFelonsTable>
+					<Name>Sub 1 Ex-Felon 2</Name>
+					<SSN>123457002</SSN>
+					<DateHired>2015-06</DateHired>
+					<QualifyingWages>25000</QualifyingWages>
+					<PercentWages>1250</PercentWages>
+					<PriorCredit>200</PriorCredit>
+					<MaxCreditMinusPriorCredit>1300</MaxCreditMinusPriorCredit>
+					<CreditAmount>1250</CreditAmount>
+				</Sch1299DExFelonsTable>
+				<Sch1299DExFelonsTable>
+					<Name>Sub 2 Ex-Felon 1</Name>
+					<SSN>123458001</SSN>
+					<DateHired>2015-06</DateHired>
+					<QualifyingWages>15000</QualifyingWages>
+					<PercentWages>750</PercentWages>
+					<PriorCredit>240</PriorCredit>
+					<MaxCreditMinusPriorCredit>1260</MaxCreditMinusPriorCredit>
+					<CreditAmount>750</CreditAmount>
+				</Sch1299DExFelonsTable>
+				<Sch1299DExFelonsTable>
+					<Name>Sub 2 Ex-Felon 2</Name>
+					<SSN>123458002</SSN>
+					<DateHired>2015-09</DateHired>
+					<QualifyingWages>23000</QualifyingWages>
+					<PercentWages>1150</PercentWages>
+					<PriorCredit>112</PriorCredit>
+					<MaxCreditMinusPriorCredit>1388</MaxCreditMinusPriorCredit>
+					<CreditAmount>1150</CreditAmount>
+				</Sch1299DExFelonsTable>
+				<Sch1299DExFelonsTable>
+					<Name>Ex-felon P1</Name>
+					<SSN>123456001</SSN>
+					<DateHired>2015-08</DateHired>
+					<QualifyingWages>35000</QualifyingWages>
+					<PercentWages>1750</PercentWages>
+					<MaxCreditMinusPriorCredit>1500</MaxCreditMinusPriorCredit>
+					<CreditAmount>1500</CreditAmount>
+				</Sch1299DExFelonsTable>
+				<Sch1299DExFelonsTable>
+					<Name>Ex-felon P2</Name>
+					<SSN>123456002</SSN>
+					<DateHired>2015-09</DateHired>
+					<QualifyingWages>30000</QualifyingWages>
+					<PercentWages>1500</PercentWages>
+					<MaxCreditMinusPriorCredit>1500</MaxCreditMinusPriorCredit>
+					<CreditAmount>1500</CreditAmount>
+				</Sch1299DExFelonsTable>
+				<DistrShareExFelonsJobsCr>2150</DistrShareExFelonsJobsCr>
+				<TotalExFelonsJobsCr>9300</TotalExFelonsJobsCr>
+				<DistrShareVetJobsCr>2650</DistrShareVetJobsCr>
+				<TotalVetJobsCr>2650</TotalVetJobsCr>
+				<Sch1299DStudentAssistTable>
+					<Name>Sub 1 Student Contribution 1</Name>
+					<SSN>823457001</SSN>
+					<QualifyingContributionAmt>10000</QualifyingContributionAmt>
+					<CreditPercentage>2500</CreditPercentage>
+					<CreditAmount>500</CreditAmount>
+				</Sch1299DStudentAssistTable>
+				<Sch1299DStudentAssistTable>
+					<Name>Sub 1 Student Contribution 2</Name>
+					<SSN>823457002</SSN>
+					<QualifyingContributionAmt>20000</QualifyingContributionAmt>
+					<CreditPercentage>5000</CreditPercentage>
+					<CreditAmount>500</CreditAmount>
+				</Sch1299DStudentAssistTable>
+				<Sch1299DStudentAssistTable>
+					<Name>Sub 2 Student Contribution 1</Name>
+					<SSN>823458001</SSN>
+					<QualifyingContributionAmt>30000</QualifyingContributionAmt>
+					<CreditPercentage>7500</CreditPercentage>
+					<CreditAmount>500</CreditAmount>
+				</Sch1299DStudentAssistTable>
+				<Sch1299DStudentAssistTable>
+					<Name>Sub 2 Student Contribution 2</Name>
+					<SSN>823458002</SSN>
+					<QualifyingContributionAmt>35000</QualifyingContributionAmt>
+					<CreditPercentage>8750</CreditPercentage>
+					<CreditAmount>500</CreditAmount>
+				</Sch1299DStudentAssistTable>
+				<Sch1299DStudentAssistTable>
+					<Name>Student Contribution P1</Name>
+					<SSN>823456001</SSN>
+					<QualifyingContributionAmt>20000</QualifyingContributionAmt>
+					<CreditPercentage>5000</CreditPercentage>
+					<CreditAmount>500</CreditAmount>
+				</Sch1299DStudentAssistTable>
+				<Sch1299DStudentAssistTable>
+					<Name>Student Contribution P2</Name>
+					<SSN>823456002</SSN>
+					<QualifyingContributionAmt>30000</QualifyingContributionAmt>
+					<CreditPercentage>7500</CreditPercentage>
+					<CreditAmount>500</CreditAmount>
+				</Sch1299DStudentAssistTable>
+				<DistShareStudentAssistCredit>3250</DistShareStudentAssistCredit>
+				<TotalStudentAssistCredit>6250</TotalStudentAssistCredit>
+				<Page3Subtotal>32072</Page3Subtotal>
+				<TotalFiveYrCredits>32072</TotalFiveYrCredits>
+			</Step1>
+			<Step2>
+				<CrTotalTax>2754334</CrTotalTax>
+				<TaxMinusForeignTaxCredit>2754334</TaxMinusForeignTaxCredit>
+				<TaxAfterPY2YrCrCfwd0YrsRemain>2754334</TaxAfterPY2YrCrCfwd0YrsRemain>
+				<TaxAfterPY5YrCrCfwd0YrsRemain>2754334</TaxAfterPY5YrCrCfwd0YrsRemain>
+				<TaxAfterPY2YrCrCfwd1YrRemains>2754334</TaxAfterPY2YrCrCfwd1YrRemains>
+				<TaxAfterPY5YrCrCfwd1YrRemains>2754334</TaxAfterPY5YrCrCfwd1YrRemains>
+				<TaxAfterCY2YearCredits>2754334</TaxAfterCY2YearCredits>
+				<TaxAfterPY5YrCrCfwd2YrsRemain>2754334</TaxAfterPY5YrCrCfwd2YrsRemain>
+				<TaxAfterPY5YrCrCfwd3YrsRemain>2754334</TaxAfterPY5YrCrCfwd3YrsRemain>
+				<TaxAfterPY5YrCrCfwd4YrsRemain>2754334</TaxAfterPY5YrCrCfwd4YrsRemain>
+				<TotalCY5YearCredits>32072</TotalCY5YearCredits>
+				<TaxAfterCY5YearCredits>2722262</TaxAfterCY5YearCredits>
+				<TaxAfterPY10YrCrCfwd6YrsRemain>2722262</TaxAfterPY10YrCrCfwd6YrsRemain>
+				<TaxAfterPY10YrCrCfwd7YrsRemain>2722262</TaxAfterPY10YrCrCfwd7YrsRemain>
+				<TaxAfterPY10YrCrCfwd8YrsRemain>2722262</TaxAfterPY10YrCrCfwd8YrsRemain>
+				<TaxAfterPY10YrCrCfwd9YrsRemain>2722262</TaxAfterPY10YrCrCfwd9YrsRemain>
+				<TaxAfterCYHistPresvCredit>2722262</TaxAfterCYHistPresvCredit>
+				<LessOfTaxAfterPY5Yr4OrCY5YrCr>32072</LessOfTaxAfterPY5Yr4OrCY5YrCr>
+				<CrSum>32072</CrSum>
+			</Step2>
+		</SchIL1299D>
+		<SchIL4255>
+			<RecapturedApe>2008-12</RecapturedApe>
+			<EZRecaptureTable>
+				<DateOfService>2008-01</DateOfService>
+				<DateDisqualified>2015-02</DateDisqualified>
+				<PropertyDescription>ez property 1a xxxxz</PropertyDescription>
+				<Specify>ez disq reason 1a xz</Specify>
+				<Basis>14560</Basis>
+				<NameOfZone>ez zone 1xxxxxz</NameOfZone>
+				<CreditRate>0.005</CreditRate>
+				<DisqualifiedAmount>73</DisqualifiedAmount>
+			</EZRecaptureTable>
+			<EZRecaptureTable>
+				<DateOfService>2008-02</DateOfService>
+				<DateDisqualified>2015-04</DateDisqualified>
+				<PropertyDescription>rv property 1a xxxxz</PropertyDescription>
+				<Specify>rv disq reason 1axxz</Specify>
+				<Basis>23695</Basis>
+				<NameOfZone>rv zonexxxxxxxz</NameOfZone>
+				<CreditRate>0.01</CreditRate>
+				<DisqualifiedAmount>237</DisqualifiedAmount>
+			</EZRecaptureTable>
+			<TotalStep1Basis>310</TotalStep1Basis>
+			<HIBRecaptureTable>
+				<DateOfService>2008-05</DateOfService>
+				<DateDisqualified>2015-03</DateDisqualified>
+				<PropertyDescription>HIB property 1a xxxz</PropertyDescription>
+				<Specify>HIB disq reason 1a z</Specify>
+				<Basis>63254</Basis>
+				<NameOfZone>HIB zone 1xxxxz</NameOfZone>
+				<DisqualifiedAmount>316</DisqualifiedAmount>
+			</HIBRecaptureTable>
+			<HIBRecaptureTable>
+				<DateOfService>2008-09</DateOfService>
+				<DateDisqualified>2015-07</DateDisqualified>
+				<PropertyDescription>HIB property 2a xxxz</PropertyDescription>
+				<Specify>HIB disq reason 2a z</Specify>
+				<Basis>77890</Basis>
+				<NameOfZone>HIB zone 2xxxxz</NameOfZone>
+				<DisqualifiedAmount>389</DisqualifiedAmount>
+			</HIBRecaptureTable>
+			<TotalStep2Basis>705</TotalStep2Basis>
+			<RTRecaptureTable>
+				<DateOfService>2008-05</DateOfService>
+				<DateDisqualified>2015-09</DateDisqualified>
+				<PropertyDescription>rt property 1a xxxxz</PropertyDescription>
+				<Specify>rt disq reason 1a xz</Specify>
+				<Basis>12690</Basis>
+				<CreditRate>0.01</CreditRate>
+				<DisqualifiedAmount>127</DisqualifiedAmount>
+			</RTRecaptureTable>
+			<RTRecaptureTable>
+				<DateOfService>2008-10</DateOfService>
+				<DateDisqualified>2015-09</DateDisqualified>
+				<PropertyDescription>rt property 2a xxxxz</PropertyDescription>
+				<Specify>rt disq reason 2a xz</Specify>
+				<Basis>44980</Basis>
+				<CreditRate>0.005</CreditRate>
+				<DisqualifiedAmount>225</DisqualifiedAmount>
+			</RTRecaptureTable>
+			<TotalStep3Basis>352</TotalStep3Basis>
+			<TotalPropertyColA>38255</TotalPropertyColA>
+			<OriginalCreditColA>310</OriginalCreditColA>
+			<TotalDisqualifiedCreditsColA>310</TotalDisqualifiedCreditsColA>
+			<OriginalTaxAmtColA>56980</OriginalTaxAmtColA>
+			<EZRivEdgeCrPrevUsed>310</EZRivEdgeCrPrevUsed>
+			<EZRivEdgeCrPrevUsedMinusAdjCr>310</EZRivEdgeCrPrevUsedMinusAdjCr>
+			<RecaptureSumColA>310</RecaptureSumColA>
+			<TotalRecaptureColA>310</TotalRecaptureColA>
+			<TotalPropertyColB>141144</TotalPropertyColB>
+			<OriginalCreditColB>705</OriginalCreditColB>
+			<TotalDisqualifiedCreditsColB>705</TotalDisqualifiedCreditsColB>
+			<OriginalTaxAmtColB>56980</OriginalTaxAmtColB>
+			<HIBCrPrevUsed>705</HIBCrPrevUsed>
+			<HIBCrPrevUsedMinusAdjCr>705</HIBCrPrevUsedMinusAdjCr>
+			<RecaptureSumColB>705</RecaptureSumColB>
+			<TotalRecaptureColB>705</TotalRecaptureColB>
+			<TotalPropertyColC>57670</TotalPropertyColC>
+			<OriginalCreditColC>352</OriginalCreditColC>
+			<TotalDisqualifiedCreditsColC>352</TotalDisqualifiedCreditsColC>
+			<OriginalTaxAmtColC>56980</OriginalTaxAmtColC>
+			<RTInvCrPrevUsed>352</RTInvCrPrevUsed>
+			<RTInvCrPrevUsedMinusAdjCr>352</RTInvCrPrevUsedMinusAdjCr>
+			<RecaptureSumColC>352</RecaptureSumColC>
+			<TotalRecaptureColC>352</TotalRecaptureColC>
+		</SchIL4255>
+		<SchIL4255>
+			<RecapturedApe>2009-12</RecapturedApe>
+			<EZRecaptureTable>
+				<DateOfService>2009-12</DateOfService>
+				<DateDisqualified>2015-10</DateDisqualified>
+				<PropertyDescription>ez property 1b xxxxz</PropertyDescription>
+				<Specify>ez disq reason 1b xz</Specify>
+				<Basis>75981</Basis>
+				<NameOfZone>ez zone 1b xxxz</NameOfZone>
+				<CreditRate>0.005</CreditRate>
+				<DisqualifiedAmount>380</DisqualifiedAmount>
+			</EZRecaptureTable>
+			<EZRecaptureTable>
+				<DateOfService>2009-08</DateOfService>
+				<DateDisqualified>2015-09</DateDisqualified>
+				<PropertyDescription>rv property 1b xxxxz</PropertyDescription>
+				<Specify>rv disq reason 1b xz</Specify>
+				<Basis>23654</Basis>
+				<NameOfZone>rv zone 1b xxxz</NameOfZone>
+				<CreditRate>0.01</CreditRate>
+				<DisqualifiedAmount>237</DisqualifiedAmount>
+			</EZRecaptureTable>
+			<TotalStep1Basis>617</TotalStep1Basis>
+			<TotalPropertyColA>99635</TotalPropertyColA>
+			<OriginalCreditColA>617</OriginalCreditColA>
+			<TotalDisqualifiedCreditsColA>617</TotalDisqualifiedCreditsColA>
+			<OriginalTaxAmtColA>33690</OriginalTaxAmtColA>
+			<EZRivEdgeCrPrevUsed>617</EZRivEdgeCrPrevUsed>
+			<EZRivEdgeCrPrevUsedMinusAdjCr>617</EZRivEdgeCrPrevUsedMinusAdjCr>
+			<OtherRecaptureColA>310</OtherRecaptureColA>
+			<RecaptureSumColA>927</RecaptureSumColA>
+			<TotalRecaptureColA>927</TotalRecaptureColA>
+			<OtherRecaptureColB>705</OtherRecaptureColB>
+			<RecaptureSumColB>705</RecaptureSumColB>
+			<TotalRecaptureColB>705</TotalRecaptureColB>
+			<OtherRecaptureColC>352</OtherRecaptureColC>
+			<RecaptureSumColC>352</RecaptureSumColC>
+			<TotalRecaptureColC>352</TotalRecaptureColC>
+		</SchIL4255>
+		<SchIL4255>
+			<RecapturedApe>2010-12</RecapturedApe>
+			<HIBRecaptureTable>
+				<DateOfService>2010-05</DateOfService>
+				<DateDisqualified>2015-06</DateDisqualified>
+				<PropertyDescription>HIB property 1c xxxz</PropertyDescription>
+				<Specify>HIB disq 1c xxxxxxxz</Specify>
+				<Basis>36548</Basis>
+				<NameOfZone>HIB zone 1c xxz</NameOfZone>
+				<DisqualifiedAmount>183</DisqualifiedAmount>
+			</HIBRecaptureTable>
+			<HIBRecaptureTable>
+				<DateOfService>2010-09</DateOfService>
+				<DateDisqualified>2015-04</DateDisqualified>
+				<PropertyDescription>HIB property 1d xxxz</PropertyDescription>
+				<Specify>HIB disq 1d xxxxxxxz</Specify>
+				<Basis>33250</Basis>
+				<NameOfZone>HIB zone 1d xxz</NameOfZone>
+				<DisqualifiedAmount>166</DisqualifiedAmount>
+			</HIBRecaptureTable>
+			<TotalStep2Basis>349</TotalStep2Basis>
+			<OtherRecaptureColA>927</OtherRecaptureColA>
+			<RecaptureSumColA>927</RecaptureSumColA>
+			<TotalRecaptureColA>927</TotalRecaptureColA>
+			<TotalPropertyColB>69798</TotalPropertyColB>
+			<OriginalCreditColB>349</OriginalCreditColB>
+			<TotalDisqualifiedCreditsColB>349</TotalDisqualifiedCreditsColB>
+			<OriginalTaxAmtColB>12365</OriginalTaxAmtColB>
+			<HIBCrPrevUsed>349</HIBCrPrevUsed>
+			<HIBCrPrevUsedMinusAdjCr>349</HIBCrPrevUsedMinusAdjCr>
+			<OtherRecaptureColB>705</OtherRecaptureColB>
+			<RecaptureSumColB>1054</RecaptureSumColB>
+			<TotalRecaptureColB>1054</TotalRecaptureColB>
+			<OtherRecaptureColC>352</OtherRecaptureColC>
+			<RecaptureSumColC>352</RecaptureSumColC>
+			<TotalRecaptureColC>352</TotalRecaptureColC>
+		</SchIL4255>
+		<SchIL4255>
+			<RecapturedApe>2011-12</RecapturedApe>
+			<RTRecaptureTable>
+				<DateOfService>2011-04</DateOfService>
+				<DateDisqualified>2015-05</DateDisqualified>
+				<PropertyDescription>RT property 1c xxxxz</PropertyDescription>
+				<Specify>RT disq 1c xxxxxxxxz</Specify>
+				<Basis>98651</Basis>
+				<CreditRate>0.005</CreditRate>
+				<DisqualifiedAmount>493</DisqualifiedAmount>
+			</RTRecaptureTable>
+			<RTRecaptureTable>
+				<DateOfService>2011-06</DateOfService>
+				<DateDisqualified>2015-08</DateDisqualified>
+				<PropertyDescription>RT property 1d xxxxz</PropertyDescription>
+				<Specify>RT disq 1d xxxxxxxxz</Specify>
+				<Basis>54621</Basis>
+				<CreditRate>0.01</CreditRate>
+				<DisqualifiedAmount>546</DisqualifiedAmount>
+			</RTRecaptureTable>
+			<TotalStep3Basis>1039</TotalStep3Basis>
+			<OtherRecaptureColA>927</OtherRecaptureColA>
+			<DistributiveShareOfRecapColA>1250</DistributiveShareOfRecapColA>
+			<RecaptureSumColA>2177</RecaptureSumColA>
+			<PartnersSCorpsAmountColA>1000</PartnersSCorpsAmountColA>
+			<TotalRecaptureColA>1177</TotalRecaptureColA>
+			<OtherRecaptureColB>1054</OtherRecaptureColB>
+			<RecaptureSumColB>1054</RecaptureSumColB>
+			<TotalRecaptureColB>1054</TotalRecaptureColB>
+			<TotalPropertyColC>153272</TotalPropertyColC>
+			<OriginalCreditColC>1039</OriginalCreditColC>
+			<TotalDisqualifiedCreditsColC>1039</TotalDisqualifiedCreditsColC>
+			<OriginalTaxAmtColC>44568</OriginalTaxAmtColC>
+			<RTInvCrPrevUsed>1039</RTInvCrPrevUsed>
+			<RTInvCrPrevUsedMinusAdjCr>1039</RTInvCrPrevUsedMinusAdjCr>
+			<OtherRecaptureColC>352</OtherRecaptureColC>
+			<DistributiveShareOfRecapColC>2250</DistributiveShareOfRecapColC>
+			<RecaptureSumColC>3641</RecaptureSumColC>
+			<PartnersSCorpsAmountColC>1200</PartnersSCorpsAmountColC>
+			<TotalRecaptureColC>2441</TotalRecaptureColC>
+		</SchIL4255>
+		<SchIL8020>
+			<IL8020RelatedPartyTable>
+				<Step1>
+					<BusinessName>Sub 1 AFF 1</BusinessName>
+					<Fein>450000021</Fein>
+				</Step1>
+				<Step2>
+					<InterestPaid>1800</InterestPaid>
+					<InterestExempt>380</InterestExempt>
+					<InterestIncluded>1420</InterestIncluded>
+					<DividendRcvd>1245</DividendRcvd>
+					<SubtractionResult>175</SubtractionResult>
+					<IntangibleExpns>2800</IntangibleExpns>
+					<IntangibleExpnsExempt>480</IntangibleExpnsExempt>
+					<ForeignCompanyStateExemptBox>X</ForeignCompanyStateExemptBox>
+					<IntangibleExpnsIncluded>2320</IntangibleExpnsIncluded>
+					<IntangibleExpnsLessExcessDvdns>2320</IntangibleExpnsLessExcessDvdns>
+					<InsurancePremiumsPd>3800</InsurancePremiumsPd>
+					<PremiumMinusExcessDividends>3800</PremiumMinusExcessDividends>
+					<InsuranceProceeds>4800</InsuranceProceeds>
+					<RelatedPartyExpnsSubtotalAdd>11095</RelatedPartyExpnsSubtotalAdd>
+				</Step2>
+				<Step3>
+					<InterestRcvd>5800</InterestRcvd>
+					<SmallestAmount>175</SmallestAmount>
+					<IntangibleInc>6800</IntangibleInc>
+					<LeastAmount>2320</LeastAmount>
+				</Step3>
+			</IL8020RelatedPartyTable>
+			<IL8020RelatedPartyTable>
+				<Step1>
+					<BusinessName>Sub 1 AFF 2</BusinessName>
+					<Fein>450000022</Fein>
+				</Step1>
+				<Step2>
+					<InterestPaid>7450</InterestPaid>
+					<InterestExempt>755</InterestExempt>
+					<InterestIncluded>6695</InterestIncluded>
+					<DividendRcvd>5480</DividendRcvd>
+					<SubtractionResult>1215</SubtractionResult>
+					<RelatedPartyExpnsSubtotalAdd>1215</RelatedPartyExpnsSubtotalAdd>
+				</Step2>
+			</IL8020RelatedPartyTable>
+			<IL8020RelatedPartyTable>
+				<Step1>
+					<BusinessName>Sub 2 AFF 1</BusinessName>
+					<Fein>450000031</Fein>
+				</Step1>
+				<Step2>
+					<InterestPaid>6000</InterestPaid>
+					<InterestExempt>2500</InterestExempt>
+					<InterestIncluded>3500</InterestIncluded>
+					<DividendRcvd>4122</DividendRcvd>
+					<ExcessDividends>622</ExcessDividends>
+					<InsurancePremiumsPd>7896</InsurancePremiumsPd>
+					<ExcessDividendsAboveIntExpns>622</ExcessDividendsAboveIntExpns>
+					<PremiumMinusExcessDividends>7274</PremiumMinusExcessDividends>
+					<RelatedPartyExpnsSubtotalAdd>7274</RelatedPartyExpnsSubtotalAdd>
+				</Step2>
+			</IL8020RelatedPartyTable>
+			<IL8020RelatedPartyTable>
+				<Step1>
+					<BusinessName>Sub 2 AFF 2</BusinessName>
+					<Fein>450000032</Fein>
+				</Step1>
+				<Step2>
+					<InterestPaid>5459</InterestPaid>
+					<InterestIncluded>5459</InterestIncluded>
+					<SubtractionResult>5459</SubtractionResult>
+					<RelatedPartyExpnsSubtotalAdd>5459</RelatedPartyExpnsSubtotalAdd>
+				</Step2>
+			</IL8020RelatedPartyTable>
+			<IL8020RelatedPartyTable>
+				<Step1>
+					<BusinessName>AFF P1</BusinessName>
+					<Fein>450000011</Fein>
+				</Step1>
+				<Step2>
+					<InterestPaid>1000</InterestPaid>
+					<InterestExempt>500</InterestExempt>
+					<InterestIncluded>500</InterestIncluded>
+					<DividendRcvd>2000</DividendRcvd>
+					<IntangibleExpns>3000</IntangibleExpns>
+					<IntangibleExpnsExempt>600</IntangibleExpnsExempt>
+					<PrincipalPurposeExemptBox>X</PrincipalPurposeExemptBox>
+					<IntangibleExpnsIncluded>2400</IntangibleExpnsIncluded>
+					<ExcessDividends>1500</ExcessDividends>
+					<IntangibleExpnsLessExcessDvdns>900</IntangibleExpnsLessExcessDvdns>
+					<InsurancePremiumsPd>4000</InsurancePremiumsPd>
+					<PremiumMinusExcessDividends>4000</PremiumMinusExcessDividends>
+					<InsuranceProceeds>700</InsuranceProceeds>
+					<RelatedPartyExpnsSubtotalAdd>5600</RelatedPartyExpnsSubtotalAdd>
+				</Step2>
+				<Step3>
+					<InterestRcvd>1200</InterestRcvd>
+					<IntangibleInc>1300</IntangibleInc>
+					<LeastAmount>900</LeastAmount>
+				</Step3>
+			</IL8020RelatedPartyTable>
+			<IL8020RelatedPartyTable>
+				<Step1>
+					<BusinessName>AFF P2</BusinessName>
+					<Fein>450000012</Fein>
+				</Step1>
+				<Step2>
+					<InterestPaid>1500</InterestPaid>
+					<InterestExempt>550</InterestExempt>
+					<InterestIncluded>950</InterestIncluded>
+					<DividendRcvd>333</DividendRcvd>
+					<SubtractionResult>617</SubtractionResult>
+					<IntangibleExpns>3500</IntangibleExpns>
+					<IntangibleExpnsExempt>650</IntangibleExpnsExempt>
+					<AddbackUnreasonableExemptBox>X</AddbackUnreasonableExemptBox>
+					<IntangibleExpnsIncluded>2850</IntangibleExpnsIncluded>
+					<IntangibleExpnsLessExcessDvdns>2850</IntangibleExpnsLessExcessDvdns>
+					<InsurancePremiumsPd>4500</InsurancePremiumsPd>
+					<PremiumMinusExcessDividends>4500</PremiumMinusExcessDividends>
+					<InsuranceProceeds>750</InsuranceProceeds>
+					<RelatedPartyExpnsSubtotalAdd>8717</RelatedPartyExpnsSubtotalAdd>
+				</Step2>
+				<Step3>
+					<InterestRcvd>1250</InterestRcvd>
+					<SmallestAmount>617</SmallestAmount>
+					<IntangibleInc>1350</IntangibleInc>
+					<LeastAmount>1350</LeastAmount>
+				</Step3>
+			</IL8020RelatedPartyTable>
+			<AdditionSubtotal1>7466</AdditionSubtotal1>
+			<AdditionSubtotal2>6070</AdditionSubtotal2>
+			<AdditionSubtotal3>19574</AdditionSubtotal3>
+			<InsuranceProceedsTotal>6250</InsuranceProceedsTotal>
+			<RelatedPartyExpnsTotalAdd>39360</RelatedPartyExpnsTotalAdd>
+			<IL8020Companies>
+				<SubtractionAllowanceSubtotal1>792</SubtractionAllowanceSubtotal1>
+				<SubtractionAllowanceSubtotal2>4570</SubtractionAllowanceSubtotal2>
+				<TotalColumnD>5362</TotalColumnD>
+			</IL8020Companies>
+			<USCoIntRcvd>8859</USCoIntRcvd>
+			<FormTotal>5362</FormTotal>
+		</SchIL8020>
+		<SchILK1P>
+			<Steps1And2>
+				<YearEnding>2015-12</YearEnding>
+				<PartnershipBox>X</PartnershipBox>
+				<PartnershipOrSCorpName>Partnership</PartnershipOrSCorpName>
+				<PartnershipOrSCorpFEIN>961234567</PartnershipOrSCorpFEIN>
+				<ApportionmentFactor>1.000000</ApportionmentFactor>
+				<PartnerOrShareholderName>ILTG - Illinois e-file test 7 - parent</PartnerOrShareholderName>
+				<USAddress>
+					<AddressLine1Txt>35 Any Street</AddressLine1Txt>
+					<CityNm>Anytown</CityNm>
+					<StateAbbreviationCd>NY</StateAbbreviationCd>
+					<ZIPCd>10006</ZIPCd>
+				</USAddress>
+				<PartOrShareholderSSNOrFEIN>990000071</PartOrShareholderSSNOrFEIN>
+				<SharePercentage>0.50000</SharePercentage>
+				<Corporation>X</Corporation>
+			</Steps1And2>
+			<Step5>
+				<FedTaxExemptInterestInc>569000</FedTaxExemptInterestInc>
+				<NonResFedTaxExemptInterestInc>569000</NonResFedTaxExemptInterestInc>
+			</Step5>
+			<Step7>
+				<RecapEntrprsRiverEdgeInvestCr>1250</RecapEntrprsRiverEdgeInvestCr>
+				<RecapReplacementTaxInvestmntCr>2250</RecapReplacementTaxInvestmntCr>
+			</Step7>
+		</SchILK1P>
+		<SchILK1P>
+			<Steps1And2>
+				<YearEnding>2015-12</YearEnding>
+				<PartnershipBox>X</PartnershipBox>
+				<PartnershipOrSCorpName>Sub 1 Partnership 1</PartnershipOrSCorpName>
+				<PartnershipOrSCorpFEIN>780000001</PartnershipOrSCorpFEIN>
+				<ApportionmentFactor>0.854600</ApportionmentFactor>
+				<PartnerOrShareholderName>ILTG - Illinois e-file test 7 - sub 1</PartnerOrShareholderName>
+				<USAddress>
+					<AddressLine1Txt>60 Any Street</AddressLine1Txt>
+					<CityNm>Anytown</CityNm>
+					<StateAbbreviationCd>TX</StateAbbreviationCd>
+					<ZIPCd>78621</ZIPCd>
+				</USAddress>
+				<PartOrShareholderSSNOrFEIN>990000072</PartOrShareholderSSNOrFEIN>
+				<SharePercentage>0.66231</SharePercentage>
+				<Corporation>X</Corporation>
+			</Steps1And2>
+			<Step5>
+				<RiverEdgeZoneDiv>1320</RiverEdgeZoneDiv>
+				<HighImpactBusinessDividend>1330</HighImpactBusinessDividend>
+				<ILBonusDepreciationSub>1380</ILBonusDepreciationSub>
+				<RelatedPartyExpensesSub>1390</RelatedPartyExpensesSub>
+				<DistributiveShareOfSub>1400</DistributiveShareOfSub>
+				<OtherSubtractions>1410</OtherSubtractions>
+			</Step5>
+			<Step7>
+				<EnterpriseInvestmentCr>200</EnterpriseInvestmentCr>
+				<ExFelonsJobsCredit>300</ExFelonsJobsCredit>
+				<VeteransJobsCredit>410</VeteransJobsCredit>
+				<StudentAssistContributionCr>510</StudentAssistContributionCr>
+			</Step7>
+		</SchILK1P>
+		<SchILK1P>
+			<Steps1And2>
+				<YearEnding>2015-12</YearEnding>
+				<PartnershipBox>X</PartnershipBox>
+				<PartnershipOrSCorpName>Sub 1 Partnership 2</PartnershipOrSCorpName>
+				<PartnershipOrSCorpFEIN>780000002</PartnershipOrSCorpFEIN>
+				<ApportionmentFactor>0.812350</ApportionmentFactor>
+				<PartnerOrShareholderName>ILTG - Illinois e-file test 7 - sub 1</PartnerOrShareholderName>
+				<USAddress>
+					<AddressLine1Txt>60 Any Street</AddressLine1Txt>
+					<CityNm>Anytown</CityNm>
+					<StateAbbreviationCd>TX</StateAbbreviationCd>
+					<ZIPCd>78621</ZIPCd>
+				</USAddress>
+				<PartOrShareholderSSNOrFEIN>990000072</PartOrShareholderSSNOrFEIN>
+				<SharePercentage>0.26541</SharePercentage>
+				<Corporation>X</Corporation>
+			</Steps1And2>
+			<Step5>
+				<RiverEdgeZoneDiv>1420</RiverEdgeZoneDiv>
+				<HighImpactBusinessDividend>1520</HighImpactBusinessDividend>
+				<ILBonusDepreciationSub>2020</ILBonusDepreciationSub>
+				<RelatedPartyExpensesSub>2120</RelatedPartyExpensesSub>
+				<DistributiveShareOfSub>2220</DistributiveShareOfSub>
+				<OtherSubtractions>2320</OtherSubtractions>
+			</Step5>
+			<Step7>
+				<EnterpriseInvestmentCr>250</EnterpriseInvestmentCr>
+				<ExFelonsJobsCredit>350</ExFelonsJobsCredit>
+				<VeteransJobsCredit>420</VeteransJobsCredit>
+				<StudentAssistContributionCr>520</StudentAssistContributionCr>
+			</Step7>
+		</SchILK1P>
+		<SchILK1P>
+			<Steps1And2>
+				<YearEnding>2015-12</YearEnding>
+				<PartnershipBox>X</PartnershipBox>
+				<PartnershipOrSCorpName>Sub 2 Partnership 1</PartnershipOrSCorpName>
+				<PartnershipOrSCorpFEIN>880000001</PartnershipOrSCorpFEIN>
+				<ApportionmentFactor>0.750000</ApportionmentFactor>
+				<PartnerOrShareholderName>ILTG - Illinois e-file test 7 - sub 2</PartnerOrShareholderName>
+				<USAddress>
+					<AddressLine1Txt>61 Any Street</AddressLine1Txt>
+					<CityNm>Anytown</CityNm>
+					<StateAbbreviationCd>TX</StateAbbreviationCd>
+					<ZIPCd>78621</ZIPCd>
+				</USAddress>
+				<PartOrShareholderSSNOrFEIN>990000073</PartOrShareholderSSNOrFEIN>
+				<SharePercentage>0.36521</SharePercentage>
+				<Corporation>X</Corporation>
+			</Steps1And2>
+			<Step7>
+				<EnterpriseInvestmentCr>300</EnterpriseInvestmentCr>
+				<RiverEdgeInvestmentCr>350</RiverEdgeInvestmentCr>
+				<ExFelonsJobsCredit>400</ExFelonsJobsCredit>
+				<VeteransJobsCredit>430</VeteransJobsCredit>
+				<StudentAssistContributionCr>530</StudentAssistContributionCr>
+				<ReplacementTaxInvestmentCredit>3342</ReplacementTaxInvestmentCredit>
+			</Step7>
+		</SchILK1P>
+		<SchILK1P>
+			<Steps1And2>
+				<YearEnding>2015-12</YearEnding>
+				<PartnershipBox>X</PartnershipBox>
+				<PartnershipOrSCorpName>Sub 2 Partnership 2</PartnershipOrSCorpName>
+				<PartnershipOrSCorpFEIN>880000002</PartnershipOrSCorpFEIN>
+				<ApportionmentFactor>0.950000</ApportionmentFactor>
+				<PartnerOrShareholderName>ILTG - Illinois e-file test 7 - sub 2</PartnerOrShareholderName>
+				<USAddress>
+					<AddressLine1Txt>61 Any Street</AddressLine1Txt>
+					<CityNm>Anytown</CityNm>
+					<StateAbbreviationCd>TX</StateAbbreviationCd>
+					<ZIPCd>78621</ZIPCd>
+				</USAddress>
+				<PartOrShareholderSSNOrFEIN>990000073</PartOrShareholderSSNOrFEIN>
+				<SharePercentage>0.54263</SharePercentage>
+				<Corporation>X</Corporation>
+			</Steps1And2>
+			<Step7>
+				<EnterpriseInvestmentCr>350</EnterpriseInvestmentCr>
+				<RiverEdgeInvestmentCr>450</RiverEdgeInvestmentCr>
+				<ExFelonsJobsCredit>450</ExFelonsJobsCredit>
+				<VeteransJobsCredit>540</VeteransJobsCredit>
+				<StudentAssistContributionCr>640</StudentAssistContributionCr>
+			</Step7>
+		</SchILK1P>
+		<SchILK1P>
+			<Steps1And2>
+				<YearEnding>2015-12</YearEnding>
+				<PartnershipBox>X</PartnershipBox>
+				<PartnershipOrSCorpName>Partnership P1</PartnershipOrSCorpName>
+				<PartnershipOrSCorpFEIN>560000001</PartnershipOrSCorpFEIN>
+				<ApportionmentFactor>1.000000</ApportionmentFactor>
+				<PartnerOrShareholderName>ILTG - Illinois e-file test 7 - sub 3</PartnerOrShareholderName>
+				<USAddress>
+					<AddressLine1Txt>32 Any Street</AddressLine1Txt>
+					<CityNm>Anytown</CityNm>
+					<StateAbbreviationCd>TX</StateAbbreviationCd>
+					<ZIPCd>77287</ZIPCd>
+				</USAddress>
+				<PartOrShareholderSSNOrFEIN>990123641</PartOrShareholderSSNOrFEIN>
+				<SharePercentage>0.51321</SharePercentage>
+				<Corporation>X</Corporation>
+			</Steps1And2>
+			<Step5>
+				<DistributiveShareOfAdd>1500</DistributiveShareOfAdd>
+				<RiverEdgeZoneDiv>1120</RiverEdgeZoneDiv>
+				<HighImpactBusinessDividend>1130</HighImpactBusinessDividend>
+				<ILBonusDepreciationSub>1180</ILBonusDepreciationSub>
+				<RelatedPartyExpensesSub>1190</RelatedPartyExpensesSub>
+				<DistributiveShareOfSub>1200</DistributiveShareOfSub>
+				<OtherSubtractions>1210</OtherSubtractions>
+			</Step5>
+			<Step7>
+				<EnterpriseInvestmentCr>100</EnterpriseInvestmentCr>
+				<RiverEdgeInvestmentCr>200</RiverEdgeInvestmentCr>
+				<ExFelonsJobsCredit>300</ExFelonsJobsCredit>
+				<VeteransJobsCredit>400</VeteransJobsCredit>
+				<StudentAssistContributionCr>500</StudentAssistContributionCr>
+			</Step7>
+		</SchILK1P>
+		<SchILK1P>
+			<Steps1And2>
+				<YearEnding>2015-12</YearEnding>
+				<PartnershipBox>X</PartnershipBox>
+				<PartnershipOrSCorpName>Partnership P2</PartnershipOrSCorpName>
+				<PartnershipOrSCorpFEIN>560000001</PartnershipOrSCorpFEIN>
+				<ApportionmentFactor>0.900000</ApportionmentFactor>
+				<PartnerOrShareholderName>ILTG - Illinois e-file test 7 - sub 3</PartnerOrShareholderName>
+				<USAddress>
+					<AddressLine1Txt>32 Any Street</AddressLine1Txt>
+					<CityNm>Anytown</CityNm>
+					<StateAbbreviationCd>TX</StateAbbreviationCd>
+					<ZIPCd>77287</ZIPCd>
+				</USAddress>
+				<PartOrShareholderSSNOrFEIN>990123641</PartOrShareholderSSNOrFEIN>
+				<SharePercentage>0.85462</SharePercentage>
+				<Corporation>X</Corporation>
+			</Steps1And2>
+			<Step5>
+				<DistributiveShareOfAdd>1550</DistributiveShareOfAdd>
+				<RiverEdgeZoneDiv>1220</RiverEdgeZoneDiv>
+				<HighImpactBusinessDividend>1230</HighImpactBusinessDividend>
+				<ILBonusDepreciationSub>1280</ILBonusDepreciationSub>
+				<RelatedPartyExpensesSub>1290</RelatedPartyExpensesSub>
+				<DistributiveShareOfSub>1300</DistributiveShareOfSub>
+				<OtherSubtractions>1310</OtherSubtractions>
+			</Step5>
+			<Step7>
+				<EnterpriseInvestmentCr>150</EnterpriseInvestmentCr>
+				<RiverEdgeInvestmentCr>250</RiverEdgeInvestmentCr>
+				<ExFelonsJobsCredit>350</ExFelonsJobsCredit>
+				<VeteransJobsCredit>450</VeteransJobsCredit>
+				<StudentAssistContributionCr>550</StudentAssistContributionCr>
+			</Step7>
+		</SchILK1P>
+		<SchILK1T>
+			<Steps1And2>
+				<YearEnding>2015-12</YearEnding>
+				<Trustbox>X</Trustbox>
+				<TrustOrEstateName>Trust P1</TrustOrEstateName>
+				<TrustOrEstateFEIN>590000001</TrustOrEstateFEIN>
+				<ApportionmentFactor>0.010000</ApportionmentFactor>
+				<BeneficiaryName>ILTG - Illinois e-file test 7 - sub 3</BeneficiaryName>
+				<USAddress>
+					<AddressLine1Txt>32 Any Street</AddressLine1Txt>
+					<CityNm>Anytown</CityNm>
+					<StateAbbreviationCd>TX</StateAbbreviationCd>
+					<ZIPCd>77287</ZIPCd>
+				</USAddress>
+				<BeneficiarySSNOrFEIN>990123641</BeneficiarySSNOrFEIN>
+				<Corporation>X</Corporation>
+			</Steps1And2>
+			<Step5>
+				<OtherAdditions>3369</OtherAdditions>
+			</Step5>
+			<Step6And7/>
+		</SchILK1T>
+		<SchILK1T>
+			<Steps1And2>
+				<YearEnding>2015-12</YearEnding>
+				<Trustbox>X</Trustbox>
+				<TrustOrEstateName>Trust P2</TrustOrEstateName>
+				<TrustOrEstateFEIN>590000002</TrustOrEstateFEIN>
+				<ApportionmentFactor>0.009840</ApportionmentFactor>
+				<BeneficiaryName>ILTG - Illinois e-file test 7 - sub 3</BeneficiaryName>
+				<USAddress>
+					<AddressLine1Txt>32 Any Street</AddressLine1Txt>
+					<CityNm>Anytown</CityNm>
+					<StateAbbreviationCd>TX</StateAbbreviationCd>
+					<ZIPCd>77287</ZIPCd>
+				</USAddress>
+				<BeneficiarySSNOrFEIN>990123641</BeneficiarySSNOrFEIN>
+				<Corporation>X</Corporation>
+			</Steps1And2>
+			<Step5>
+				<OtherAdditions>5542</OtherAdditions>
+			</Step5>
+			<Step6And7/>
+		</SchILK1T>
+	</ReturnDataState>
+	<FinancialTransaction>
+		<RefundDirectDeposit>
+			<TelephoneNumber>6165559999</TelephoneNumber>
+			<RoutingTransitNumber>071000013</RoutingTransitNumber>
+			<BankAccountNumber>004001562444</BankAccountNumber>
+			<Amount>1537980</Amount>
+			<Savings>X</Savings>
+			<NotIATTransaction>X</NotIATTransaction>
+		</RefundDirectDeposit>
+	</FinancialTransaction>
+</ReturnState>

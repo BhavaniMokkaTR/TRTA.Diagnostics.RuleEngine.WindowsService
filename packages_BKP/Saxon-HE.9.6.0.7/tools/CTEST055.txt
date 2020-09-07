@@ -1,0 +1,141 @@
+let $gReturnDataState :=  element{'ReturnDataState'} {''}
+let $gSchIL1120UB :=  element{'SchIL1120UB'} {''}
+let $gStep3ColDTaxableInc :=  element{'Step3ColDTaxableInc'} {''}
+let $gIncSubTotal :=  element{'IncSubTotal'} {''}
+let $gFederalNetOperatingLoss :=  element{'FederalNetOperatingLoss'} {''}
+let $gInterestStateAndMunicipal :=  element{'InterestStateAndMunicipal'} {''}
+let $gIncTaxAndReplacementTax :=  element{'IncTaxAndReplacementTax'} {''}
+let $gBonusDepreciationAddition :=  element{'BonusDepreciationAddition'} {''}
+let $gRelatedPartyExpns :=  element{'RelatedPartyExpns'} {''}
+let $gDistShareOfAdditions :=  element{'DistShareOfAdditions'} {''}
+let $gOtherAdditions :=  element{'OtherAdditions'} {''}
+let $gFedTaxIncOrLossToBeSubtracted :=  element{'FedTaxIncOrLossToBeSubtracted'} {''}
+
+ 
+for 
+	$ReturnDataState at $currentReturnDataStatePos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState)) then doc("CTEST055.xml")/ReturnState/ReturnDataState else $gReturnDataState,
+	$SchIL1120UB at $currentSchIL1120UBPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB else $gSchIL1120UB,
+	$Step3ColDTaxableInc at $currentStep3ColDTaxableIncPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc else $gStep3ColDTaxableInc,
+	$IncSubTotal at $currentIncSubTotalPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncSubTotal)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncSubTotal else $gIncSubTotal,
+	$FederalNetOperatingLoss at $currentFederalNetOperatingLossPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/FederalNetOperatingLoss)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/FederalNetOperatingLoss else $gFederalNetOperatingLoss,
+	$InterestStateAndMunicipal at $currentInterestStateAndMunicipalPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/InterestStateAndMunicipal)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/InterestStateAndMunicipal else $gInterestStateAndMunicipal,
+	$IncTaxAndReplacementTax at $currentIncTaxAndReplacementTaxPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncTaxAndReplacementTax)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncTaxAndReplacementTax else $gIncTaxAndReplacementTax,
+	$BonusDepreciationAddition at $currentBonusDepreciationAdditionPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/BonusDepreciationAddition)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/BonusDepreciationAddition else $gBonusDepreciationAddition,
+	$RelatedPartyExpns at $currentRelatedPartyExpnsPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/RelatedPartyExpns)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/RelatedPartyExpns else $gRelatedPartyExpns,
+	$DistShareOfAdditions at $currentDistShareOfAdditionsPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/DistShareOfAdditions)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/DistShareOfAdditions else $gDistShareOfAdditions,
+	$OtherAdditions at $currentOtherAdditionsPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/OtherAdditions)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/OtherAdditions else $gOtherAdditions,
+	$FedTaxIncOrLossToBeSubtracted at $currentFedTaxIncOrLossToBeSubtractedPos in if(exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/FedTaxIncOrLossToBeSubtracted)) then doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/FedTaxIncOrLossToBeSubtracted else $gFedTaxIncOrLossToBeSubtracted
+
+let $genReturnDataState := false()
+let $genSchIL1120UB := false()
+let $genStep3ColDTaxableInc := false()
+let $genIncSubTotal := exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncSubTotal)
+let $genFederalNetOperatingLoss := exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/FederalNetOperatingLoss)
+let $genInterestStateAndMunicipal := exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/InterestStateAndMunicipal)
+let $genIncTaxAndReplacementTax := exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncTaxAndReplacementTax)
+let $genBonusDepreciationAddition := exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/BonusDepreciationAddition)
+let $genRelatedPartyExpns := exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/RelatedPartyExpns)
+let $genDistShareOfAdditions := exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/DistShareOfAdditions)
+let $genOtherAdditions := exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/OtherAdditions)
+let $genFedTaxIncOrLossToBeSubtracted := exists(doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/FedTaxIncOrLossToBeSubtracted)
+return 
+<Evaluation><FieldEntry>
+                    <Name>IncSubTotal</Name>
+                    <Xpath>ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncSubTotal</Xpath>
+			        <Value>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncSubTotal/data()}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncSubTotal/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry><FieldEntry>
+                    <Name>FederalNetOperatingLoss</Name>
+                    <Xpath>ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/FederalNetOperatingLoss</Xpath>
+			        <Value>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/FederalNetOperatingLoss/data()}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/FederalNetOperatingLoss/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry><FieldEntry>
+                    <Name>InterestStateAndMunicipal</Name>
+                    <Xpath>ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/InterestStateAndMunicipal</Xpath>
+			        <Value>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/InterestStateAndMunicipal/data()}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/InterestStateAndMunicipal/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry><FieldEntry>
+                    <Name>IncTaxAndReplacementTax</Name>
+                    <Xpath>ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncTaxAndReplacementTax</Xpath>
+			        <Value>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncTaxAndReplacementTax/data()}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/IncTaxAndReplacementTax/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry><FieldEntry>
+                    <Name>BonusDepreciationAddition</Name>
+                    <Xpath>ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/BonusDepreciationAddition</Xpath>
+			        <Value>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/BonusDepreciationAddition/data()}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/BonusDepreciationAddition/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry><FieldEntry>
+                    <Name>RelatedPartyExpns</Name>
+                    <Xpath>ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/RelatedPartyExpns</Xpath>
+			        <Value>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/RelatedPartyExpns/data()}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/RelatedPartyExpns/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry><FieldEntry>
+                    <Name>DistShareOfAdditions</Name>
+                    <Xpath>ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/DistShareOfAdditions</Xpath>
+			        <Value>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/DistShareOfAdditions/data()}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/DistShareOfAdditions/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry><FieldEntry>
+                    <Name>OtherAdditions</Name>
+                    <Xpath>ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/OtherAdditions</Xpath>
+			        <Value>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/OtherAdditions/data()}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/Step3ColDTaxableInc/OtherAdditions/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry><FieldEntry>
+                    <Name>FedTaxIncOrLossToBeSubtracted</Name>
+                    <Xpath>ReturnState/ReturnDataState/SchIL1120UB/FedTaxIncOrLossToBeSubtracted</Xpath>
+			        <Value>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/FedTaxIncOrLossToBeSubtracted/data()}</Value>
+			        <NextValue></NextValue>
+			        <PrevValue></PrevValue>
+			        <Index>{1}</Index>
+                    <Count>{1}</Count>
+                    <FieldKey>{doc("CTEST055.xml")/ReturnState/ReturnDataState/SchIL1120UB/FedTaxIncOrLossToBeSubtracted/@FieldKey/data()}</FieldKey>
+                    <NodeIsPresent></NodeIsPresent>
+                    <HasChildNodes></HasChildNodes>
+		            </FieldEntry></Evaluation>

@@ -1,0 +1,50 @@
+let $gReturnDataState :=  element{'ReturnDataState'} {''} 
+$gSchIL1299A :=  element{'SchIL1299A'} {''} 
+let $gStep1 :=  element{'Step1'} {''} 
+let $gRERZITable :=  element{'RERZITable'} {''} 
+let $xpathRERZITable := ./x:ReturnState/x:ReturnDataState/x:SchIL1299A/x:Step1/x:RERZITable 
+let $gIL1299AIntSubTableColH :=  element{'IL1299AIntSubTableColH'} {''} 
+let $gIL1299AIntSubTableColB :=  element{'IL1299AIntSubTableColB'} {''}    
+for   
+$ReturnDataState at $currentReturnDataStatePos in if(exists(./x:ReturnState/x:ReturnDataState)) then ./x:ReturnState/x:ReturnDataState else $gReturnDataState,  
+$SchIL1299A at $currentSchIL1299APos in if(exists(./x:ReturnState/x:ReturnDataState/x:SchIL1299A)) then ./x:ReturnState/x:ReturnDataState/x:SchIL1299A else $gSchIL1299A, 
+$Step1 at $currentStep1Pos in if(exists(./x:ReturnState/x:ReturnDataState/x:SchIL1299A/x:Step1)) then ./x:ReturnState/x:ReturnDataState/x:SchIL1299A/x:Step1 else $gStep1, 
+$RERZITable at $currentRERZITablePos in if(exists(./x:ReturnState/x:ReturnDataState/x:SchIL1299A/x:Step1/x:RERZITable)) then ./x:ReturnState/x:ReturnDataState/x:SchIL1299A/x:Step1/x:RERZITable else $gRERZITable,  
+$IL1299AIntSubTableColH at $currentIL1299AIntSubTableColHPos in if(exists($RERZITable/x:IL1299AIntSubTableColH)) then $RERZITable/x:IL1299AIntSubTableColH else $gIL1299AIntSubTableColH, 
+$IL1299AIntSubTableColB at $currentIL1299AIntSubTableColBPos in if(exists($RERZITable/x:IL1299AIntSubTableColB)) then $RERZITable/x:IL1299AIntSubTableColB else $gIL1299AIntSubTableColB  
+
+let $genReturnDataState := false() let $genSchIL1299A := false() 
+let $genStep1 := false() 
+let $genRERZITable := false() 
+let $prevRERZITable := $xpathRERZITable[$currentRERZITablePos+-1] 
+let $nextRERZITable := $xpathRERZITable[$currentRERZITablePos+1] 
+let $RERZITableCount := count($xpathRERZITable) 
+let $genIL1299AIntSubTableColH := exists($RERZITable/x:IL1299AIntSubTableColH)
+let $genIL1299AIntSubTableColB := exists($RERZITable/x:IL1299AIntSubTableColB) 
+return  
+<Evaluation>
+    <FieldEntry>
+        <Name>x:IL1299AIntSubTableColH</Name>
+        <Xpath>x:ReturnState/x:ReturnDataState/x:SchIL1299A/x:Step1/x:RERZITable/x:IL1299AIntSubTableColH</Xpath>
+        <Value>{$RERZITable/x:IL1299AIntSubTableColH/data()}</Value>
+        <NextValue>{$nextRERZITable/x:IL1299AIntSubTableColH/data()}</NextValue>
+        <PrevValue>{$prevRERZITable/x:IL1299AIntSubTableColH/data()}</PrevValue>
+        <Index>{$currentRERZITablePos}</Index>
+        <Count>{$RERZITableCount}</Count>
+        <FieldKey>{$RERZITable/x:IL1299AIntSubTableColH/@FieldKey/data()}</FieldKey>
+        <NodeIsPresent></NodeIsPresent>
+        <HasChildNodes></HasChildNodes>
+    </FieldEntry>
+    <FieldEntry>
+        <Name>x:IL1299AIntSubTableColB</Name>
+        <Xpath>x:ReturnState/x:ReturnDataState/x:SchIL1299A/x:Step1/x:RERZITable/x:IL1299AIntSubTableColB</Xpath>
+        <Value>{$RERZITable/x:IL1299AIntSubTableColB/data()}</Value>
+        <NextValue>{$nextRERZITable/x:IL1299AIntSubTableColB/data()}</NextValue>
+        <PrevValue>{$prevRERZITable/x:IL1299AIntSubTableColB/data()}</PrevValue>
+        <Index>{$currentRERZITablePos}</Index>
+        <Count>{$RERZITableCount}</Count>
+        <FieldKey>{$RERZITable/x:IL1299AIntSubTableColB/@FieldKey/data()}</FieldKey>
+        <NodeIsPresent></NodeIsPresent>
+        <HasChildNodes></HasChildNodes>
+    </FieldEntry>
+</Evaluation>

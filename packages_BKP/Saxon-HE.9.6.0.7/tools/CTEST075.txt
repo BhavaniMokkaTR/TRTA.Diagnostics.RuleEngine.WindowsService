@@ -1,0 +1,39 @@
+let $gReturnDataState :=  element{'ReturnDataState'} {''} let $gSchIL1120UB :=  element{'SchIL1120UB'} {''} let $gSchUBMembershipTable :=  element{'SchUBMembershipTable'} {''} let $xpathSchUBMembershipTable := doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/SchUBMembershipTable let $gStep4ColABCApporFactor :=  element{'Step4ColABCApporFactor'} {''} let $gSalesGrossReceiptsSumInState :=  element{'SalesGrossReceiptsSumInState'} {''} let $gSalesGrossReceiptsSumRatio :=  element{'SalesGrossReceiptsSumRatio'} {''} let $gStep4ColDApporFactor :=  element{'Step4ColDApporFactor'} {''} let $gSalesGrossRcptsSumEverywhere :=  element{'SalesGrossRcptsSumEverywhere'} {''}    for   $ReturnDataState at $currentReturnDataStatePos in if(exists(doc("CTEST075.xil")/ReturnState/ReturnDataState)) then doc("CTEST075.xil")/ReturnState/ReturnDataState else $gReturnDataState,  $SchIL1120UB at $currentSchIL1120UBPos in if(exists(doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB)) then doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB else $gSchIL1120UB,  $SchUBMembershipTable at $currentSchUBMembershipTablePos in if(exists(doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/SchUBMembershipTable)) then doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/SchUBMembershipTable else $gSchUBMembershipTable,  $Step4ColABCApporFactor at $currentStep4ColABCApporFactorPos in if(exists($SchUBMembershipTable/Step4ColABCApporFactor)) then $SchUBMembershipTable/Step4ColABCApporFactor else $gStep4ColABCApporFactor,  $SalesGrossReceiptsSumInState at $currentSalesGrossReceiptsSumInStatePos in if(exists($SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumInState)) then $SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumInState else $gSalesGrossReceiptsSumInState,  $SalesGrossReceiptsSumRatio at $currentSalesGrossReceiptsSumRatioPos in if(exists($SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumRatio)) then $SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumRatio else $gSalesGrossReceiptsSumRatio,  $Step4ColDApporFactor at $currentStep4ColDApporFactorPos in if(exists(doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/Step4ColDApporFactor)) then doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/Step4ColDApporFactor else $gStep4ColDApporFactor,  $SalesGrossRcptsSumEverywhere at $currentSalesGrossRcptsSumEverywherePos in if(exists(doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/Step4ColDApporFactor/SalesGrossRcptsSumEverywhere)) then doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/Step4ColDApporFactor/SalesGrossRcptsSumEverywhere else $gSalesGrossRcptsSumEverywhere  let $genReturnDataState := false() let $genSchIL1120UB := false() let $genSchUBMembershipTable := false() let $prevSchUBMembershipTable := $xpathSchUBMembershipTable[$currentSchUBMembershipTablePos+-1] let $nextSchUBMembershipTable := $xpathSchUBMembershipTable[$currentSchUBMembershipTablePos+1] let $SchUBMembershipTableCount := count($xpathSchUBMembershipTable) let $genStep4ColABCApporFactor := false() let $genSalesGrossReceiptsSumInState := exists($SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumInState) let $genSalesGrossReceiptsSumRatio := exists($SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumRatio) let $genStep4ColDApporFactor := false() let $genSalesGrossRcptsSumEverywhere := exists(doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/Step4ColDApporFactor/SalesGrossRcptsSumEverywhere) return  
+<Evaluation>
+    <FieldEntry>
+        <Name>SalesGrossReceiptsSumInState</Name>
+        <Xpath>ReturnState/ReturnDataState/SchIL1120UB/SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumInState</Xpath>
+        <Value>{$SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumInState/data()}</Value>
+        <NextValue>{$nextSchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumInState/data()}</NextValue>
+        <PrevValue>{$prevSchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumInState/data()}</PrevValue>
+        <Index>{$currentSchUBMembershipTablePos}</Index>
+        <Count>{$SchUBMembershipTableCount}</Count>
+        <FieldKey>{$SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumInState/@FieldKey/data()}</FieldKey>
+        <NodeIsPresent></NodeIsPresent>
+        <HasChildNodes></HasChildNodes>
+    </FieldEntry>
+    <FieldEntry>
+        <Name>SalesGrossReceiptsSumRatio</Name>
+        <Xpath>ReturnState/ReturnDataState/SchIL1120UB/SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumRatio</Xpath>
+        <Value>{$SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumRatio/data()}</Value>
+        <NextValue>{$nextSchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumRatio/data()}</NextValue>
+        <PrevValue>{$prevSchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumRatio/data()}</PrevValue>
+        <Index>{$currentSchUBMembershipTablePos}</Index>
+        <Count>{$SchUBMembershipTableCount}</Count>
+        <FieldKey>{$SchUBMembershipTable/Step4ColABCApporFactor/SalesGrossReceiptsSumRatio/@FieldKey/data()}</FieldKey>
+        <NodeIsPresent></NodeIsPresent>
+        <HasChildNodes></HasChildNodes>
+    </FieldEntry>
+    <FieldEntry>
+        <Name>SalesGrossRcptsSumEverywhere</Name>
+        <Xpath>ReturnState/ReturnDataState/SchIL1120UB/Step4ColDApporFactor/SalesGrossRcptsSumEverywhere</Xpath>
+        <Value>{doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/Step4ColDApporFactor/SalesGrossRcptsSumEverywhere/data()}</Value>
+        <NextValue></NextValue>
+        <PrevValue></PrevValue>
+        <Index>{1}</Index>
+        <Count>{1}</Count>
+        <FieldKey>{doc("CTEST075.xil")/ReturnState/ReturnDataState/SchIL1120UB/Step4ColDApporFactor/SalesGrossRcptsSumEverywhere/@FieldKey/data()}</FieldKey>
+        <NodeIsPresent></NodeIsPresent>
+        <HasChildNodes></HasChildNodes>
+    </FieldEntry>
+</Evaluation>
